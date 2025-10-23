@@ -1,0 +1,15 @@
+# General temporary files
+.DS_Store
+Thumbs.db
+
+# Node / JS tooling
+node_modules/
+.npm/
+.yarn/
+dist/
+build/
+
+# Environment & secrets
+.env
+.env.*
+*.log
