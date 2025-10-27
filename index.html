@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Vercedo Website Draft – Local Preview</title>
+    <meta name="description" content="Local preview for Vercedo website content (Markdown)." />
+    <style>
+      :root {
+        --bg-start: #0b0214;
+        --bg-end: #0a0010;
+        --accent: #9b5cff;
+        --text: #e9e6ef;
+        --muted: #b8afc7;
+        --card: rgba(255,255,255,0.06);
+        --card-border: rgba(255,255,255,0.08);
+      }
+      * { box-sizing: border-box; }
+      html, body { height: 100%; }
+      body {
+        margin: 0;
+        color: var(--text);
+        font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+        background: radial-gradient(80% 120% at 10% 0%, #1b1030 0%, var(--bg-start) 35%, var(--bg-end) 100%);
+        background-attachment: fixed;
+        line-height: 1.6;
+      }
+      header {
+        position: sticky;
+        top: 0;
+        backdrop-filter: blur(8px);
+        background: linear-gradient(180deg, rgba(10,0,16,0.8) 0%, rgba(10,0,16,0.4) 100%);
+        border-bottom: 1px solid var(--card-border);
+        z-index: 10;
+      }
+      .container { max-width: 1100px; margin: 0 auto; padding: 24px; }
+      .brand { display: flex; align-items: center; gap: 12px; font-weight: 700; letter-spacing: 0.2px; }
+      .brand .dot { width: 10px; height: 10px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 24px var(--accent); }
+      .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; }
+      .card {
+        background: var(--card);
+        border: 1px solid var(--card-border);
+        border-radius: 14px;
+        padding: 20px;
+        transition: transform 140ms ease, background 140ms ease, border-color 140ms ease;
+      }
+      .card:hover { transform: translateY(-2px); border-color: rgba(155,92,255,0.5); }
+      a.card { color: inherit; text-decoration: none; display: block; }
+      .muted { color: var(--muted); }
+      .hero { padding: 32px 0 8px; }
+      h1 { font-size: clamp(28px, 3.6vw, 42px); margin: 0 0 8px; line-height: 1.2; }
+      h2 { font-size: 18px; margin: 0 0 10px; color: #d7cff0; }
+      ul { margin: 8px 0 0 18px; }
+      footer { color: var(--muted); border-top: 1px solid var(--card-border); margin-top: 32px; }
+      code { background: rgba(255,255,255,0.08); padding: 2px 6px; border-radius: 6px; }
+      .cta { display: inline-block; background: var(--accent); color: #120626; padding: 10px 14px; border-radius: 10px; text-decoration: none; font-weight: 600; box-shadow: 0 4px 24px rgba(155,92,255,0.36); }
+      .cta:hover { filter: brightness(1.08); }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="container" style="display:flex; align-items:center; justify-content:space-between; gap:16px;">
+        <div class="brand"><span class="dot"></span> Vercedo – Local Content Preview</div>
+        <a class="cta" href="viewer.html?file=CONTENT_HOMEPAGE.md">Open Preview</a>
+      </div>
+    </header>
+
+    <main class="container">
+      <section class="hero">
+        <h1>Website status: Content and design draft only</h1>
+        <p class="muted">This repository contains Markdown content and design guidance for the Vercedo website. A full framework implementation (e.g., Next.js) is not included yet. Use the links below to preview each page locally, rendered from Markdown.</p>
+      </section>
+
+      <section style="margin-top: 16px;">
+        <h2>Pages</h2>
+        <div class="grid" role="list">
+          <a class="card" role="listitem" href="viewer.html?file=CONTENT_HOMEPAGE.md">
+            <strong>Homepage</strong>
+            <div class="muted">CONTENT_HOMEPAGE.md</div>
+          </a>
+          <a class="card" role="listitem" href="viewer.html?file=CONTENT_FEATURES.md">
+            <strong>Features & Use-Cases</strong>
+            <div class="muted">CONTENT_FEATURES.md</div>
+          </a>
+          <a class="card" role="listitem" href="viewer.html?file=CONTENT_TECHNOLOGY.md">
+            <strong>Technology</strong>
+            <div class="muted">CONTENT_TECHNOLOGY.md</div>
+          </a>
+          <a class="card" role="listitem" href="viewer.html?file=CONTENT_PRICING.md">
+            <strong>Pricing & Plans</strong>
+            <div class="muted">CONTENT_PRICING.md</div>
+          </a>
+          <a class="card" role="listitem" href="viewer.html?file=CONTENT_ABOUT.md">
+            <strong>About</strong>
+            <div class="muted">CONTENT_ABOUT.md</div>
+          </a>
+          <a class="card" role="listitem" href="viewer.html?file=CONTENT_CONTACT.md">
+            <strong>Contact / Demo</strong>
+            <div class="muted">CONTENT_CONTACT.md</div>
+          </a>
+        </div>
+      </section>
+
+      <section style="margin-top: 24px;">
+        <h2>How to run locally</h2>
+        <ol class="muted">
+          <li>From this folder, start a static file server. Examples:</li>
+        </ol>
+        <ul class="muted">
+          <li>Python 3: <code>python3 -m http.server 5173</code></li>
+          <li>Node (if installed): <code>npx serve -l 5173</code></li>
+        </ul>
+        <p class="muted">Then open <code>http://localhost:5173/</code> in your browser and click a page above.</p>
+      </section>
+
+      <section style="margin-top: 24px;">
+        <h2>Next steps</h2>
+        <ul class="muted">
+          <li>Use this draft to implement a production site in your preferred framework (e.g., Next.js app router) with proper routing, SEO, and assets.</li>
+          <li>Replace this preview with real pages/components and deploy.</li>
+        </ul>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container" style="display:flex; align-items:center; justify-content:space-between; gap:16px; padding: 22px 24px;">
+        <div>© Vercedo – Local Preview</div>
+        <nav class="muted" aria-label="Quick links" style="display:flex; gap:14px; flex-wrap: wrap;">
+          <a class="muted" href="viewer.html?file=CONTENT_HOMEPAGE.md" style="text-decoration:none;">Home</a>
+          <a class="muted" href="viewer.html?file=CONTENT_FEATURES.md" style="text-decoration:none;">Features</a>
+          <a class="muted" href="viewer.html?file=CONTENT_TECHNOLOGY.md" style="text-decoration:none;">Technology</a>
+          <a class="muted" href="viewer.html?file=CONTENT_PRICING.md" style="text-decoration:none;">Pricing</a>
+          <a class="muted" href="viewer.html?file=CONTENT_ABOUT.md" style="text-decoration:none;">About</a>
+          <a class="muted" href="viewer.html?file=CONTENT_CONTACT.md" style="text-decoration:none;">Contact</a>
+        </nav>
+      </div>
+    </footer>
+  </body>
+</html>

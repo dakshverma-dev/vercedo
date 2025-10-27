@@ -300,3 +300,23 @@
 ---
 
 **Next Steps:** Use this draft to guide high-fidelity designs in Figma or proceed directly to implementation in your chosen web framework (React, Next.js, etc.).
+
+---
+
+## Local Development Preview
+
+This repository currently includes content and design guidance as Markdown files (no full web framework yet). You can preview the content locally in a browser:
+
+1) Start a simple static file server from the project root
+- Python 3: `python3 -m http.server 5173`
+- Node (if installed): `npx serve -l 5173`
+
+2) Open the index page
+- Visit http://localhost:5173/ in your browser
+- Click any page card (e.g., Homepage) to render the corresponding Markdown via the built-in viewer
+
+Files added for preview
+- `index.html` – entry page with links to each Markdown section
+- `viewer.html` – renders a given Markdown file using the Marked.js CDN
+
+When you are ready to build the production website, implement these pages in your framework of choice (e.g., Next.js), wire up navigation, analytics, SEO meta, and deploy.
