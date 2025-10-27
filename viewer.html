@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Vercedo – Markdown Page Preview</title>
+    <meta name="description" content="Render a Markdown file from this repo as HTML for quick local preview." />
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <style>
+      :root {
+        --bg-start: #0b0214;
+        --bg-end: #0a0010;
+        --accent: #9b5cff;
+        --text: #e9e6ef;
+        --muted: #b8afc7;
+        --card: rgba(255,255,255,0.06);
+        --card-border: rgba(255,255,255,0.08);
+      }
+      * { box-sizing: border-box; }
+      html, body { height: 100%; }
+      body {
+        margin: 0;
+        color: var(--text);
+        font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+        background: radial-gradient(80% 120% at 10% 0%, #1b1030 0%, var(--bg-start) 35%, var(--bg-end) 100%);
+        background-attachment: fixed;
+        line-height: 1.6;
+      }
+      header {
+        position: sticky;
+        top: 0;
+        backdrop-filter: blur(8px);
+        background: linear-gradient(180deg, rgba(10,0,16,0.8) 0%, rgba(10,0,16,0.4) 100%);
+        border-bottom: 1px solid var(--card-border);
+        z-index: 10;
+      }
+      .container { max-width: 1100px; margin: 0 auto; padding: 24px; }
+      .brand { display: flex; align-items: center; gap: 12px; font-weight: 700; letter-spacing: 0.2px; }
+      .brand .dot { width: 10px; height: 10px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 24px var(--accent); }
+      .toolbar { display:flex; gap: 10px; align-items:center; flex-wrap: wrap; }
+      .muted { color: var(--muted); }
+      .card { background: var(--card); border: 1px solid var(--card-border); border-radius: 12px; }
+      .badge { display:inline-block; border: 1px solid var(--card-border); border-radius: 999px; padding: 6px 10px; color: var(--muted); }
+      .content { background: var(--card); border: 1px solid var(--card-border); border-radius: 16px; padding: 24px; }
+      .content h1, .content h2, .content h3 { color: #f1eaff; }
+      .content a { color: #c8a9ff; }
+      pre, code { background: rgba(255,255,255,0.08); border-radius: 8px; }
+      pre { padding: 14px; overflow: auto; }
+      code { padding: 2px 6px; }
+      .back { color: var(--muted); text-decoration: none; }
+      .back:hover { color: var(--text); }
+      .loading { color: var(--muted); }
+      .error { color: #ffb4b4; }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="container" style="display:flex; align-items:center; justify-content:space-between; gap:16px;">
+        <div class="brand"><span class="dot"></span> Vercedo – Markdown Preview</div>
+        <nav class="toolbar">
+          <a class="back" href="./">← Back to index</a>
+          <span id="fileBadge" class="badge" aria-live="polite"></span>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container">
+      <div id="notice" class="muted" style="margin-bottom:12px;">Rendering Markdown as HTML for quick review. For production, implement these pages in your framework of choice.</div>
+      <article id="app" class="content" aria-live="polite"><div class="loading">Loading…</div></article>
+    </main>
+
+    <script>
+      (function() {
+        const params = new URLSearchParams(window.location.search);
+        const file = params.get('file');
+        const app = document.getElementById('app');
+        const badge = document.getElementById('fileBadge');
+
+        function escapeHtml(s){
+          const div = document.createElement('div');
+          div.innerText = s; return div.innerHTML;
+        }
+
+        if (!file) {
+          badge.textContent = 'No file selected';
+          app.innerHTML = '<p class="error">No file parameter provided. Example: <code>viewer.html?file=CONTENT_HOMEPAGE.md</code></p>';
+          return;
+        }
+
+        badge.textContent = file;
+        // Configure marked
+        marked.use({
+          gfm: true,
+          breaks: true,
+          mangle: false,
+          headerIds: true
+        });
+
+        fetch(file, { cache: 'no-store' })
+          .then(async (res) => {
+            if (!res.ok) throw new Error('Failed to load ' + file + ' (' + res.status + ')');
+            const text = await res.text();
+            const html = marked.parse(text);
+            app.innerHTML = html;
+          })
+          .catch((err) => {
+            app.innerHTML = '<p class="error">' + escapeHtml(err.message) + '</p>';
+          });
+      })();
+    </script>
+  </body>
+</html>
