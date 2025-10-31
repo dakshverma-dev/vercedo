@@ -61,6 +61,9 @@ export const metadata: Metadata = {
   }
 }
 
+// Force dynamic rendering for app routes to avoid prerender-time errors
+export const dynamic = 'force-dynamic'
+
 export default function RootLayout({
   children
 }: {
