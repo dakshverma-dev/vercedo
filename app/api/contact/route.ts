@@ -20,14 +20,14 @@ export async function POST(request: Request) {
     }
 
     const resend = new Resend(apiKey)
-    const { name, email, company, message, budget } = parsed.data
+    const { name, email, phone, businessType, callVolume, message } = parsed.data
 
     await resend.emails.send({
       from: `Vercedo Concierge <${fromEmail}>`,
       to: recipient,
       subject: `New VerceBot request from ${name}`,
       reply_to: email,
-      text: `Name: ${name}\nEmail: ${email}\nCompany: ${company}\nBudget: ${budget ?? 'Not specified'}\n\nMessage:\n${message}`
+      text: `Name: ${name}\nEmail: ${email}\nPhone: ${phone}\nBusiness Type: ${businessType}\nCall Volume: ${callVolume}\n\nMessage:\n${message}`
     })
 
     return NextResponse.json({ success: true })
