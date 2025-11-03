@@ -4,8 +4,13 @@ const nextConfig = {
   output: 'standalone',
   images: {
     domains: [],
+    formats: ['image/avif', 'image/webp'],
   },
   transpilePackages: ['three'],
+  swcMinify: true,
+  poweredByHeader: false,
+  compress: true,
+  productionBrowserSourceMaps: false,
 }
 
 module.exports = nextConfig

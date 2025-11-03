@@ -47,6 +47,7 @@ In the Vercel project settings, add:
 |--------------|-------|-------------|
 | `RESEND_API_KEY` | `your_resend_api_key` | API key from Resend |
 | `CONTACT_RECIPIENT_EMAIL` | `founders@vercedo.ai` | Contact form recipient |
+| `RESEND_FROM_EMAIL` | `onboarding@resend.dev` | Verified sender email (can use default) |
 
 ### Step 5: Deploy
 
@@ -197,6 +198,7 @@ docker run -p 3000:3000 -e RESEND_API_KEY=your_key -e CONTACT_RECIPIENT_EMAIL=em
 |---------|-------------|--------------|
 | `RESEND_API_KEY` | Email API key | [resend.com](https://resend.com) |
 | `CONTACT_RECIPIENT_EMAIL` | Contact form recipient | Your email |
+| `RESEND_FROM_EMAIL` | Verified sender email | Your verified domain or onboarding@resend.dev |
 
 ### Optional Variables
 
