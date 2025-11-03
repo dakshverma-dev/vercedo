@@ -109,12 +109,12 @@ export default function RootLayout({
             `
           }}
         />
+        <NavBar />
         <AnimationProvider>
-          <NavBar />
           <main className="flex-grow">{children}</main>
-          <Footer />
-          <VerceBot />
         </AnimationProvider>
+        <Footer />
+        <VerceBot />
       </body>
     </html>
   )

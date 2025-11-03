@@ -23,18 +23,27 @@ export function MissionSection() {
           {missionStatements.map((statement, index) => (
             <motion.div
               key={statement.title}
-              initial={{ opacity: 0, y: 32 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8, delay: index * 0.2 }}
-              className="group relative overflow-hidden rounded-4xl border border-white/10 bg-white/5 p-8 backdrop-blur-xl transition hover:border-white/20"
+              initial={{ opacity: 0, y: 40, scale: 0.9 }}
+              whileInView={{ opacity: 1, y: 0, scale: 1 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.7, delay: index * 0.15 }}
+              whileHover={{ 
+                y: -10,
+                scale: 1.02,
+                transition: { duration: 0.3 } 
+              }}
+              className="group relative overflow-hidden rounded-4xl border border-white/10 bg-white/5 p-8 backdrop-blur-xl transition-all hover:border-cobalt/30 hover:shadow-xl hover:shadow-cobalt/10 cursor-pointer"
             >
-              <div className="absolute inset-0 bg-gradient-to-br from-white/5 via-transparent to-transparent opacity-0 transition duration-500 group-hover:opacity-100" />
+              <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-cobalt/10 via-aurora/5 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
               <div className="relative">
-                <div className="mb-4 inline-block rounded-full border border-white/15 bg-white/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-white">
+                <motion.div 
+                  className="mb-4 inline-block rounded-full border border-white/15 bg-white/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-white"
+                  whileHover={{ scale: 1.05 }}
+                  transition={{ duration: 0.2 }}
+                >
                   {statement.title}
-                </div>
-                <p className="text-base leading-relaxed text-slate-300">{statement.description}</p>
+                </motion.div>
+                <p className="text-base leading-relaxed text-slate-300 group-hover:text-slate-200 transition-colors">{statement.description}</p>
               </div>
             </motion.div>
           ))}

@@ -9,6 +9,10 @@
   --font-archivo: 'Archivo', sans-serif;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   @apply bg-obsidian text-platinum antialiased;
 }
