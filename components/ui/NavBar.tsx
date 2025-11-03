@@ -40,9 +40,13 @@ export function NavBar() {
       )}
     >
       <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-5">
-        <Link href="/" className="flex items-center gap-2">
-          <div className="h-9 w-9 rounded-full border border-white/30 bg-gradient-to-br from-white/20 via-cobalt/40 to-transparent shadow-glow" />
-          <span className="font-display text-xl tracking-wide text-white">Vercedo</span>
+        <Link href="/" className="flex items-center gap-2.5">
+          <div className="relative h-9 w-9">
+            <div className="absolute inset-0 rounded-lg border border-white/30 bg-gradient-to-br from-cobalt/80 via-aurora/60 to-cobalt/90 shadow-glow" />
+            <div className="absolute inset-1.5 rounded-md bg-obsidian/40 backdrop-blur-sm" />
+            <div className="absolute left-1/2 top-1/2 h-2 w-2 -translate-x-1/2 -translate-y-1/2 rounded-full bg-white shadow-glow" />
+          </div>
+          <span className="font-display text-xl font-bold tracking-wide text-white">Vercedo</span>
         </Link>
         <div className="hidden items-center gap-10 md:flex">
           {navLinks.map((link) => {
@@ -66,13 +70,15 @@ export function NavBar() {
               </Link>
             )
           })}
-          <Link
-            href="/contact"
+          <button
+            data-cal-link="vercedo/30min"
+            data-cal-namespace="30min"
+            data-cal-config='{"layout":"month_view"}'
             className="group relative overflow-hidden rounded-full border border-white/20 px-5 py-2 text-xs font-semibold uppercase tracking-[0.25em] text-white"
           >
             <span className="absolute inset-0 -z-10 bg-gradient-to-r from-cobalt/60 via-aurora/60 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
-            Engage
-          </Link>
+            Book a Call
+          </button>
         </div>
         <button
           className="flex h-11 w-11 items-center justify-center rounded-full border border-white/15 bg-white/5 md:hidden"
@@ -110,6 +116,14 @@ export function NavBar() {
                 </Link>
               )
             })}
+            <button
+              data-cal-link="vercedo/30min"
+              data-cal-namespace="30min"
+              data-cal-config='{"layout":"month_view"}'
+              className="w-full rounded-2xl border border-white/20 bg-gradient-to-r from-cobalt via-aurora/40 to-cobalt px-4 py-3 text-sm font-semibold uppercase tracking-[0.3em] text-white shadow-glow"
+            >
+              Book a Call
+            </button>
           </div>
         </motion.div>
       )}

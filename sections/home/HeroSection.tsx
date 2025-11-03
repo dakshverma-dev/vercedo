@@ -3,7 +3,6 @@
 import { motion } from 'framer-motion'
 import Link from 'next/link'
 import { HiArrowRight } from 'react-icons/hi2'
-import { AIRobotCanvas } from '@/components/three/AIRobotCanvas'
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 32 },
@@ -20,14 +19,14 @@ export function HeroSection() {
       <div className="absolute inset-0 grid-pattern opacity-40" />
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-obsidian/90" />
       <div className="relative mx-auto flex min-h-screen max-w-7xl flex-col items-center justify-center px-6 pt-32 pb-16">
-        <div className="grid gap-12 lg:grid-cols-2">
-          <div className="flex flex-col justify-center">
+        <div className="mx-auto max-w-4xl text-center">
+          <div className="flex flex-col items-center">
             <motion.div
               custom={0}
               variants={fadeInUp}
               initial="hidden"
               animate="visible"
-              className="mb-5 inline-flex items-center gap-2 self-start rounded-full border border-white/15 bg-white/5 px-4 py-2 backdrop-blur-sm"
+              className="mb-5 inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-2 backdrop-blur-sm"
             >
               <span className="h-2 w-2 animate-pulse rounded-full bg-aurora" />
               <span className="text-xs font-medium uppercase tracking-[0.25em] text-slate-300">
@@ -59,7 +58,7 @@ export function HeroSection() {
               variants={fadeInUp}
               initial="hidden"
               animate="visible"
-              className="flex flex-wrap gap-4"
+              className="flex flex-wrap justify-center gap-4"
             >
               <Link
                 href="/contact"
@@ -80,7 +79,7 @@ export function HeroSection() {
               variants={fadeInUp}
               initial="hidden"
               animate="visible"
-              className="mt-10 flex items-center gap-8 text-sm"
+              className="mt-10 flex items-center justify-center gap-8 text-sm"
             >
               <div>
                 <p className="font-semibold text-white">97%</p>
@@ -92,15 +91,32 @@ export function HeroSection() {
                 <p className="text-slate-400">Faster Time to Value</p>
               </div>
             </motion.div>
+            <motion.div
+              custom={5}
+              variants={fadeInUp}
+              initial="hidden"
+              animate="visible"
+              className="relative mt-16 w-full max-w-3xl overflow-hidden rounded-[32px] border border-white/10 bg-white/5 px-8 py-10 backdrop-blur-sm"
+            >
+              <div className="pointer-events-none absolute -inset-1 rounded-[36px] bg-gradient-to-r from-cobalt/30 via-aurora/20 to-transparent opacity-70" />
+              <div className="relative grid gap-8 text-left sm:grid-cols-3 sm:text-center">
+                <div>
+                  <p className="text-xs uppercase tracking-[0.3em] text-slate-400">Cognition</p>
+                  <p className="mt-2 text-base font-semibold text-white">Autonomous agent mesh that learns every workflow.</p>
+                </div>
+                <div className="hidden h-16 w-px justify-self-center bg-white/10 sm:block" />
+                <div>
+                  <p className="text-xs uppercase tracking-[0.3em] text-slate-400">Orchestration</p>
+                  <p className="mt-2 text-base font-semibold text-white">Visual command center with instant deployment loops.</p>
+                </div>
+                <div className="hidden h-16 w-px justify-self-center bg-white/10 sm:block" />
+                <div>
+                  <p className="text-xs uppercase tracking-[0.3em] text-slate-400">Insight</p>
+                  <p className="mt-2 text-base font-semibold text-white">Holographic analytics that surface decisions in seconds.</p>
+                </div>
+              </div>
+            </motion.div>
           </div>
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 0.3, duration: 1.2, ease: [0.19, 1, 0.22, 1] }}
-            className="flex items-center justify-center"
-          >
-            <AIRobotCanvas />
-          </motion.div>
         </div>
       </div>
     </section>
