@@ -2,12 +2,11 @@
 
 import { motion } from 'framer-motion'
 import Link from 'next/link'
-import { HiArrowRight } from 'react-icons/hi2'
+import { HiArrowRight, HiArrowTrendingUp } from 'react-icons/hi2'
 
 const industries = [
   {
     icon: 'H',
-    emoji: '🏥',
     title: 'Healthcare & Clinics',
     subtitle: 'Missed calls = missed patients.',
     points: [
@@ -20,7 +19,6 @@ const industries = [
   },
   {
     icon: 'S',
-    emoji: '💇',
     title: 'Salons & Gyms',
     subtitle: 'Turn every enquiry into a loyal client.',
     points: [
@@ -33,7 +31,6 @@ const industries = [
   },
   {
     icon: 'R',
-    emoji: '🏠',
     title: 'Real Estate & Home Services',
     subtitle: 'Stop losing leads after hours.',
     points: [
@@ -46,7 +43,6 @@ const industries = [
   },
   {
     icon: 'C',
-    emoji: '🎓',
     title: 'Coaching & Education',
     subtitle: 'Focus on teaching, not calls.',
     points: [
@@ -59,7 +55,6 @@ const industries = [
   },
   {
     icon: 'B',
-    emoji: '🧾',
     title: 'Retail & Small Businesses',
     subtitle: 'Convert voice enquiries into orders.',
     points: [
@@ -142,24 +137,25 @@ export function IndustriesHeroSection() {
                 className="absolute inset-0 bg-gradient-to-br from-aurora/10 via-cobalt/5 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100"
                 initial={false}
               />
-              <div className="relative mb-4 flex items-center gap-3">
-                <div className="flex h-12 w-12 items-center justify-center rounded-full bg-aurora/10 text-2xl">
-                  {industry.emoji}
+              <div className="relative mb-4 flex items-start gap-3">
+                <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-aurora/20 to-cobalt/20 text-xl font-bold text-aurora">
+                  {industry.icon}
                 </div>
-                <h2 className="text-2xl font-bold text-white">{industry.title}</h2>
+                <h2 className="text-2xl font-bold leading-tight text-white">{industry.title}</h2>
               </div>
               <div className="relative flex flex-1 flex-col">
-                <p className="mb-4 text-base font-medium text-slate-200">{industry.subtitle}</p>
-                <ul className="mb-4 space-y-2">
+                <p className="mb-4 text-base font-medium leading-snug text-slate-200">{industry.subtitle}</p>
+                <ul className="mb-4 space-y-2.5">
                   {industry.points.map((point) => (
-                    <li key={point} className="flex items-start gap-2 text-sm text-slate-300">
-                      <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-aurora" />
+                    <li key={point} className="flex items-start gap-2 text-sm leading-relaxed text-slate-300">
+                      <span className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-aurora" />
                       <span>{point}</span>
                     </li>
                   ))}
                 </ul>
-                <div className="mb-6 mt-auto rounded-lg border border-aurora/20 bg-aurora/5 px-4 py-2 text-center">
-                  <p className="text-lg font-semibold text-aurora">{industry.stat}</p>
+                <div className="mb-6 mt-auto flex items-center justify-center gap-2 rounded-lg border border-aurora/20 bg-aurora/5 px-4 py-2.5">
+                  <HiArrowTrendingUp className="h-5 w-5 text-aurora" />
+                  <p className="text-base font-semibold text-aurora">{industry.stat}</p>
                 </div>
                 <Link
                   href={industry.href}
