@@ -1,7 +1,38 @@
 "use client"
 
 import { motion } from 'framer-motion'
-import { contactChannels } from '@/lib/data'
+import { HiPhone, HiEnvelope, HiChatBubbleLeftRight, HiCalendar } from 'react-icons/hi2'
+
+const contactMethods = [
+  {
+    icon: HiPhone,
+    title: 'Call Us',
+    description: 'Founder Direct Line',
+    value: '+91-XXXXX-XXXXX',
+    subtext: 'Available: Mon-Sat, 10 AM - 7 PM'
+  },
+  {
+    icon: HiEnvelope,
+    title: 'Email Us',
+    description: 'Get a response within 2 hours',
+    value: 'daksh@vercedo.com',
+    subtext: 'For general inquiries & support'
+  },
+  {
+    icon: HiChatBubbleLeftRight,
+    title: 'WhatsApp',
+    description: 'Quick questions? Message us',
+    value: 'WhatsApp Chat',
+    subtext: 'Response within 30 minutes'
+  },
+  {
+    icon: HiCalendar,
+    title: 'Schedule Call',
+    description: 'Book 15-min call with founder',
+    value: 'Book Meeting',
+    subtext: 'Choose time that works for you'
+  }
+]
 
 export function ContactHero() {
   return (
@@ -12,27 +43,28 @@ export function ContactHero() {
         initial={{ opacity: 0, y: 24 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
-        className="relative mx-auto max-w-4xl px-6 text-center"
+        className="relative mx-auto max-w-5xl px-6 text-center"
       >
-        <h1 className="mb-6 font-display text-5xl font-bold leading-tight text-white md:text-7xl">
-          Summon an <span className="text-gradient">automation strategist</span>
+        <h1 className="mb-6 font-display text-5xl font-bold leading-tight text-white md:text-6xl">
+          Let's Talk About <span className="text-gradient">Growing Your Business</span>
         </h1>
         <p className="mx-auto mb-12 max-w-2xl text-lg leading-relaxed text-slate-300">
-          Our architects are standing by to design your intelligent workflow. Share your vision, and we'll synthesize a
-          solution before your next coffee break.
+          Questions? Want a custom demo? Need enterprise pricing? We're here to help.
         </p>
-        <div className="grid gap-6 md:grid-cols-3">
-          {contactChannels.map((channel, index) => (
+        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+          {contactMethods.map((method, index) => (
             <motion.div
-              key={channel.title}
+              key={method.title}
               initial={{ opacity: 0, y: 32 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: index * 0.15 }}
-              className="rounded-3xl border border-white/10 bg-white/5 p-6 backdrop-blur-xl"
+              className="rounded-3xl border border-white/10 bg-white/5 p-6 backdrop-blur-xl transition hover:border-white/20"
             >
-              <h3 className="mb-2 font-display text-lg text-white">{channel.title}</h3>
-              <p className="mb-3 text-sm text-slate-300">{channel.description}</p>
-              <p className="font-semibold text-aurora">{channel.value}</p>
+              <method.icon className="mb-4 h-10 w-10 text-aurora" />
+              <h3 className="mb-2 font-display text-lg text-white">{method.title}</h3>
+              <p className="mb-3 text-sm text-slate-300">{method.description}</p>
+              <p className="font-semibold text-aurora">{method.value}</p>
+              <p className="mt-2 text-xs text-slate-400">{method.subtext}</p>
             </motion.div>
           ))}
         </div>

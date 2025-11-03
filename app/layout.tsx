@@ -10,18 +10,20 @@ import Script from 'next/script'
 export const metadata: Metadata = {
   metadataBase: new URL('https://vercedo.ai'),
   title: {
-    default: 'Vercedo – Automate the Impossible',
-    template: '%s | Vercedo AI Automation Platform'
+    default: 'Vercedo – AI Receptionist for Indian Businesses',
+    template: '%s | Vercedo AI Receptionist'
   },
   description:
-    'Vercedo is the premium AI automation platform crafting intelligent workflows, orchestration, and insights for visionary enterprises.',
+    'AI receptionists that speak Hindi & English fluently. Answer every call, book appointments automatically, and capture every lead—24/7. Starting ₹6,000/month.',
   keywords: [
-    'AI automation',
-    'workflow orchestration',
-    'artificial intelligence',
-    'enterprise automation',
-    'intelligent agents',
-    'business process automation'
+    'AI receptionist',
+    'Hindi AI',
+    'Indian business',
+    'appointment booking',
+    'call answering',
+    'AI assistant India',
+    'virtual receptionist',
+    'business automation India'
   ],
   authors: [{ name: 'Vercedo' }],
   openGraph: {
@@ -29,23 +31,23 @@ export const metadata: Metadata = {
     locale: 'en_US',
     url: 'https://vercedo.ai',
     siteName: 'Vercedo',
-    title: 'Vercedo – Automate the Impossible',
+    title: 'Vercedo – AI Receptionist for Indian Businesses',
     description:
-      'Premium AI automation platform crafting intelligent workflows for visionary enterprises.',
+      'AI receptionists that speak Hindi & English fluently. Never miss another customer call—24/7 availability, automatic appointment booking.',
     images: [
       {
         url: '/og-image.svg',
         width: 1200,
         height: 630,
-        alt: 'Vercedo – Automate the Impossible'
+        alt: 'Vercedo – Never Miss Another Customer Call'
       }
     ]
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Vercedo – Automate the Impossible',
+    title: 'Vercedo – AI Receptionist for Indian Businesses',
     description:
-      'Premium AI automation platform crafting intelligent workflows for visionary enterprises.',
+      'AI receptionists that speak Hindi & English fluently. Never miss another customer call—24/7 availability.',
     creator: '@vercedo',
     images: ['/og-image.svg']
   },
