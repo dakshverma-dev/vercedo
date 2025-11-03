@@ -89,7 +89,7 @@ export function CTASection() {
         >
           <span>✓ No credit card required for demo</span>
           <span>✓ Setup in 2 days</span>
-          <span>✓ 7-day money-back guarantee</span>
+          <span>✓ Transparent pricing with no hidden fees</span>
           <span>✓ Cancel anytime</span>
         </motion.div>
       </motion.div>
