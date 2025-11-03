@@ -77,31 +77,11 @@ export default function RootLayout({
         <style dangerouslySetInnerHTML={{
           __html: `
             body { 
-              background-color: #020617; 
+              background-color: #090a10; 
               color: #e2e8f0;
               min-height: 100vh;
               font-family: system-ui, -apple-system, sans-serif;
             }
-            body::before {
-              content: '';
-              position: fixed;
-              inset: 0;
-              background: #020617;
-              z-index: 9999;
-              pointer-events: none;
-              opacity: 1;
-              transition: opacity 0.3s ease-out;
-            }
-            body.loaded::before {
-              opacity: 0;
-            }
-          `
-        }} />
-        <script dangerouslySetInnerHTML={{
-          __html: `
-            document.addEventListener('DOMContentLoaded', () => {
-              setTimeout(() => document.body.classList.add('loaded'), 100);
-            });
           `
         }} />
       </head>
