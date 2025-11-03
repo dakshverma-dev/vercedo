@@ -2,50 +2,73 @@
 
 import { motion } from 'framer-motion'
 import Link from 'next/link'
-import { HiArrowRight, HiCheckCircle } from 'react-icons/hi2'
+import { HiArrowRight } from 'react-icons/hi2'
 
 const industries = [
   {
-    icon: 'D',
-    title: 'Dental Clinics',
-    description:
-      'Book, reschedule, and answer patient queries 24/7. Cut no-shows with auto reminders and prioritize emergencies.',
-    href: '/industries/dental'
+    icon: 'H',
+    emoji: '🏥',
+    title: 'Healthcare & Clinics',
+    subtitle: 'Missed calls = missed patients.',
+    points: [
+      'Auto-book appointments',
+      'Follow-up with patients',
+      'Send WhatsApp reminders'
+    ],
+    stat: '+40% patient retention',
+    href: '/industries/healthcare'
   },
   {
-    icon: 'B',
-    title: 'Beauty Salons & Spas',
-    description:
-      'Reserve stylists, manage peak hours, and instantly share pricing—all in Hindi, English, or other languages.',
-    href: '/industries/beauty'
+    icon: 'S',
+    emoji: '💇',
+    title: 'Salons & Gyms',
+    subtitle: 'Turn every enquiry into a loyal client.',
+    points: [
+      'Slot booking via call',
+      'Membership reminders',
+      'AI reschedules automatically'
+    ],
+    stat: '+30% recurring bookings',
+    href: '/industries/salons'
   },
   {
     icon: 'R',
-    title: 'Real Estate Agencies',
-    description:
-      'Qualify leads, schedule viewings, and capture buyer needs while you show properties.',
+    emoji: '🏠',
+    title: 'Real Estate & Home Services',
+    subtitle: 'Stop losing leads after hours.',
+    points: [
+      'Lead capture + qualification',
+      'AI callback for missed calls',
+      'Instant CRM entry'
+    ],
+    stat: '5x faster conversions',
     href: '/industries/real-estate'
   },
   {
     icon: 'C',
-    title: 'Coaching Institutes',
-    description:
-      'Field admission queries, share batch times and fees, schedule counseling sessions automatically.',
+    emoji: '🎓',
+    title: 'Coaching & Education',
+    subtitle: 'Focus on teaching, not calls.',
+    points: [
+      'Demo scheduling',
+      'Course inquiry handling',
+      'Payment reminders'
+    ],
+    stat: '+45% admissions',
     href: '/industries/coaching'
   },
   {
-    icon: 'M',
-    title: 'Medical Clinics',
-    description:
-      'Book patients, handle prescription refills, provide clinic hours 24/7—zero missed calls.',
-    href: '/industries/medical'
-  },
-  {
-    icon: 'A',
-    title: 'Car Service Centres',
-    description:
-      'Schedule service slots, quote repairs, send completion alerts via voice and SMS.',
-    href: '/industries/automotive'
+    icon: 'B',
+    emoji: '🧾',
+    title: 'Retail & Small Businesses',
+    subtitle: 'Convert voice enquiries into orders.',
+    points: [
+      'WhatsApp order confirmations',
+      'AI upselling suggestions',
+      'Stock-based responses'
+    ],
+    stat: '+25% more repeat buyers',
+    href: '/industries/retail'
   }
 ]
 
@@ -107,7 +130,7 @@ export function IndustriesHeroSection() {
           ))}
         </motion.div>
 
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
           {industries.map((industry) => (
             <motion.div
               key={industry.title}
@@ -119,15 +142,28 @@ export function IndustriesHeroSection() {
                 className="absolute inset-0 bg-gradient-to-br from-aurora/10 via-cobalt/5 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100"
                 initial={false}
               />
-              <div className="relative mb-6 flex h-12 w-12 items-center justify-center rounded-full bg-aurora/10 text-lg font-semibold text-aurora">
-                {industry.icon}
+              <div className="relative mb-4 flex items-center gap-3">
+                <div className="flex h-12 w-12 items-center justify-center rounded-full bg-aurora/10 text-2xl">
+                  {industry.emoji}
+                </div>
+                <h2 className="text-2xl font-bold text-white">{industry.title}</h2>
               </div>
               <div className="relative flex flex-1 flex-col">
-                <h2 className="mb-3 text-2xl font-bold text-white">{industry.title}</h2>
-                <p className="mb-6 text-slate-300">{industry.description}</p>
+                <p className="mb-4 text-base font-medium text-slate-200">{industry.subtitle}</p>
+                <ul className="mb-4 space-y-2">
+                  {industry.points.map((point) => (
+                    <li key={point} className="flex items-start gap-2 text-sm text-slate-300">
+                      <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-aurora" />
+                      <span>{point}</span>
+                    </li>
+                  ))}
+                </ul>
+                <div className="mb-6 mt-auto rounded-lg border border-aurora/20 bg-aurora/5 px-4 py-2 text-center">
+                  <p className="text-lg font-semibold text-aurora">{industry.stat}</p>
+                </div>
                 <Link
                   href={industry.href}
-                  className="mt-auto inline-flex items-center gap-2 rounded-full border border-white/10 px-4 py-2 text-sm font-semibold text-white transition hover:bg-white/10"
+                  className="inline-flex items-center justify-center gap-2 rounded-full border border-white/10 px-4 py-2 text-sm font-semibold text-white transition hover:bg-white/10"
                 >
                   Learn More
                   <HiArrowRight className="h-4 w-4" />
@@ -144,17 +180,16 @@ export function IndustriesHeroSection() {
             </p>
             <div className="mt-6 flex flex-wrap items-center justify-center gap-4">
               <Link
-                href="/demo"
+                href="/contact"
                 className="inline-flex items-center gap-2 rounded-full bg-aurora px-8 py-3 text-sm font-semibold text-white transition hover:bg-aurora/90"
               >
-                Try Live Demo Now
+                Book a Demo
               </Link>
               <Link
                 href="/contact"
                 className="inline-flex items-center gap-2 rounded-full border border-white/10 px-8 py-3 text-sm font-semibold text-white transition hover:bg-white/10"
               >
                 Request Industry Playbook
-                <HiCheckCircle className="h-4 w-4" />
               </Link>
             </div>
           </div>

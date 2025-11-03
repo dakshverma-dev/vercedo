@@ -67,10 +67,10 @@ export function CTASection() {
           className="flex flex-wrap items-center justify-center gap-4"
         >
           <Link
-            href="/demo"
+            href="/contact"
             className="group inline-flex items-center gap-3 rounded-full border border-white/10 bg-gradient-to-r from-cobalt via-aurora/40 to-cobalt px-10 py-5 text-lg font-semibold text-white shadow-glow transition-all hover:scale-105 hover:shadow-glow"
           >
-            Try Live Demo
+            Get Started Now
             <HiArrowRight className="transition-transform group-hover:translate-x-2" />
           </Link>
           <Link
