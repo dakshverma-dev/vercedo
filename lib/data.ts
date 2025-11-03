@@ -20,19 +20,31 @@ export const heroHighlights = [
 
 export const featureCards = [
   {
-    title: 'Cognition Engine',
-    description: 'Adaptive intelligence that learns from every workflow signal and tunes automations in real-time.',
-    items: ['Agent mesh with shared memory', 'Predictive process rerouting', 'Human-in-the-loop assist']
+    title: 'AI Voice Engine',
+    description: 'Answer every call in Hindi or English with a receptionist that sounds human and remembers every detail.',
+    items: [
+      'Understands tone and intent in real time',
+      'Remembers customers and preferences',
+      'Automatically handles follow-ups and escalations'
+    ]
   },
   {
-    title: 'Neural Orchestrator',
-    description: 'Visual pipeline builder with AI suggestions, compliance guardrails, and one-click deployment.',
-    items: ['Drag-and-drop workflow composer', 'AI policy enforcement layer', 'Instant simulation sandbox']
+    title: 'Booking Automation',
+    description: 'Move callers from questions to confirmed bookings without manual effort from your team.',
+    items: [
+      'Syncs with Google and Outlook calendars',
+      'Sends WhatsApp, SMS, and email reminders',
+      'Captures and qualifies every lead automatically'
+    ]
   },
   {
-    title: 'Insight Prism',
-    description: 'Glassmorphism analytics suite with holographic dashboards and natural-language querying.',
-    items: ['Conversational BI interface', 'Autonomous anomaly detection', '360º KPI projections']
+    title: 'Insights & Control',
+    description: 'Track every conversation, booking, and rupee earned with simple dashboards and alerts.',
+    items: [
+      'Live view of calls, bookings, and revenue',
+      'Searchable call recordings and transcripts',
+      'Sentiment trends and ROI tracking'
+    ]
   }
 ]
 
