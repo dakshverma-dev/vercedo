@@ -28,39 +28,41 @@ const itemVariant = {
 
 const scenarios = [
   {
-    title: 'Simple Appointment Booking',
-    description: 'Say: "I need an appointment for tomorrow" and watch how it checks availability, offers time slots, collects details, and confirms your booking.'
+    title: 'Book an Appointment',
+    description: 'Ask for a slot tomorrow and watch the AI check availability, suggest times, and confirm instantly.'
   },
   {
-    title: 'Hindi Conversation',
-    description: 'Say: "Kya aap Sunday ko khule rehte ho?" and notice the seamless Hindi understanding and response.'
+    title: 'Switch Languages Mid-Call',
+    description: 'Request the AI to continue in Hindi, English, or another language to see how it adapts without missing a beat.'
   },
   {
     title: 'Price Inquiry',
-    description: 'Ask: "How much does teeth cleaning cost?" and see how it provides clear pricing information.'
+    description: 'Confirm service pricing and add-ons to hear concise, accurate information every time.'
   },
   {
-    title: 'Complex Request',
-    description: 'Say: "I need emergency dental treatment right now" and see the priority handling and immediate escalation.'
+    title: 'High-Priority Request',
+    description: 'Explain an urgent need and see how the AI escalates or transfers in seconds.'
   },
   {
-    title: 'Interruption Test',
-    description: 'Start speaking, then interrupt yourself mid-sentence to experience natural conversation flow handling.'
+    title: 'Interruptions',
+    description: 'Talk over the AI or change your mind mid-sentence. Notice the natural recovery and follow-up questions.'
   }
 ]
 
 const conversations = [
   {
     title: 'Conversation 1: Appointment Booking',
-    transcript: `Customer: "Hello, mujhe kal ke liye appointment book karni hai"
-AI Priya: "Namaste! Bilkul, main aapki madad karungi. Aap konsi service ke liye appointment lena chahte hain?"
-Customer: "Dental cleaning"
-AI Priya: "Perfect! Dental cleaning 30 minutes ki hoti hai aur ₹1,500 mein. Kal subah 11 baje ya dopahar 3 baje mein kaun sa time convenient hai?"`
+    transcript: `Customer: "Hi, I need a cleaning appointment for tomorrow."
+AI: "Happy to help. Cleanings take 30 minutes. I can do 11:00 AM or 3:00 PM. What works for you?"
+Customer: "3:00 PM."
+AI: "Done. I\'ve booked 3:00 PM and sent a confirmation SMS."`
   },
   {
     title: 'Conversation 2: Service Inquiry',
-    transcript: `Customer: "What are your charges for root canal?"
-AI Priya: "Our root canal treatment ranges from ₹8,000 to ₹15,000 depending on the tooth. Would you like to schedule a consultation? Our doctor can give you the exact quote after examination."`
+    transcript: `Customer: "Can you brief me in Hindi and then switch to English?"
+AI: "Sure. I\'ll explain the treatment options in Hindi first, then recap in English so you have both."
+Customer: "Great, thank you."
+AI: "The procedure begins with..."`
   }
 ]
 
@@ -84,10 +86,10 @@ export function LiveDemoSection() {
       >
         <motion.div variants={itemVariant} className="mb-16 text-center">
           <h2 className="mb-4 font-display text-4xl font-bold text-white md:text-5xl">
-            Experience It Yourself—<span className="text-gradient">Call Right Now</span>
+            Try the <span className="text-gradient">Live Demo</span>
           </h2>
           <p className="mx-auto max-w-3xl text-lg text-slate-300">
-            Don't just take our word for it. Call our AI receptionist and experience how naturally it handles conversations, books appointments, and answers questions.
+            Call our AI and see how it handles conversations, books appointments, and answers questions.
           </p>
         </motion.div>
 
@@ -112,9 +114,9 @@ export function LiveDemoSection() {
                 <div className="rounded-2xl bg-white/5 p-6">
                   <p className="text-sm font-semibold uppercase tracking-wider text-aurora">Try Asking</p>
                   <ul className="mt-3 space-y-3 text-slate-300">
-                    <li>"Mujhe appointment chahiye"</li>
-                    <li>"What are your services and prices?"</li>
-                    <li>"Aap weekend mein khule ho?"</li>
+                    <li>"Can you book a slot for tomorrow?"</li>
+                    <li>"Please switch to Hindi and confirm prices."</li>
+                    <li>"Are you open this weekend?"</li>
                   </ul>
                 </div>
                 <div className="rounded-2xl bg-white/5 p-6">

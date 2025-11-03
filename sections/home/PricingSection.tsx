@@ -31,17 +31,16 @@ const plans = [
   {
     name: 'Small Business',
     price: '₹6,000/month',
-    highlight: 'Perfect for single-location businesses',
-    setup: '₹12,000 one-time (50% off this month: ₹6,000)',
+    highlight: 'Single-location businesses',
+    setup: '₹6,000 one-time (50% off)',
     features: [
-      '200-300 calls per month',
+      '200-300 calls/month',
       '24/7 AI receptionist',
-      'Hindi & English support',
+      'Multilingual support',
       'Appointment booking',
-      'Google Calendar sync',
+      'Calendar sync',
       'SMS confirmations',
-      'Basic analytics',
-      'Email & WhatsApp support'
+      'Basic analytics'
     ],
     cta: 'Start Free Trial',
     href: '/contact'
@@ -49,18 +48,17 @@ const plans = [
   {
     name: 'Medium Business',
     price: '₹15,000/month',
-    highlight: 'Most Popular – For growing teams',
-    setup: '₹25,000 one-time (50% off this month: ₹12,500)',
+    highlight: 'Most Popular',
+    setup: '₹12,500 one-time (50% off)',
     features: [
-      'Everything in Small Business',
-      '500-800 calls per month',
-      'Advanced CRM integration',
-      'Multi-location support',
+      'All Small Business features',
+      '500-800 calls/month',
+      'CRM integration',
+      'Multi-location',
       'Custom workflows',
       'Priority support',
-      'Detailed analytics',
-      'Call recordings access',
-      'Dedicated account manager'
+      'Call recordings',
+      'Account manager'
     ],
     cta: 'Schedule Demo',
     href: '/demo',
@@ -69,16 +67,15 @@ const plans = [
   {
     name: 'Enterprise',
     price: '₹30,000+/month',
-    highlight: 'Custom solutions for large operations',
+    highlight: 'Large operations',
     setup: 'Custom pricing',
     features: [
-      'Everything in Medium Business',
+      'All Medium features',
       'Unlimited calls',
-      'Multiple AI receptionists',
-      'Advanced customization',
+      'Multiple AI agents',
       'API access',
-      'White-label options',
-      'Outbound calling',
+      'White-label',
+      'Outbound calls',
       'Custom integrations',
       '24/7 phone support'
     ],

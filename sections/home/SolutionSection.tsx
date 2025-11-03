@@ -36,33 +36,33 @@ const itemVariant = {
 const features = [
   {
     icon: HiLanguage,
-    title: 'Fluent in Hindi & English',
-    description: 'Naturally understands and responds in Hindi, English, or Hinglish. Adapts to customer\'s language preference instantly, just like a real receptionist.'
+    title: 'Multilingual Support',
+    description: 'Speaks Hindi, English, and other languages. Adapts instantly to customer preference like a real receptionist.'
   },
   {
     icon: HiClock,
     title: '24/7 Availability',
-    description: 'Never miss a call at lunch, after closing, on weekends, or during holidays. Your AI receptionist works every hour of every day, handling multiple calls simultaneously.'
+    description: 'Never miss calls—lunch, weekends, holidays. Handles multiple calls simultaneously, every hour.'
   },
   {
     icon: HiCalendar,
-    title: 'Automatic Appointment Booking',
-    description: 'Checks your real-time calendar, books appointments instantly, and sends confirmation SMS to customers. No back-and-forth, no double bookings.'
+    title: 'Auto Appointment Booking',
+    description: 'Checks calendar, books instantly, sends SMS confirmation. No back-and-forth or double bookings.'
   },
   {
     icon: HiChartBar,
-    title: 'Lead Capture & CRM',
-    description: 'Every caller\'s details are automatically captured and synced to your CRM or Google Sheets. Never lose a potential customer\'s information again.'
+    title: 'Lead Capture',
+    description: 'Auto-syncs caller details to your CRM or Google Sheets. Never lose a lead.'
   },
   {
     icon: HiArrowPath,
-    title: 'Smart Call Routing',
-    description: 'Handles routine inquiries instantly, escalates complex issues to your team, and transfers urgent calls immediately. Your AI knows when humans are needed.'
+    title: 'Smart Routing',
+    description: 'Handles routine inquiries, escalates complex issues, transfers urgent calls. Knows when humans are needed.'
   },
   {
     icon: HiCurrencyRupee,
     title: '90% Cost Savings',
-    description: 'Pay ₹6,000/month instead of ₹15,000+ for hiring a receptionist. No training costs, no sick days, no salary negotiations. Just reliable service.'
+    description: '₹6,000/month vs ₹15,000+ for receptionist. No training, sick days, or negotiations.'
   }
 ]
 

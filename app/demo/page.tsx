@@ -5,11 +5,11 @@ import { CTASection } from '@/sections/shared/CTASection'
 export const metadata: Metadata = {
   title: 'Live Demo – Try Our AI Receptionist',
   description:
-    'Call our AI receptionist right now. Test it in Hindi, English, or Hinglish. Experience how naturally it handles real conversations and books appointments.',
+    'Call our AI receptionist. Test multilingual support—Hindi, English, and more. Experience natural conversations and instant bookings.',
   openGraph: {
     title: 'Try Vercedo Live Demo',
     description:
-      'Call our AI receptionist and experience how naturally it handles conversations, books appointments, and answers questions in Hindi & English.'
+      'Call our AI receptionist and see how it handles conversations, books appointments, and answers questions across languages.'
   }
 }
 
