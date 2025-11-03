@@ -10,20 +10,19 @@ import Script from 'next/script'
 export const metadata: Metadata = {
   metadataBase: new URL('https://vercedo.ai'),
   title: {
-    default: 'Vercedo – AI Receptionist for Indian Businesses',
-    template: '%s | Vercedo AI Receptionist'
+    default: 'Vercedo – AI Receptionist',
+    template: '%s | Vercedo'
   },
   description:
-    'AI receptionists that speak Hindi & English fluently. Answer every call, book appointments automatically, and capture every lead—24/7. Starting ₹6,000/month.',
+    'Multilingual AI receptionist supporting Hindi, English, and more. Answer calls, book appointments, capture leads—24/7. Starting ₹6,000/month.',
   keywords: [
     'AI receptionist',
-    'Hindi AI',
+    'multilingual AI',
     'Indian business',
     'appointment booking',
     'call answering',
-    'AI assistant India',
     'virtual receptionist',
-    'business automation India'
+    'business automation'
   ],
   authors: [{ name: 'Vercedo' }],
   openGraph: {
@@ -31,9 +30,9 @@ export const metadata: Metadata = {
     locale: 'en_US',
     url: 'https://vercedo.ai',
     siteName: 'Vercedo',
-    title: 'Vercedo – AI Receptionist for Indian Businesses',
+    title: 'Vercedo – AI Receptionist',
     description:
-      'AI receptionists that speak Hindi & English fluently. Never miss another customer call—24/7 availability, automatic appointment booking.',
+      'Multilingual AI receptionist. Never miss a call—24/7 availability, automatic appointment booking.',
     images: [
       {
         url: '/og-image.svg',
@@ -45,9 +44,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Vercedo – AI Receptionist for Indian Businesses',
+    title: 'Vercedo – AI Receptionist',
     description:
-      'AI receptionists that speak Hindi & English fluently. Never miss another customer call—24/7 availability.',
+      'Multilingual AI receptionist. Never miss a call—24/7 availability.',
     creator: '@vercedo',
     images: ['/og-image.svg']
   },
@@ -74,6 +73,38 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="dark">
+      <head>
+        <style dangerouslySetInnerHTML={{
+          __html: `
+            body { 
+              background-color: #020617; 
+              color: #e2e8f0;
+              min-height: 100vh;
+              font-family: system-ui, -apple-system, sans-serif;
+            }
+            body::before {
+              content: '';
+              position: fixed;
+              inset: 0;
+              background: #020617;
+              z-index: 9999;
+              pointer-events: none;
+              opacity: 1;
+              transition: opacity 0.3s ease-out;
+            }
+            body.loaded::before {
+              opacity: 0;
+            }
+          `
+        }} />
+        <script dangerouslySetInnerHTML={{
+          __html: `
+            document.addEventListener('DOMContentLoaded', () => {
+              setTimeout(() => document.body.classList.add('loaded'), 100);
+            });
+          `
+        }} />
+      </head>
       <body className="min-h-screen flex flex-col">
         <Script
           id="cal-embed"

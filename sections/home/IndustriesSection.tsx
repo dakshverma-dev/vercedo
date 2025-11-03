@@ -29,39 +29,39 @@ const itemVariant = {
 
 const industries = [
   {
-    icon: '🦷',
+    icon: 'D',
     title: 'Dental Clinics',
-    description: 'Handle appointment bookings, reschedules, and patient inquiries 24/7. Reduce no-shows with automated reminders.',
+    description: 'Book appointments, reschedule visits, handle inquiries 24/7. Cut no-shows with auto reminders.',
     href: '/industries/dental'
   },
   {
-    icon: '💅',
+    icon: 'B',
     title: 'Beauty Salons & Spas',
-    description: 'Book appointments for specific stylists, manage peak hours, and answer service pricing questions instantly.',
+    description: 'Book stylists, manage peak hours, answer pricing questions instantly.',
     href: '/industries/beauty'
   },
   {
-    icon: '🏡',
+    icon: 'R',
     title: 'Real Estate Agents',
-    description: 'Qualify leads, schedule property viewings, and capture buyer requirements even when you\'re showing other properties.',
+    description: 'Qualify leads, schedule viewings, capture buyer needs while you show properties.',
     href: '/industries/real-estate'
   },
   {
-    icon: '📚',
+    icon: 'C',
     title: 'Coaching Institutes',
-    description: 'Handle admission inquiries, batch timings, fee structure questions, and schedule counseling sessions automatically.',
+    description: 'Handle admissions, batch queries, fees, and schedule counseling sessions.',
     href: '/industries/coaching'
   },
   {
-    icon: '🩺',
+    icon: 'M',
     title: 'Medical Clinics',
-    description: 'Book patient appointments, handle prescription refill requests, and provide clinic timing information 24/7.',
+    description: 'Book patient slots, handle prescription requests, share clinic hours 24/7.',
     href: '/industries/medical'
   },
   {
-    icon: '🚗',
+    icon: 'A',
     title: 'Car Service Centers',
-    description: 'Schedule service appointments, provide quotations, and send service completion updates automatically.',
+    description: 'Schedule service, quote repairs, send completion updates automatically.',
     href: '/industries/automotive'
   }
 ]
@@ -102,7 +102,9 @@ export function IndustriesSection() {
                 initial={false}
               />
               <div className="relative">
-                <div className="mb-4 text-5xl">{industry.icon}</div>
+                <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-aurora/10 text-lg font-semibold text-aurora">
+                  {industry.icon}
+                </div>
                 <h3 className="mb-3 text-xl font-bold text-white">{industry.title}</h3>
                 <p className="mb-4 leading-relaxed text-slate-300">{industry.description}</p>
                 <Link

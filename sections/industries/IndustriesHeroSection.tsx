@@ -6,45 +6,45 @@ import { HiArrowRight, HiCheckCircle } from 'react-icons/hi2'
 
 const industries = [
   {
-    icon: '🦷',
+    icon: 'D',
     title: 'Dental Clinics',
     description:
-      'Handle appointment bookings, reschedules, and patient inquiries 24/7. Reduce no-shows with automated reminders and priority emergency handling.',
+      'Book, reschedule, and answer patient queries 24/7. Cut no-shows with auto reminders and prioritize emergencies.',
     href: '/industries/dental'
   },
   {
-    icon: '💅',
+    icon: 'B',
     title: 'Beauty Salons & Spas',
     description:
-      'Book appointments for specific stylists, manage peak hours, and answer service pricing questions instantly in Hindi & English.',
+      'Reserve stylists, manage peak hours, and instantly share pricing—all in Hindi, English, or other languages.',
     href: '/industries/beauty'
   },
   {
-    icon: '🏡',
+    icon: 'R',
     title: 'Real Estate Agencies',
     description:
-      'Qualify leads, schedule property viewings, and capture buyer requirements even when you\'re showing other properties.',
+      'Qualify leads, schedule viewings, and capture buyer needs while you show properties.',
     href: '/industries/real-estate'
   },
   {
-    icon: '📚',
+    icon: 'C',
     title: 'Coaching Institutes',
     description:
-      'Handle admission inquiries, batch timings, fee structure questions, and schedule counseling sessions automatically.',
+      'Field admission queries, share batch times and fees, schedule counseling sessions automatically.',
     href: '/industries/coaching'
   },
   {
-    icon: '🩺',
+    icon: 'M',
     title: 'Medical Clinics',
     description:
-      'Book patient appointments, handle prescription requests, and provide clinic timing information 24/7 with zero missed calls.',
+      'Book patients, handle prescription refills, provide clinic hours 24/7—zero missed calls.',
     href: '/industries/medical'
   },
   {
-    icon: '🚗',
+    icon: 'A',
     title: 'Car Service Centres',
     description:
-      'Schedule service appointments, provide quotations, and send service completion updates automatically through voice + SMS.',
+      'Schedule service slots, quote repairs, send completion alerts via voice and SMS.',
     href: '/industries/automotive'
   }
 ]
@@ -94,7 +94,7 @@ export function IndustriesHeroSection() {
             Built for Indian Businesses <span className="text-gradient">Across Industries</span>
           </h1>
           <p className="mx-auto max-w-3xl text-xl leading-relaxed text-slate-300">
-            Vercedo adapts to your industry, customers, and workflows. Choose your sector to see how our AI receptionist handles calls like your best employee—without ever missing one.
+            Vercedo adapts to your industry, customers, and workflows. See how the AI receptionist handles calls like your best employee—never misses one.
           </p>
         </motion.div>
 
@@ -119,7 +119,9 @@ export function IndustriesHeroSection() {
                 className="absolute inset-0 bg-gradient-to-br from-aurora/10 via-cobalt/5 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100"
                 initial={false}
               />
-              <div className="relative mb-6 text-5xl">{industry.icon}</div>
+              <div className="relative mb-6 flex h-12 w-12 items-center justify-center rounded-full bg-aurora/10 text-lg font-semibold text-aurora">
+                {industry.icon}
+              </div>
               <div className="relative flex flex-1 flex-col">
                 <h2 className="mb-3 text-2xl font-bold text-white">{industry.title}</h2>
                 <p className="mb-6 text-slate-300">{industry.description}</p>

@@ -38,7 +38,7 @@ export function HeroSection() {
               animate="visible"
               className="mb-4 max-w-2xl text-xl leading-relaxed text-slate-300"
             >
-              AI receptionists that speak Hindi & English fluently. Answer every call, book appointments automatically, and capture every lead—24/7, without breaks.
+              Multilingual AI receptionist supporting Hindi, English, and other languages. Answer calls, book appointments, capture leads—24/7.
             </motion.p>
             <motion.p
               custom={2}
@@ -47,7 +47,7 @@ export function HeroSection() {
               animate="visible"
               className="mb-8 text-lg text-slate-400"
             >
-              Join 50+ Indian businesses saving ₹15,000/month while handling 300% more calls.
+              Join 50+ businesses saving ₹15,000/month while handling 300% more calls.
             </motion.p>
             <motion.div
               custom={3}

@@ -32,12 +32,12 @@ const steps = [
     step: 'Step 1',
     title: 'We Customize',
     timeline: '2 days',
-    description: 'Tell us about your business—services, pricing, availability, FAQs. We train your AI receptionist to sound exactly like your brand and handle your specific workflows.',
+    description: 'Share services, pricing, availability, and FAQs. We train the AI to match your brand.',
     checklist: [
-      'List of services and pricing',
-      'Your availability schedule',
-      'Common questions customers ask',
-      'Preferred greetings and tone'
+      'Services and pricing',
+      'Schedule',
+      'Common customer questions',
+      'Tone and greetings'
     ]
   },
   {
@@ -45,12 +45,12 @@ const steps = [
     step: 'Step 2',
     title: 'Connect & Test',
     timeline: 'Same day',
-    description: 'We connect the AI to your phone number or give you a new dedicated number. You test it thoroughly, make adjustments, and approve when satisfied.',
+    description: 'We link the AI to your number or provide a new one. You test, adjust, and approve.',
     checklist: [
-      'Phone number setup',
+      'Phone setup',
       'Calendar integration',
-      'CRM/Google Sheets connection',
-      'You test with 10+ scenarios'
+      'CRM sync',
+      'Test 10+ scenarios'
     ]
   },
   {
@@ -58,12 +58,12 @@ const steps = [
     step: 'Step 3',
     title: 'Go Live',
     timeline: 'Forever',
-    description: 'Your AI receptionist starts handling calls immediately. Monitor performance through your dashboard, make updates anytime, and watch your business grow.',
+    description: 'AI starts handling calls. Monitor via dashboard, update anytime, and grow.',
     checklist: [
-      '24/7 technical monitoring',
-      'Monthly performance reports',
-      'Free adjustments anytime',
-      'Dedicated support via WhatsApp'
+      '24/7 monitoring',
+      'Monthly reports',
+      'Free adjustments',
+      'WhatsApp support'
     ]
   }
 ]

@@ -33,13 +33,11 @@ export function CTASection() {
               transition={{ repeat: Infinity, duration: 15, ease: 'linear' }}
               className="flex h-full items-center justify-center rounded-full bg-gradient-to-br from-cobalt/30 via-aurora/20 to-transparent"
             >
-              <motion.span 
-                className="text-2xl"
+              <motion.div
+                className="h-4 w-4 rounded-full bg-aurora"
                 animate={{ scale: [1, 1.2, 1] }}
                 transition={{ repeat: Infinity, duration: 2, ease: 'easeInOut' }}
-              >
-                ✨
-              </motion.span>
+              />
             </motion.div>
           </motion.div>
         </motion.div>

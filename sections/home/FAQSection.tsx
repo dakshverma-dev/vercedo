@@ -29,54 +29,54 @@ const itemVariant = {
 
 const faqs = [
   {
-    question: 'Can it really understand Hindi and regional accents?',
+    question: 'Can it understand Hindi and regional accents?',
     answer:
-      'Absolutely! Our AI is specifically trained on Indian accents, Hindi, English, and Hinglish. It understands regional variations and code-switching naturally. Over 95% of our calls are handled successfully in the customer\'s preferred language.'
+      'Yes. The AI is trained on Indian accents plus Hindi, English, and regional mixes. It handles code-switching with 95% accuracy.'
   },
   {
-    question: "What happens if the AI doesn't understand something?",
+    question: "What if the AI gets stuck?",
     answer:
-      'The AI is trained to recognize when it needs human help. It will politely say "Let me connect you to my colleague" and transfer the call to you immediately. You can also set specific keywords that trigger instant transfers.'
+      'It knows when to bring in a human. The caller hears a quick handoff and the call routes to your team instantly.'
   },
   {
-    question: 'How long does setup actually take?',
+    question: 'How long does setup take?',
     answer:
-      '2-3 days from payment to go-live. Day 1: We customize your AI. Day 2: You test and approve. Day 3: We go live. Most clients are operational within 48 hours.'
+      'Typically 2-3 days. Day 1 we customize, Day 2 you test, Day 3 we go live. Most clients launch within 48 hours.'
   },
   {
-    question: 'Can I update the information myself?',
+    question: 'Can I update information myself?',
     answer:
-      'Yes! We provide a simple dashboard where you can update your availability, pricing, services, and FAQs anytime. Changes go live within 5 minutes. For major customizations, our team helps you.'
+      'Absolutely. Use the dashboard to change availability, pricing, services, or FAQs. Updates go live within minutes.'
   },
   {
     question: 'What if I already have a receptionist?',
     answer:
-      'Perfect! Your AI can handle after-hours calls, overflow during busy times, or take over routine bookings while your receptionist handles complex customer service. Many clients use both.'
+      'Keep both. Let the AI handle after-hours, overflow, and routine bookings while your receptionist focuses on high-touch tasks.'
   },
   {
-    question: 'Do I need any technical knowledge?',
+    question: 'Do I need technical knowledge?',
     answer:
-      'None at all. We handle all the technical setup. You just need to tell us about your business. If you can use WhatsApp, you can use Vercedo.'
+      'No. We handle implementation. You just share business details and review the setup.'
   },
   {
-    question: 'What happens to call recordings?',
+    question: 'What about call recordings?',
     answer:
-      'All calls are recorded and stored securely for 90 days (premium plans get 1 year). You can listen to any call from your dashboard. We comply with Indian data protection regulations.'
+      'Calls stay encrypted for 90 days (1 year on premium plans). Access every recording from your dashboard.'
   },
   {
-    question: 'Can it handle appointments for multiple staff members?',
+    question: 'Can it book for multiple team members?',
     answer:
-      'Yes! The AI can book appointments for specific doctors, stylists, consultants, or service bays. It checks individual calendars and manages each person\'s schedule separately.'
+      'Yes. It checks each person’s calendar and schedules appointments for doctors, stylists, consultants, or bays.'
   },
   {
-    question: 'Is there a contract? Can I cancel anytime?',
+    question: 'Is there a contract?',
     answer:
-      'No long-term contracts. You can cancel anytime with 15 days notice. Most clients stay because they see immediate ROI, but we don\'t believe in locking anyone in.'
+      'No lock-ins. Cancel with 15 days notice. Clients stay because the ROI is immediate.'
   },
   {
-    question: 'How many calls can it handle simultaneously?',
+    question: 'How many calls can it handle at once?',
     answer:
-      'Unlimited! Unlike human receptionists, your AI can handle 10, 50, or 100 calls at the same time. No more busy signals or customers waiting on hold.'
+      'Unlimited. The AI answers every caller simultaneously so nobody hits a busy tone.'
   }
 ]
 

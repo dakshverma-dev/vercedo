@@ -29,26 +29,26 @@ const itemVariant = {
 const problems = [
   {
     icon: HiPhoneXMark,
-    title: 'Missing 30-40% of Calls',
-    description: 'During lunch hours, busy periods, and after closing time, valuable customers can\'t reach you. Each missed call is potential revenue walking away.',
+    title: 'Missed Calls Hurt Growth',
+    description: 'Lunch breaks, peak rush, and closing time leave customers hanging and revenue walks away.',
     color: 'text-red-400'
   },
   {
     icon: HiCurrencyRupee,
-    title: '₹50,000-2,00,000 Lost Monthly',
-    description: 'Industry data shows businesses lose 30-40% of incoming calls. That\'s not just missed calls—it\'s missed appointments, lost sales, and frustrated customers choosing competitors.',
+    title: 'Revenue Slips Fast',
+    description: 'Every unanswered call means lost appointments, smaller ticket sizes, and weaker loyalty.',
     color: 'text-yellow-400'
   },
   {
     icon: HiFaceFrown,
-    title: 'Overworked Staff',
-    description: 'Your team is stretched thin handling calls while trying to serve in-person customers. Important details get missed, appointments get double-booked, and service quality suffers.',
+    title: 'Teams Burn Out',
+    description: 'Staff juggle walk-ins and ringing phones, make errors, and deliver uneven service.',
     color: 'text-orange-400'
   },
   {
     icon: HiMoon,
-    title: 'After-Hours Inquiries',
-    description: '60% of people prefer calling outside business hours. Without 24/7 availability, you\'re invisible to evening and weekend customers—your competitors aren\'t.',
+    title: 'No Coverage After Hours',
+    description: 'Customers call in the evenings and weekends. If you are silent, competitors pick them up.',
     color: 'text-blue-400'
   }
 ]

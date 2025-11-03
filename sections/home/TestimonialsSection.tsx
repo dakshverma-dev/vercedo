@@ -28,17 +28,17 @@ const itemVariant = {
 
 const testimonials = [
   {
-    quote: 'Within the first week, we booked 23 more appointments than usual. The AI handles Hindi-speaking patients better than our previous receptionist. Best ₹6,000 we spend every month.',
+    quote: 'Booked 20% more appointments in week one. The AI serves Hindi, English, and mixed-language callers without breaking flow. Best ₹6,000 we spend.',
     author: 'Dr. Rajesh Sharma',
     position: 'Smile Dental Clinic, Delhi'
   },
   {
-    quote: 'हमारे पास दिन में 50-60 calls आती थीं जिनमें से 20 miss हो जाती थीं। अब हर call answer हो रही है। Game changer है!',
+    quote: 'We used to miss 20 calls a day. Now every caller is greeted, qualified, and scheduled—even late at night.',
     author: 'Priya Kapoor',
     position: 'Glamour Beauty Salon, Gurgaon'
   },
   {
-    quote: 'I was skeptical about AI handling my real estate leads. But this AI qualifies leads better than my junior agents. It asks the right questions and schedules site visits perfectly.',
+    quote: 'It triages real-estate leads faster than new agents. Buyers hear instant answers and get site visits booked on the first call.',
     author: 'Amit Malhotra',
     position: 'Malhotra Properties, Noida'
   }
