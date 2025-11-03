@@ -115,6 +115,7 @@ vercedo-ai/
    Update `.env.local` with your API keys:
    - `RESEND_API_KEY`: Get from [resend.com](https://resend.com)
    - `CONTACT_RECIPIENT_EMAIL`: Your contact form recipient email
+   - `RESEND_FROM_EMAIL`: Verified sender email (defaults to onboarding@resend.dev)
 
 4. **Run the development server**
    ```bash
@@ -222,8 +223,9 @@ Animated loading screen with rotating elements.
 ### Environment Variables for Production
 
 Add these in Vercel dashboard:
-- `RESEND_API_KEY`
-- `CONTACT_RECIPIENT_EMAIL`
+- `RESEND_API_KEY` - Your Resend API key
+- `CONTACT_RECIPIENT_EMAIL` - Email to receive contact form submissions
+- `RESEND_FROM_EMAIL` - Verified sender email (optional, defaults to onboarding@resend.dev)
 
 ---
 

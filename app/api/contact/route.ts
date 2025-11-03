@@ -13,6 +13,7 @@ export async function POST(request: Request) {
 
     const recipient = process.env.CONTACT_RECIPIENT_EMAIL
     const apiKey = process.env.RESEND_API_KEY
+    const fromEmail = process.env.RESEND_FROM_EMAIL ?? 'onboarding@resend.dev'
 
     if (!recipient || !apiKey) {
       return NextResponse.json({ error: 'Contact configuration missing.' }, { status: 500 })
@@ -22,7 +23,7 @@ export async function POST(request: Request) {
     const { name, email, company, message, budget } = parsed.data
 
     await resend.emails.send({
-      from: 'Vercedo Concierge <noreply@vercedo.ai>',
+      from: `Vercedo Concierge <${fromEmail}>`,
       to: recipient,
       subject: `New VerceBot request from ${name}`,
       reply_to: email,
