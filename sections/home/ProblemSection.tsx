@@ -1,7 +1,7 @@
 "use client"
 
 import { motion } from 'framer-motion'
-import { HiPhoneMissedCall, HiCurrencyRupee, HiFaceFrown, HiMoon } from 'react-icons/hi2'
+import { HiPhoneXMark, HiCurrencyRupee, HiFaceFrown, HiMoon } from 'react-icons/hi2'
 
 const containerVariant = {
   hidden: { opacity: 0 },
@@ -28,7 +28,7 @@ const itemVariant = {
 
 const problems = [
   {
-    icon: HiPhoneMissedCall,
+    icon: HiPhoneXMark,
     title: 'Missing 30-40% of Calls',
     description: 'During lunch hours, busy periods, and after closing time, valuable customers can\'t reach you. Each missed call is potential revenue walking away.',
     color: 'text-red-400'
