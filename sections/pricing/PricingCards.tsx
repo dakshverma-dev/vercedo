@@ -2,8 +2,8 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
-import { motion } from 'framer-motion'
-import { HiCheck, HiArrowRight } from 'react-icons/hi2'
+import { AnimatePresence, motion } from 'framer-motion'
+import { HiCheck, HiArrowRight, HiChevronDown, HiChevronUp } from 'react-icons/hi2'
 import { cn } from '@/lib/utils'
 
 type PlanFeature = {
@@ -593,6 +593,7 @@ const faqs: FAQ[] = [
 
 export function PricingCards() {
   const [billingCycle, setBillingCycle] = useState<'monthly' | 'annual'>('monthly')
+  const [activePlan, setActivePlan] = useState<string | null>(plans[0]?.name ?? null)
 
   return (
     <section className="relative pb-12">
@@ -684,19 +685,59 @@ export function PricingCards() {
                 )}
                 {plan.setup.note && <span className="ml-2 text-aurora/80">({plan.setup.note})</span>}
               </div>
-              <ul className="mt-6 space-y-4 text-sm text-slate-300">
-                {plan.features.map((feature) => (
-                  <li key={feature.title} className="flex gap-3">
-                    <span className="flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full border border-aurora/30 bg-aurora/10 text-aurora">
-                      <HiCheck className="h-3.5 w-3.5" />
-                    </span>
-                    <div>
-                      <p className="font-medium text-white">{feature.title}</p>
-                      {feature.description && <p className="mt-1 text-slate-400">{feature.description}</p>}
-                    </div>
-                  </li>
-                ))}
-              </ul>
+              <div>
+                <ul className="mt-6 space-y-4 text-sm text-slate-300">
+                  {plan.features.slice(0, 4).map((feature) => (
+                    <li key={feature.title} className="flex gap-3">
+                      <span className="flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full border border-aurora/30 bg-aurora/10 text-aurora">
+                        <HiCheck className="h-3.5 w-3.5" />
+                      </span>
+                      <div>
+                        <p className="font-medium text-white">{feature.title}</p>
+                      </div>
+                    </li>
+                  ))}
+                </ul>
+                <AnimatePresence>
+                  {activePlan === plan.name && (
+                    <motion.ul
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: 'auto', opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{ duration: 0.3 }}
+                      className="mt-4 space-y-4 overflow-hidden text-sm text-slate-300"
+                    >
+                      {plan.features.slice(4).map((feature) => (
+                        <li key={feature.title} className="flex gap-3">
+                          <span className="flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full border border-aurora/30 bg-aurora/10 text-aurora">
+                            <HiCheck className="h-3.5 w-3.5" />
+                          </span>
+                          <div>
+                            <p className="font-medium text-white">{feature.title}</p>
+                          </div>
+                        </li>
+                      ))}
+                    </motion.ul>
+                  )}
+                </AnimatePresence>
+                {plan.features.length > 4 && (
+                  <button
+                    type="button"
+                    onClick={() => setActivePlan(activePlan === plan.name ? null : plan.name)}
+                    className="mt-4 flex w-full items-center justify-center gap-2 text-sm font-medium text-aurora transition hover:text-aurora/80"
+                  >
+                    {activePlan === plan.name ? (
+                      <>
+                        Show Less <HiChevronUp className="h-4 w-4" />
+                      </>
+                    ) : (
+                      <>
+                        Show All Features ({plan.features.length}) <HiChevronDown className="h-4 w-4" />
+                      </>
+                    )}
+                  </button>
+                )}
+              </div>
               <div className="mt-8">
                 <p className="text-xs uppercase tracking-[0.3em] text-slate-400">Perfect for</p>
                 <ul className="mt-3 space-y-2 text-sm text-slate-300">
