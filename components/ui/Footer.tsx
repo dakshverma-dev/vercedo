@@ -36,9 +36,13 @@ export function Footer() {
       <div className="relative mx-auto max-w-6xl px-6 py-16">
         <div className="grid gap-12 md:grid-cols-5">
           <div className="md:col-span-2">
-            <div className="flex items-center gap-3 mb-5">
-              <div className="h-10 w-10 rounded-full border border-white/30 bg-gradient-to-br from-white/20 via-cobalt/40 to-transparent shadow-glow" />
-              <span className="font-display text-2xl tracking-wide text-white">Vercedo</span>
+            <div className="mb-5 flex items-center gap-3">
+              <div className="relative h-10 w-10">
+                <div className="absolute inset-0 rounded-lg border border-white/25 bg-gradient-to-br from-cobalt/80 via-aurora/60 to-cobalt/90 shadow-glow" />
+                <div className="absolute inset-1.5 rounded-md bg-obsidian/50 backdrop-blur-sm" />
+                <div className="absolute left-1/2 top-1/2 h-2.5 w-2.5 -translate-x-1/2 -translate-y-1/2 rounded-full bg-white shadow-glow" />
+              </div>
+              <span className="font-display text-2xl font-bold tracking-wide text-white">Vercedo</span>
             </div>
             <p className="mb-6 max-w-xs text-sm leading-relaxed text-slate-400">
               Orchestrating autonomous intelligence for the next-generation enterprise.
