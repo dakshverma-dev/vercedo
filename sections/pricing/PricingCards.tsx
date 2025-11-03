@@ -593,7 +593,7 @@ const faqs: FAQ[] = [
 
 export function PricingCards() {
   const [billingCycle, setBillingCycle] = useState<'monthly' | 'annual'>('monthly')
-  const [activePlan, setActivePlan] = useState<string | null>(plans[0]?.name ?? null)
+  const [expandedPlan, setExpandedPlan] = useState<string | null>(null)
 
   return (
     <section className="relative pb-12">
@@ -660,112 +660,109 @@ export function PricingCards() {
                 <h3 className="font-display text-2xl text-white">{plan.name}</h3>
                 <p className="mt-2 text-sm text-aurora">{plan.subtitle}</p>
               </div>
-              <div className="space-y-2">
-                {billingCycle === 'monthly' ? (
+              <div className="space-y-1">
+                <p className="text-3xl font-semibold text-white">
+                  {billingCycle === 'monthly' ? plan.monthly.headline : plan.annual.headline}
+                </p>
+                <p className="text-xs uppercase tracking-[0.3em] text-slate-400">
+                  {billingCycle === 'monthly' ? 'Monthly billing' : 'Annual billing'}
+                </p>
+              </div>
+
+              <button
+                type="button"
+                aria-expanded={expandedPlan === plan.name}
+                onClick={() => setExpandedPlan(expandedPlan === plan.name ? null : plan.name)}
+                className="mt-6 flex w-full items-center justify-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm font-semibold text-white transition hover:bg-white/10"
+              >
+                {expandedPlan === plan.name ? (
                   <>
-                    <p className="text-3xl font-semibold text-white">{plan.monthly.headline}</p>
-                    {plan.monthly.promo && <p className="text-sm text-aurora">{plan.monthly.promo}</p>}
+                    Hide Plan Details <HiChevronUp className="h-4 w-4" />
                   </>
                 ) : (
                   <>
-                    <p className="text-3xl font-semibold text-white">{plan.annual.headline}</p>
-                    {plan.annual.note && <p className="text-sm text-aurora">{plan.annual.note}</p>}
+                    View Plan Details <HiChevronDown className="h-4 w-4" />
                   </>
                 )}
-              </div>
-              <div className="mt-4 text-sm text-slate-400">
-                <span className="text-slate-300">Setup fee: </span>
-                {plan.setup.original ? (
-                  <>
-                    <span className="mr-2 line-through text-slate-500">{plan.setup.original}</span>
-                    <span className="font-semibold text-white">{plan.setup.current}</span>
-                  </>
-                ) : (
-                  <span className="font-semibold text-white">{plan.setup.current}</span>
-                )}
-                {plan.setup.note && <span className="ml-2 text-aurora/80">({plan.setup.note})</span>}
-              </div>
-              <div>
-                <ul className="mt-6 space-y-4 text-sm text-slate-300">
-                  {plan.features.slice(0, 4).map((feature) => (
-                    <li key={feature.title} className="flex gap-3">
-                      <span className="flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full border border-aurora/30 bg-aurora/10 text-aurora">
-                        <HiCheck className="h-3.5 w-3.5" />
-                      </span>
+              </button>
+
+              <AnimatePresence initial={false}>
+                {expandedPlan === plan.name && (
+                  <motion.div
+                    initial={{ height: 0, opacity: 0 }}
+                    animate={{ height: 'auto', opacity: 1 }}
+                    exit={{ height: 0, opacity: 0 }}
+                    transition={{ duration: 0.3 }}
+                    className="overflow-hidden"
+                  >
+                    <div className="space-y-6 border-t border-white/10 pt-6">
                       <div>
-                        <p className="font-medium text-white">{feature.title}</p>
+                        <p className="mb-3 text-xs uppercase tracking-[0.3em] text-slate-400">Includes</p>
+                        <ul className="space-y-2.5 text-sm text-slate-300">
+                          {plan.features.slice(0, 4).map((feature) => (
+                            <li key={feature.title} className="flex items-start gap-2">
+                              <span className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-aurora" />
+                              <span>{feature.title}</span>
+                            </li>
+                          ))}
+                        </ul>
                       </div>
-                    </li>
-                  ))}
-                </ul>
-                <AnimatePresence>
-                  {activePlan === plan.name && (
-                    <motion.ul
-                      initial={{ height: 0, opacity: 0 }}
-                      animate={{ height: 'auto', opacity: 1 }}
-                      exit={{ height: 0, opacity: 0 }}
-                      transition={{ duration: 0.3 }}
-                      className="mt-4 space-y-4 overflow-hidden text-sm text-slate-300"
-                    >
-                      {plan.features.slice(4).map((feature) => (
-                        <li key={feature.title} className="flex gap-3">
-                          <span className="flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full border border-aurora/30 bg-aurora/10 text-aurora">
-                            <HiCheck className="h-3.5 w-3.5" />
-                          </span>
-                          <div>
-                            <p className="font-medium text-white">{feature.title}</p>
-                          </div>
-                        </li>
-                      ))}
-                    </motion.ul>
-                  )}
-                </AnimatePresence>
-                {plan.features.length > 4 && (
-                  <button
-                    type="button"
-                    onClick={() => setActivePlan(activePlan === plan.name ? null : plan.name)}
-                    className="mt-4 flex w-full items-center justify-center gap-2 text-sm font-medium text-aurora transition hover:text-aurora/80"
-                  >
-                    {activePlan === plan.name ? (
-                      <>
-                        Show Less <HiChevronUp className="h-4 w-4" />
-                      </>
-                    ) : (
-                      <>
-                        Show All Features ({plan.features.length}) <HiChevronDown className="h-4 w-4" />
-                      </>
-                    )}
-                  </button>
+
+                      <div className="space-y-2 text-sm">
+                        {billingCycle === 'monthly' && plan.monthly.promo && (
+                          <p className="font-medium text-aurora">{plan.monthly.promo}</p>
+                        )}
+                        {billingCycle === 'annual' && plan.annual.note && (
+                          <p className="font-medium text-aurora">{plan.annual.note}</p>
+                        )}
+                        <p className="text-slate-300">
+                          <span className="text-slate-400">Setup: </span>
+                          {plan.setup.original && (
+                            <span className="mr-2 line-through text-slate-500">{plan.setup.original}</span>
+                          )}
+                          <span className="font-semibold text-white">{plan.setup.current}</span>
+                          {plan.setup.note && <span className="ml-2 text-aurora/80">({plan.setup.note})</span>}
+                        </p>
+                      </div>
+
+                      <div>
+                        <p className="mb-3 text-xs uppercase tracking-[0.3em] text-slate-400">Perfect for</p>
+                        <ul className="space-y-2 text-sm text-slate-300">
+                          {plan.perfectFor.map((item) => (
+                            <li key={item} className="flex items-start gap-2">
+                              <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-aurora" />
+                              <span>{item}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+
+                      {plan.highlight && (
+                        <div className="rounded-lg border border-aurora/20 bg-aurora/5 px-4 py-3 text-center">
+                          <p className="text-sm font-semibold text-aurora">{plan.highlight}</p>
+                        </div>
+                      )}
+
+                      <div className="flex flex-col gap-3">
+                        {plan.ctas.map((cta) => (
+                          <Link
+                            key={cta.label}
+                            href={cta.href}
+                            className={cn(
+                              'inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-semibold transition',
+                              cta.variant === 'primary'
+                                ? 'border border-white/10 bg-gradient-to-r from-cobalt via-aurora/40 to-cobalt text-white shadow-glow hover:scale-105'
+                                : 'border border-white/15 bg-white/5 text-white hover:bg-white/10'
+                            )}
+                          >
+                            {cta.label}
+                          </Link>
+                        ))}
+                      </div>
+                    </div>
+                  </motion.div>
                 )}
-              </div>
-              <div className="mt-8">
-                <p className="text-xs uppercase tracking-[0.3em] text-slate-400">Perfect for</p>
-                <ul className="mt-3 space-y-2 text-sm text-slate-300">
-                  {plan.perfectFor.map((item) => (
-                    <li key={item} className="flex items-start gap-2">
-                      <span className="mt-1 h-1.5 w-1.5 rounded-full bg-aurora" />
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-              {plan.highlight && <p className="mt-4 text-sm font-semibold text-aurora">{plan.highlight}</p>}
-              <div className="mt-8 flex flex-col gap-3">
-                {plan.ctas.map((cta) => (
-                  <Link
-                    key={cta.label}
-                    href={cta.href}
-                    className={cn(
-                      'inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-semibold transition',
-                      cta.variant === 'primary'
-                        ? 'border border-white/10 bg-gradient-to-r from-cobalt via-aurora/40 to-cobalt text-white shadow-glow hover:scale-105'
-                        : 'border border-white/15 bg-white/5 text-white hover:bg-white/10'
-                    )}
-                  >
-                    {cta.label}
-                  </Link>
-                ))}
-              </div>
+              </AnimatePresence>
             </motion.div>
           ))}
         </div>
