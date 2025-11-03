@@ -22,12 +22,12 @@ export function FeatureHero() {
           <span className="text-xs uppercase tracking-[0.3em] text-slate-300">AI Capabilities</span>
         </motion.div>
         <h1 className="mb-6 font-display text-5xl font-bold leading-tight text-white md:text-7xl">
-          Orchestrate complexity <br />
-          with <span className="text-gradient">autonomous precision</span>
+          AI Voice, Automation <br />
+          and <span className="text-gradient">Revenue Growth</span>
         </h1>
         <p className="mx-auto max-w-2xl text-lg leading-relaxed text-slate-300">
-          Vercedo weaves together intelligent agents, self-tuning workflows, and intuitive analytics—delivering
-          automation that anticipates, adapts, and scales with your ambitions.
+          Transform every customer conversation into revenue with AI that speaks Hindi and English,
+          automates bookings, and delivers real results for Indian businesses.
         </p>
       </motion.div>
     </section>

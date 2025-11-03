@@ -1,7 +1,7 @@
 "use client"
 
 import { motion } from 'framer-motion'
-import { useState } from 'react'
+import { ChangeEvent, useState } from 'react'
 import { HiChevronDown } from 'react-icons/hi2'
 
 const containerVariant = {
@@ -81,7 +81,12 @@ const faqs = [
 ]
 
 export function FAQSection() {
-  const [openIndex, setOpenIndex] = useState<number | null>(0)
+  const [openIndex, setOpenIndex] = useState<number | null>(null)
+
+  const handleSelectChange = (event: ChangeEvent<HTMLSelectElement>) => {
+    const value = event.target.value
+    setOpenIndex(value === '' ? null : Number(value))
+  }
 
   return (
     <section className="relative overflow-hidden bg-obsidian py-24">
@@ -97,6 +102,29 @@ export function FAQSection() {
           <h2 className="mb-4 font-display text-4xl font-bold text-white md:text-5xl">
             Frequently Asked <span className="text-gradient">Questions</span>
           </h2>
+          <p className="mb-6 text-base text-slate-300">
+            Have questions about Vercedo? Browse our common questions below.
+          </p>
+          <div className="mx-auto max-w-md">
+            <label htmlFor="faq-dropdown" className="mb-2 block text-sm font-medium text-slate-300">
+              Jump to a question
+            </label>
+            <select
+              id="faq-dropdown"
+              value={openIndex === null ? '' : String(openIndex)}
+              onChange={handleSelectChange}
+              className="glass w-full rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-white transition hover:border-white/20 focus:border-aurora focus:outline-none focus:ring-2 focus:ring-aurora/50"
+            >
+              <option value="" className="bg-obsidian text-white">
+                Select a question...
+              </option>
+              {faqs.map((faq, index) => (
+                <option key={faq.question} value={String(index)} className="bg-obsidian text-white">
+                  {faq.question}
+                </option>
+              ))}
+            </select>
+          </div>
         </motion.div>
 
         <div className="space-y-4">

@@ -27,12 +27,12 @@ export function ShowcaseSection() {
           className="mb-16 flex flex-col items-start justify-between gap-6 md:flex-row md:items-center"
         >
           <div>
-            <p className="text-sm uppercase tracking-[0.3em] text-aurora">Intelligent Capabilities</p>
-            <h2 className="mt-2 font-display text-4xl text-white md:text-5xl">Neural orchestration at scale</h2>
+            <p className="text-sm uppercase tracking-[0.3em] text-aurora">What You Get</p>
+            <h2 className="mt-2 font-display text-4xl text-white md:text-5xl">AI that works for your business</h2>
           </div>
           <p className="max-w-xl text-base leading-relaxed text-slate-300">
-            Activate a constellation of VerceAgents that align to your operating model. From cognition to execution,
-            Vercedo adapts in real-time.
+            From answering calls to booking appointments, Vercedo handles every customer interaction so you can focus
+            on delivering great service.
           </p>
         </motion.div>
         <div className="grid gap-6 md:grid-cols-3">

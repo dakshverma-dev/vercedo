@@ -4,13 +4,13 @@ import { FeatureHero } from '@/sections/features/FeatureHero'
 import { CTASection } from '@/sections/shared/CTASection'
 
 export const metadata: Metadata = {
-  title: 'Capabilities & Intelligence',
+  title: 'Vercedo Features',
   description:
-    'Explore Vercedo’s cognition engine, neural orchestrator, and insight prism—crafted to automate the impossible with next-gen AI.',
+    'Discover how Vercedo turns every customer call into revenue with AI voice, automation, and analytics built for Indian businesses.',
   openGraph: {
-    title: 'Vercedo Capabilities',
+    title: 'Vercedo Features',
     description:
-      'Explore Vercedo’s cognition engine, neural orchestrator, and insight prism—crafted to automate the impossible with next-gen AI.'
+      'Discover how Vercedo turns every customer call into revenue with AI voice, automation, and analytics built for Indian businesses.'
   }
 }
 
