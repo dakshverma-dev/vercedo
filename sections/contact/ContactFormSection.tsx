@@ -149,7 +149,7 @@ export function ContactFormSection() {
                 value={formData.businessType}
                 onChange={handleChange}
                 className={cn(
-                  'w-full rounded-2xl border bg-white/5 px-4 py-3 text-white focus:border-aurora/40 focus:outline-none',
+                  'w-full rounded-2xl border bg-white/5 px-4 py-3 text-white focus:border-aurora/40 focus:outline-none [&>option]:bg-midnight [&>option]:text-white',
                   errors.businessType ? 'border-red-400/40' : 'border-white/10'
                 )}
               >
@@ -175,7 +175,7 @@ export function ContactFormSection() {
               value={formData.callVolume}
               onChange={handleChange}
               className={cn(
-                'w-full rounded-2xl border bg-white/5 px-4 py-3 text-white focus:border-aurora/40 focus:outline-none',
+                'w-full rounded-2xl border bg-white/5 px-4 py-3 text-white focus:border-aurora/40 focus:outline-none [&>option]:bg-midnight [&>option]:text-white',
                 errors.callVolume ? 'border-red-400/40' : 'border-white/10'
               )}
             >

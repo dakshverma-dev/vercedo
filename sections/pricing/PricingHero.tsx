@@ -1,6 +1,7 @@
 "use client"
 
 import { motion } from 'framer-motion'
+import Link from 'next/link'
 
 export function PricingHero() {
   return (
@@ -13,12 +14,34 @@ export function PricingHero() {
         className="relative mx-auto max-w-4xl px-6 text-center"
       >
         <h1 className="mb-6 font-display text-5xl font-bold text-white md:text-7xl">
-          Invest in <span className="text-gradient">autonomous brilliance</span>
+          Simple, Transparent <span className="text-gradient">Pricing</span>
         </h1>
-        <p className="mx-auto max-w-2xl text-lg leading-relaxed text-slate-300">
-          From visionary startups to global enterprises, Vercedo aligns to your pace of innovation. Choose a path and our
-          architects craft tailored automations within days.
+        <p className="mx-auto max-w-2xl text-lg leading-relaxed text-slate-300 mb-4">
+          No Hidden Fees. No Long Contracts. Cancel Anytime.
         </p>
+        <p className="mx-auto max-w-2xl text-base leading-relaxed text-slate-400">
+          Choose the plan that fits your business. Upgrade or downgrade anytime.
+          All plans include 24/7 Hindi & English AI receptionist.
+        </p>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.3 }}
+          className="mt-8 flex flex-wrap items-center justify-center gap-4"
+        >
+          <Link
+            href="/contact"
+            className="inline-flex items-center gap-3 rounded-full border border-white/10 bg-gradient-to-r from-cobalt via-aurora/40 to-cobalt px-8 py-4 text-base font-semibold text-white shadow-glow transition-all hover:scale-105"
+          >
+            Start Free Trial
+          </Link>
+          <Link
+            href="/demo"
+            className="inline-flex items-center gap-3 rounded-full border border-white/15 bg-white/5 px-8 py-4 text-base font-semibold text-white backdrop-blur-sm transition hover:bg-white/10"
+          >
+            Schedule Demo
+          </Link>
+        </motion.div>
       </motion.div>
     </section>
   )
