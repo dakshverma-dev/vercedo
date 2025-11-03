@@ -72,17 +72,13 @@ export function NavBar() {
                 </Link>
               )
             })}
-            <motion.button
-              data-cal-link="vercedo/30min"
-              data-cal-namespace="30min"
-              data-cal-config='{"layout":"month_view"}'
+            <Link
+              href="/contact"
               className="group relative overflow-hidden rounded-full border border-white/20 px-5 py-2 text-xs font-semibold uppercase tracking-[0.25em] text-white"
-              whileHover={{ scale: 1.05 }}
-              transition={{ duration: 0.2 }}
             >
               <span className="absolute inset-0 -z-10 bg-gradient-to-r from-cobalt/60 via-aurora/60 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
-              Book a Call
-            </motion.button>
+              Get Started Free
+            </Link>
           </div>
         </LayoutGroup>
         <button
@@ -121,14 +117,12 @@ export function NavBar() {
                 </Link>
               )
             })}
-            <button
-              data-cal-link="vercedo/30min"
-              data-cal-namespace="30min"
-              data-cal-config='{"layout":"month_view"}'
+            <Link
+              href="/contact"
               className="w-full rounded-2xl border border-white/20 bg-gradient-to-r from-cobalt via-aurora/40 to-cobalt px-4 py-3 text-sm font-semibold uppercase tracking-[0.3em] text-white shadow-glow"
             >
-              Book a Call
-            </button>
+              Get Started Free
+            </Link>
           </div>
         </motion.div>
       )}

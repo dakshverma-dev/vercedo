@@ -10,9 +10,10 @@ export function ContactFormSection() {
   const [formData, setFormData] = useState<ContactFormData>({
     name: '',
     email: '',
-    company: '',
-    message: '',
-    budget: ''
+    phone: '',
+    businessType: '',
+    callVolume: '',
+    message: ''
   })
   const [errors, setErrors] = useState<Record<string, string>>({})
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle')
@@ -53,10 +54,10 @@ export function ContactFormSection() {
       if (!response.ok) throw new Error('Submission failed')
 
       setStatus('success')
-      setFormData({ name: '', email: '', company: '', message: '', budget: '' })
+      setFormData({ name: '', email: '', phone: '', businessType: '', callVolume: '', message: '' })
     } catch (error) {
       setStatus('error')
-      setErrors({ general: 'Submission failed. VerceBot will ping you if this persists.' })
+      setErrors({ general: 'Submission failed. Please try again in a moment.' })
     }
   }
 
@@ -72,8 +73,8 @@ export function ContactFormSection() {
         >
           {status === 'success' && (
             <div className="rounded-3xl border border-aurora/40 bg-aurora/10 px-6 py-4 text-sm text-white">
-              <p className="font-semibold">Message received! ✨</p>
-              <p className="mt-1 text-slate-300">A Vercedo architect will respond within 24 hours.</p>
+              <p className="font-semibold">Message sent! We'll respond within 2 hours.</p>
+              <p className="mt-1 text-slate-300">Watch your email & WhatsApp for a reply.</p>
             </div>
           )}
           {errors.general && (
@@ -84,7 +85,7 @@ export function ContactFormSection() {
           <div className="grid gap-6 md:grid-cols-2">
             <div>
               <label htmlFor="name" className="mb-2 block text-sm font-medium text-slate-300">
-                Full Name
+                Name
               </label>
               <input
                 type="text"
@@ -96,13 +97,33 @@ export function ContactFormSection() {
                   'w-full rounded-2xl border bg-white/5 px-4 py-3 text-white placeholder:text-slate-500 focus:border-aurora/40 focus:outline-none',
                   errors.name ? 'border-red-400/40' : 'border-white/10'
                 )}
-                placeholder="Ada Lovelace"
+                placeholder="Priya Sharma"
               />
               {errors.name && <p className="mt-1 text-xs text-red-400">{errors.name}</p>}
             </div>
             <div>
+              <label htmlFor="phone" className="mb-2 block text-sm font-medium text-slate-300">
+                Phone Number
+              </label>
+              <input
+                type="tel"
+                id="phone"
+                name="phone"
+                value={formData.phone}
+                onChange={handleChange}
+                className={cn(
+                  'w-full rounded-2xl border bg-white/5 px-4 py-3 text-white placeholder:text-slate-500 focus:border-aurora/40 focus:outline-none',
+                  errors.phone ? 'border-red-400/40' : 'border-white/10'
+                )}
+                placeholder="9876543210"
+              />
+              {errors.phone && <p className="mt-1 text-xs text-red-400">{errors.phone}</p>}
+            </div>
+          </div>
+          <div className="grid gap-6 md:grid-cols-2">
+            <div>
               <label htmlFor="email" className="mb-2 block text-sm font-medium text-slate-300">
-                Email Address
+                Email
               </label>
               <input
                 type="email"
@@ -114,50 +135,61 @@ export function ContactFormSection() {
                   'w-full rounded-2xl border bg-white/5 px-4 py-3 text-white placeholder:text-slate-500 focus:border-aurora/40 focus:outline-none',
                   errors.email ? 'border-red-400/40' : 'border-white/10'
                 )}
-                placeholder="ada@automations.ai"
+                placeholder="you@business.com"
               />
               {errors.email && <p className="mt-1 text-xs text-red-400">{errors.email}</p>}
             </div>
+            <div>
+              <label htmlFor="businessType" className="mb-2 block text-sm font-medium text-slate-300">
+                Business Type
+              </label>
+              <select
+                id="businessType"
+                name="businessType"
+                value={formData.businessType}
+                onChange={handleChange}
+                className={cn(
+                  'w-full rounded-2xl border bg-white/5 px-4 py-3 text-white focus:border-aurora/40 focus:outline-none',
+                  errors.businessType ? 'border-red-400/40' : 'border-white/10'
+                )}
+              >
+                <option value="">Select your business type</option>
+                <option value="Dental">Dental Clinic</option>
+                <option value="Salon">Beauty Salon / Spa</option>
+                <option value="Real Estate">Real Estate</option>
+                <option value="Medical">Medical Clinic</option>
+                <option value="Coaching">Coaching Institute</option>
+                <option value="Automotive">Car Service Centre</option>
+                <option value="Other">Other</option>
+              </select>
+              {errors.businessType && <p className="mt-1 text-xs text-red-400">{errors.businessType}</p>}
+            </div>
           </div>
           <div>
-            <label htmlFor="company" className="mb-2 block text-sm font-medium text-slate-300">
-              Company / Initiative
-            </label>
-            <input
-              type="text"
-              id="company"
-              name="company"
-              value={formData.company}
-              onChange={handleChange}
-              className={cn(
-                'w-full rounded-2xl border bg-white/5 px-4 py-3 text-white placeholder:text-slate-500 focus:border-aurora/40 focus:outline-none',
-                errors.company ? 'border-red-400/40' : 'border-white/10'
-              )}
-              placeholder="Automations Dynamics"
-            />
-            {errors.company && <p className="mt-1 text-xs text-red-400">{errors.company}</p>}
-          </div>
-          <div>
-            <label htmlFor="budget" className="mb-2 block text-sm font-medium text-slate-300">
-              Estimated Budget (optional)
+            <label htmlFor="callVolume" className="mb-2 block text-sm font-medium text-slate-300">
+              Current Monthly Call Volume
             </label>
             <select
-              id="budget"
-              name="budget"
-              value={formData.budget}
+              id="callVolume"
+              name="callVolume"
+              value={formData.callVolume}
               onChange={handleChange}
-              className="w-full rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-white focus:border-aurora/40 focus:outline-none"
+              className={cn(
+                'w-full rounded-2xl border bg-white/5 px-4 py-3 text-white focus:border-aurora/40 focus:outline-none',
+                errors.callVolume ? 'border-red-400/40' : 'border-white/10'
+              )}
             >
-              <option value="">Select a range</option>
-              <option value="<10k">Under $10k</option>
-              <option value="10k-50k">$10k – $50k</option>
-              <option value="50k-100k">$50k – $100k</option>
-              <option value=">100k">Over $100k</option>
+              <option value="">Select range</option>
+              <option value="<100">Under 100 calls</option>
+              <option value="100-300">100 - 300 calls</option>
+              <option value="300-500">300 - 500 calls</option>
+              <option value=">500">500+ calls</option>
             </select>
+            {errors.callVolume && <p className="mt-1 text-xs text-red-400">{errors.callVolume}</p>}
           </div>
           <div>
             <label htmlFor="message" className="mb-2 block text-sm font-medium text-slate-300">
-              Your Vision
+              Tell us about your needs
             </label>
             <textarea
               id="message"
@@ -169,7 +201,7 @@ export function ContactFormSection() {
                 'w-full rounded-2xl border bg-white/5 px-4 py-3 text-white placeholder:text-slate-500 focus:border-aurora/40 focus:outline-none',
                 errors.message ? 'border-red-400/40' : 'border-white/10'
               )}
-              placeholder="Tell us what you'd like to automate, integrate, or accelerate..."
+              placeholder="What challenges are you facing with missed calls or customer handling?"
             />
             {errors.message && <p className="mt-1 text-xs text-red-400">{errors.message}</p>}
           </div>
@@ -178,7 +210,7 @@ export function ContactFormSection() {
             disabled={status === 'loading'}
             className="group flex w-full items-center justify-center gap-3 rounded-full border border-white/10 bg-gradient-to-r from-cobalt via-aurora/40 to-cobalt px-8 py-4 text-base font-semibold text-white shadow-glow transition hover:scale-105 disabled:opacity-50"
           >
-            {status === 'loading' ? 'Transmitting...' : 'Send to VerceBot'}
+            {status === 'loading' ? 'Sending your message...' : 'Get Free Consultation'}
             <HiPaperAirplane className="transition-transform group-hover:translate-x-1" />
           </button>
         </motion.form>

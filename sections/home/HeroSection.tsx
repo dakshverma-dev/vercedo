@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion'
 import Link from 'next/link'
-import { HiArrowRight } from 'react-icons/hi2'
+import { HiArrowRight, HiCheckCircle } from 'react-icons/hi2'
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 32 },
@@ -21,37 +21,33 @@ export function HeroSection() {
       <div className="relative mx-auto flex min-h-screen max-w-7xl flex-col items-center justify-center px-6 pt-32 pb-16">
         <div className="mx-auto max-w-4xl text-center">
           <div className="flex flex-col items-center">
-            <motion.div
-              custom={0}
-              variants={fadeInUp}
-              initial="hidden"
-              animate="visible"
-              className="mb-5 inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-2 backdrop-blur-sm"
-            >
-              <span className="h-2 w-2 animate-pulse rounded-full bg-aurora" />
-              <span className="text-xs font-medium uppercase tracking-[0.25em] text-slate-300">
-                VerceOS 2.0 Now Live
-              </span>
-            </motion.div>
             <motion.h1
-              custom={1}
+              custom={0}
               variants={fadeInUp}
               initial="hidden"
               animate="visible"
               className="mb-6 font-display text-5xl font-bold leading-[1.1] text-white sm:text-6xl lg:text-7xl"
             >
-              Automate the{' '}
-              <span className="text-gradient">Impossible</span>
+              Never Miss Another{' '}
+              <span className="text-gradient">Customer Call</span>
             </motion.h1>
+            <motion.p
+              custom={1}
+              variants={fadeInUp}
+              initial="hidden"
+              animate="visible"
+              className="mb-4 max-w-2xl text-xl leading-relaxed text-slate-300"
+            >
+              AI receptionists that speak Hindi & English fluently. Answer every call, book appointments automatically, and capture every lead—24/7, without breaks.
+            </motion.p>
             <motion.p
               custom={2}
               variants={fadeInUp}
               initial="hidden"
               animate="visible"
-              className="mb-8 max-w-xl text-lg leading-relaxed text-slate-300"
+              className="mb-8 text-lg text-slate-400"
             >
-              Vercedo orchestrates autonomous AI agents that transform enterprise complexity into
-              fluid, intelligent workflows—powered by next-gen artificial intelligence.
+              Join 50+ Indian businesses saving ₹15,000/month while handling 300% more calls.
             </motion.p>
             <motion.div
               custom={3}
@@ -61,59 +57,37 @@ export function HeroSection() {
               className="flex flex-wrap justify-center gap-4"
             >
               <Link
-                href="/contact"
+                href="/demo"
                 className="group relative inline-flex items-center gap-2 overflow-hidden rounded-full border border-white/10 bg-gradient-to-r from-cobalt via-aurora/40 to-cobalt px-8 py-4 text-base font-semibold text-white shadow-glow transition-all hover:scale-105 hover:shadow-glow"
               >
-                Get Early Access
+                Try Live Demo Now
                 <HiArrowRight className="transition-transform group-hover:translate-x-1" />
               </Link>
-              <Link
-                href="/features"
+              <button
+                onClick={() => document.getElementById('how-it-works')?.scrollIntoView({ behavior: 'smooth' })}
                 className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-8 py-4 text-base font-semibold text-white backdrop-blur-sm transition hover:bg-white/10"
               >
-                Explore the Platform
-              </Link>
+                See How It Works
+              </button>
             </motion.div>
             <motion.div
               custom={4}
               variants={fadeInUp}
               initial="hidden"
               animate="visible"
-              className="mt-10 flex items-center justify-center gap-8 text-sm"
+              className="mt-8 flex flex-wrap items-center justify-center gap-6 text-sm text-slate-300"
             >
-              <div>
-                <p className="font-semibold text-white">97%</p>
-                <p className="text-slate-400">Operations Automated</p>
+              <div className="flex items-center gap-2">
+                <HiCheckCircle className="h-5 w-5 text-aurora" />
+                <span>Setup in 2 days</span>
               </div>
-              <div className="h-10 w-px bg-white/10" />
-              <div>
-                <p className="font-semibold text-white">3x</p>
-                <p className="text-slate-400">Faster Time to Value</p>
+              <div className="flex items-center gap-2">
+                <HiCheckCircle className="h-5 w-5 text-aurora" />
+                <span>No technical skills needed</span>
               </div>
-            </motion.div>
-            <motion.div
-              custom={5}
-              variants={fadeInUp}
-              initial="hidden"
-              animate="visible"
-              className="relative mt-16 w-full max-w-3xl overflow-hidden rounded-[32px] border border-white/10 bg-white/5 px-8 py-10 backdrop-blur-sm"
-            >
-              <div className="pointer-events-none absolute -inset-1 rounded-[36px] bg-gradient-to-r from-cobalt/30 via-aurora/20 to-transparent opacity-70" />
-              <div className="relative grid gap-8 text-left sm:grid-cols-3 sm:text-center">
-                <div>
-                  <p className="text-xs uppercase tracking-[0.3em] text-slate-400">Cognition</p>
-                  <p className="mt-2 text-base font-semibold text-white">Autonomous agent mesh that learns every workflow.</p>
-                </div>
-                <div className="hidden h-16 w-px justify-self-center bg-white/10 sm:block" />
-                <div>
-                  <p className="text-xs uppercase tracking-[0.3em] text-slate-400">Orchestration</p>
-                  <p className="mt-2 text-base font-semibold text-white">Visual command center with instant deployment loops.</p>
-                </div>
-                <div className="hidden h-16 w-px justify-self-center bg-white/10 sm:block" />
-                <div>
-                  <p className="text-xs uppercase tracking-[0.3em] text-slate-400">Insight</p>
-                  <p className="mt-2 text-base font-semibold text-white">Holographic analytics that surface decisions in seconds.</p>
-                </div>
+              <div className="flex items-center gap-2">
+                <HiCheckCircle className="h-5 w-5 text-aurora" />
+                <span>Cancel anytime</span>
               </div>
             </motion.div>
           </div>

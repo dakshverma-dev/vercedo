@@ -50,7 +50,7 @@ export function CTASection() {
           transition={{ duration: 0.7, delay: 0.2, ease: [0.19, 1, 0.22, 1] }}
           className="mb-6 font-display text-4xl font-bold text-white md:text-6xl"
         >
-          Ready to orchestrate <span className="text-gradient">brilliance?</span>
+          Ready to Never Miss <span className="text-gradient">Another Call?</span>
         </motion.h2>
         <motion.p 
           initial={{ opacity: 0, y: 20 }}
@@ -59,22 +59,40 @@ export function CTASection() {
           transition={{ duration: 0.7, delay: 0.3, ease: [0.19, 1, 0.22, 1] }}
           className="mb-10 text-lg leading-relaxed text-slate-300"
         >
-          Join the next-generation enterprises transforming complexity into seamless intelligence. Your
-          dedicated automation architect awaits.
+          Join 50+ businesses that chose growth over missed opportunities
         </motion.p>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7, delay: 0.4, ease: [0.19, 1, 0.22, 1] }}
+          className="flex flex-wrap items-center justify-center gap-4"
         >
           <Link
-            href="/contact"
+            href="/demo"
             className="group inline-flex items-center gap-3 rounded-full border border-white/10 bg-gradient-to-r from-cobalt via-aurora/40 to-cobalt px-10 py-5 text-lg font-semibold text-white shadow-glow transition-all hover:scale-105 hover:shadow-glow"
           >
-            Get Early Access
+            Try Live Demo
             <HiArrowRight className="transition-transform group-hover:translate-x-2" />
           </Link>
+          <Link
+            href="/contact"
+            className="inline-flex items-center gap-3 rounded-full border border-white/15 bg-white/5 px-10 py-5 text-lg font-semibold text-white backdrop-blur-sm transition hover:bg-white/10"
+          >
+            Schedule Demo Call
+          </Link>
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7, delay: 0.5, ease: [0.19, 1, 0.22, 1] }}
+          className="mt-8 flex flex-wrap items-center justify-center gap-6 text-sm text-slate-400"
+        >
+          <span>✓ No credit card required for demo</span>
+          <span>✓ Setup in 2 days</span>
+          <span>✓ 7-day money-back guarantee</span>
+          <span>✓ Cancel anytime</span>
         </motion.div>
       </motion.div>
     </section>

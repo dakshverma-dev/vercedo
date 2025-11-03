@@ -1,14 +1,26 @@
 import { HeroSection } from '@/sections/home/HeroSection'
-import { HighlightsSection } from '@/sections/home/HighlightsSection'
-import { ShowcaseSection } from '@/sections/home/ShowcaseSection'
+import { ProblemSection } from '@/sections/home/ProblemSection'
+import { SolutionSection } from '@/sections/home/SolutionSection'
+import { LiveDemoSection } from '@/sections/home/LiveDemoSection'
+import { HowItWorksSection } from '@/sections/home/HowItWorksSection'
+import { IndustriesSection } from '@/sections/home/IndustriesSection'
+import { PricingSection } from '@/sections/home/PricingSection'
+import { TestimonialsSection } from '@/sections/home/TestimonialsSection'
+import { FAQSection } from '@/sections/home/FAQSection'
 import { CTASection } from '@/sections/shared/CTASection'
 
 export default function HomePage() {
   return (
     <>
       <HeroSection />
-      <HighlightsSection />
-      <ShowcaseSection />
+      <ProblemSection />
+      <SolutionSection />
+      <LiveDemoSection />
+      <HowItWorksSection />
+      <IndustriesSection />
+      <PricingSection />
+      <TestimonialsSection />
+      <FAQSection />
       <CTASection />
     </>
   )
