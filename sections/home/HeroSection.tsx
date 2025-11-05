@@ -2,7 +2,9 @@
 
 import { motion } from 'framer-motion'
 import Link from 'next/link'
-import { HiArrowRight, HiCheckCircle } from 'react-icons/hi2'
+import { HiArrowRight, HiCheckCircle, HiOutlineSparkles } from 'react-icons/hi2'
+
+import { SplineScene, VERCEDO_SPLINE_SCENE_URL } from '@/components/interactive/SplineScene'
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 32 },
@@ -16,8 +18,15 @@ const fadeInUp = {
 export function HeroSection() {
   return (
     <section className="relative min-h-screen overflow-hidden bg-gradient-midnight">
-      <div className="absolute inset-0 grid-pattern opacity-40" />
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-obsidian/90" />
+      <SplineScene
+        sceneUrl={VERCEDO_SPLINE_SCENE_URL}
+        mode="background"
+        className="absolute inset-0 -z-30"
+      />
+      <div className="pointer-events-none absolute inset-0 -z-20 bg-gradient-to-b from-obsidian/70 via-obsidian/75 to-obsidian/95" />
+      <div className="pointer-events-none absolute inset-0 -z-10 grid-pattern opacity-40" aria-hidden="true" />
+      <div className="pointer-events-none absolute inset-x-0 bottom-0 -z-10 h-1/2 bg-gradient-to-t from-obsidian via-obsidian/80 to-transparent" />
+
       <div className="relative mx-auto flex min-h-screen max-w-7xl flex-col items-center justify-center px-6 pt-32 pb-16">
         <div className="mx-auto max-w-4xl text-center">
           <div className="flex flex-col items-center">
@@ -28,8 +37,7 @@ export function HeroSection() {
               animate="visible"
               className="mb-6 font-display text-5xl font-bold leading-[1.1] text-white sm:text-6xl lg:text-7xl"
             >
-              Never Miss Another{' '}
-              <span className="text-gradient">Customer Call</span>
+              Never Miss Another <span className="text-gradient">Customer Call</span>
             </motion.h1>
             <motion.p
               custom={1}
@@ -62,6 +70,13 @@ export function HeroSection() {
               >
                 Get Started Now
                 <HiArrowRight className="transition-transform group-hover:translate-x-1" />
+              </Link>
+              <Link
+                href="/demo"
+                className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-8 py-4 text-base font-semibold text-white backdrop-blur-sm transition hover:bg-white/15"
+              >
+                <HiOutlineSparkles className="h-5 w-5 text-aurora" />
+                View 3D Demo
               </Link>
               <button
                 onClick={() => document.getElementById('how-it-works')?.scrollIntoView({ behavior: 'smooth' })}
