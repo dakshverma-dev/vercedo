@@ -193,7 +193,7 @@ const plans: Plan[] = [
     ],
     ctas: [
       { label: 'Start Free 7-Day Trial', href: '/contact', variant: 'primary' },
-      { label: 'Schedule Demo', href: '/demo', variant: 'secondary' }
+      { label: 'Book a Demo Call', href: '/contact', variant: 'secondary' }
     ]
   },
   {
@@ -264,7 +264,7 @@ const plans: Plan[] = [
       'High call-volume operations'
     ],
     ctas: [
-      { label: 'Schedule Demo', href: '/demo', variant: 'primary' },
+      { label: 'Book a Demo Call', href: '/contact', variant: 'primary' },
       { label: 'Talk to Sales', href: '/contact', variant: 'secondary' }
     ]
   },

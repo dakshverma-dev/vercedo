@@ -119,6 +119,22 @@ const resultStats = [
 ]
 
 export function FeatureMatrixSection() {
+  const handleBookDemo = () => {
+    if (typeof window === 'undefined') return
+
+    const cal = (window as any).Cal
+    if (cal) {
+      cal('ui', {
+        styles: { branding: { brandColor: '#1F6FEB' } },
+        hideEventTypeDetails: false,
+        layout: 'month_view'
+      })
+      return
+    }
+
+    window.open('https://cal.com/vercedo/30min', '_blank', 'noopener,noreferrer')
+  }
+
   return (
     <section className="relative overflow-hidden py-12">
       <div className="absolute inset-0 bg-gradient-aurora opacity-20" />
@@ -241,17 +257,21 @@ export function FeatureMatrixSection() {
             Vercedo combines AI voice, automation, and revenue growth into one platform built for India.
           </p>
           <div className="flex flex-wrap items-center gap-4">
-            <Link
-              href="/demo"
+            <button
+              type="button"
+              onClick={handleBookDemo}
+              data-cal-link="vercedo/30min"
+              data-cal-namespace="30min"
+              data-cal-config='{"layout":"month_view"}'
               className="inline-flex items-center justify-center rounded-full bg-aurora px-6 py-3 text-sm font-semibold text-obsidian transition hover:bg-aurora/90"
             >
-              Try live demo
-            </Link>
+              Book a live walkthrough
+            </button>
             <Link
               href="/contact"
               className="inline-flex items-center justify-center rounded-full border border-white/15 px-6 py-3 text-sm font-semibold text-white transition hover:border-white/30"
             >
-              Schedule a call
+              Talk to our team
             </Link>
           </div>
         </motion.div>
