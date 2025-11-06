@@ -4,6 +4,22 @@ import { motion } from 'framer-motion'
 import Link from 'next/link'
 
 export function PricingHero() {
+  const handleBookDemo = () => {
+    if (typeof window === 'undefined') return
+
+    const cal = (window as any).Cal
+    if (cal) {
+      cal('ui', {
+        styles: { branding: { brandColor: '#1F6FEB' } },
+        hideEventTypeDetails: false,
+        layout: 'month_view'
+      })
+      return
+    }
+
+    window.open('https://cal.com/vercedo/30min', '_blank', 'noopener,noreferrer')
+  }
+
   return (
     <section className="relative overflow-hidden py-20">
       <div className="absolute inset-0 bg-gradient-to-br from-cobalt/30 via-transparent to-transparent opacity-40" />
@@ -35,12 +51,16 @@ export function PricingHero() {
           >
             Start Free Trial
           </Link>
-          <Link
-            href="/demo"
+          <button
+            type="button"
+            onClick={handleBookDemo}
+            data-cal-link="vercedo/30min"
+            data-cal-namespace="30min"
+            data-cal-config='{"layout":"month_view"}'
             className="inline-flex items-center gap-3 rounded-full border border-white/15 bg-white/5 px-8 py-4 text-base font-semibold text-white backdrop-blur-sm transition hover:bg-white/10"
           >
             Schedule Demo
-          </Link>
+          </button>
         </motion.div>
       </motion.div>
     </section>
