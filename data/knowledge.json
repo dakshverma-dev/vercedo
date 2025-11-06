@@ -1,0 +1,37 @@
+[
+  {
+    "id": "fallback_0",
+    "url": "https://vercedo.ai",
+    "title": "Vercedo - AI Receptionist",
+    "content": "Vercedo provides multilingual AI receptionist services for businesses. Our AI can handle calls in multiple languages including Hindi, English, and more. We offer 24/7 availability, automatic appointment booking, lead capture, and customer support automation. Starting at ₹6,000 per month, our AI receptionist can answer calls, book appointments, capture leads, and provide customer support around the clock. Setup takes just 2 days and requires no technical skills. Businesses using Vercedo see 3x more calls answered and save an average of ₹15,000 per month. Our AI receptionist integrates seamlessly with your existing phone system and can be customized to match your business needs.",
+    "tokens": 120
+  },
+  {
+    "id": "fallback_1",
+    "url": "https://vercedo.ai/pricing",
+    "title": "Pricing Plans",
+    "content": "Vercedo offers flexible pricing plans starting at ₹6,000 per month for basic AI receptionist services. Our plans include different tiers based on call volume, features, and support needs. All plans include multilingual support, appointment booking, lead capture, and 24/7 availability. We offer a free demo to show you how our AI receptionist can benefit your business. Contact our sales team for custom enterprise pricing. No technical skills required for setup, and you can cancel anytime.",
+    "tokens": 95
+  },
+  {
+    "id": "fallback_2",
+    "url": "https://vercedo.ai/features",
+    "title": "Features",
+    "content": "Vercedo AI receptionist features include multilingual support (Hindi, English, and more), 24/7 call answering, automatic appointment booking, lead capture and qualification, customer support automation, CRM integration, call transcription, analytics and reporting, customizable scripts, and seamless phone system integration. Our AI can handle customer inquiries, schedule appointments, take messages, qualify leads, and provide basic information about your business. The system learns from interactions to improve over time.",
+    "tokens": 110
+  },
+  {
+    "id": "fallback_3",
+    "url": "https://vercedo.ai/industries",
+    "title": "Industries Served",
+    "content": "Vercedo serves various industries including healthcare, legal services, real estate, financial services, consulting, education, retail, and hospitality. Our AI receptionist is particularly valuable for businesses that receive high call volumes, need multilingual support, operate outside regular business hours, or want to improve customer service while reducing costs. Healthcare providers use it for appointment scheduling, lawyers for client intake, real estate agents for property inquiries, and financial advisors for consultation booking.",
+    "tokens": 105
+  },
+  {
+    "id": "fallback_4",
+    "url": "https://vercedo.ai/contact",
+    "title": "Contact Us",
+    "content": "Contact Vercedo to schedule a demo, get pricing information, or learn more about our AI receptionist services. You can book a 30-minute demo consultation through our website, email us at founders@vercedo.ai, or call our sales team. We offer personalized demos to show you exactly how our AI receptionist will work for your business. Our team can help you choose the right plan and ensure smooth implementation. Get started today and see how Vercedo can transform your customer service.",
+    "tokens": 100
+  }
+]

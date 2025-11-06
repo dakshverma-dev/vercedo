@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import './globals.css'
 import { NavBar } from '@/components/ui/NavBar'
 import { Footer } from '@/components/ui/Footer'
-import { VerceBot } from '@/components/ui/VerceBot'
+import { VercebotWidget } from '@/components/ui/VercebotWidget'
 import { AnimationProvider } from '@/components/providers/AnimationProvider'
 import { ReactNode } from 'react'
 import Script from 'next/script'
@@ -127,7 +127,7 @@ export default function RootLayout({
           <main className="flex-grow">{children}</main>
         </AnimationProvider>
         <Footer />
-        <VerceBot />
+        <VercebotWidget />
       </body>
     </html>
   )
