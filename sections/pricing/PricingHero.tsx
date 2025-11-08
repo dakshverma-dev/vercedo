@@ -47,7 +47,7 @@ export function PricingHero() {
         >
           <Link
             href="/contact"
-            className="inline-flex items-center gap-3 rounded-full border border-white/10 bg-gradient-to-r from-cobalt via-aurora/40 to-cobalt px-8 py-4 text-base font-semibold text-white shadow-glow transition-all hover:scale-105"
+            className="inline-flex items-center gap-3 rounded-full border border-white/10 bg-gradient-to-r from-cobalt via-silver/40 to-cobalt px-8 py-4 text-base font-semibold text-white shadow-glow transition-all hover:scale-105"
           >
             Start Free Trial
           </Link>

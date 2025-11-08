@@ -91,7 +91,7 @@ export function NavBar() {
               data-cal-config='{"layout":"month_view"}'
               className="group relative overflow-hidden rounded-full border border-white/20 px-5 py-2 text-xs font-semibold uppercase tracking-[0.25em] text-white"
             >
-              <span className="absolute inset-0 -z-10 bg-gradient-to-r from-cobalt/60 via-aurora/60 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+              <span className="absolute inset-0 -z-10 bg-gradient-to-r from-cobalt/60 via-silver/60 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
               Book a meet
             </button>
           </div>
@@ -149,7 +149,7 @@ export function NavBar() {
               }}
               data-cal-link="vercedo/30min"
               data-cal-config='{"layout":"month_view"}'
-              className="w-full rounded-2xl border border-white/20 bg-gradient-to-r from-cobalt via-aurora/40 to-cobalt px-4 py-3 text-sm font-semibold uppercase tracking-[0.3em] text-white shadow-glow"
+              className="w-full rounded-2xl border border-white/20 bg-gradient-to-r from-cobalt via-silver/40 to-cobalt px-4 py-3 text-sm font-semibold uppercase tracking-[0.3em] text-white shadow-glow"
             >
               Book a meet
             </button>
