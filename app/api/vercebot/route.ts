@@ -203,20 +203,12 @@ export async function POST(request: NextRequest): Promise<NextResponse> {
     
     const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY)
     const model = genAI.getGenerativeModel({ 
-      model: 'gemini-1.5-flash', // Use flash for faster responses
-      systemInstruction: systemPrompt
+      model: 'gemini-1.5-flash' // Use flash for faster responses
     })
     
-    // Build conversation history
-    const conversation = messages
-      .slice(-10) // Keep last 10 messages to manage context length
-      .map(msg => ({
-        role: msg.role === 'user' ? 'user' : 'model',
-        parts: [{ text: msg.content }]
-      }))
-    
     // Generate response with streaming
-    const result = await model.generateContentStream(conversation)
+    const prompt = `${systemPrompt}\n\nUser: ${userMessage.content}`
+    const result = await model.generateContentStream(prompt)
     
     // Create a readable stream for the response
     const encoder = new TextEncoder()
