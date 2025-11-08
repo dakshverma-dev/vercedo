@@ -617,7 +617,7 @@ export function PricingCards() {
               className={cn(
                 'rounded-full px-6 py-3 text-sm font-semibold transition',
                 billingCycle === 'monthly'
-                  ? 'bg-gradient-to-r from-cobalt via-aurora/40 to-cobalt text-white shadow-glow'
+                  ? 'bg-gradient-to-r from-cobalt via-silver/40 to-cobalt text-white shadow-glow'
                   : 'text-slate-300 hover:text-white'
               )}
             >
@@ -629,7 +629,7 @@ export function PricingCards() {
               className={cn(
                 'rounded-full px-6 py-3 text-sm font-semibold transition',
                 billingCycle === 'annual'
-                  ? 'bg-gradient-to-r from-cobalt via-aurora/40 to-cobalt text-white shadow-glow'
+                  ? 'bg-gradient-to-r from-cobalt via-silver/40 to-cobalt text-white shadow-glow'
                   : 'text-slate-300 hover:text-white'
               )}
             >
@@ -751,7 +751,7 @@ export function PricingCards() {
                             className={cn(
                               'inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-semibold transition',
                               cta.variant === 'primary'
-                                ? 'border border-white/10 bg-gradient-to-r from-cobalt via-aurora/40 to-cobalt text-white shadow-glow hover:scale-105'
+                                ? 'border border-white/10 bg-gradient-to-r from-cobalt via-silver/40 to-cobalt text-white shadow-glow hover:scale-105'
                                 : 'border border-white/15 bg-white/5 text-white hover:bg-white/10'
                             )}
                           >
@@ -949,7 +949,7 @@ export function PricingCards() {
           <div className="mt-6 flex justify-center">
             <Link
               href="/contact"
-              className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-gradient-to-r from-cobalt via-aurora/40 to-cobalt px-8 py-4 text-base font-semibold text-white shadow-glow transition hover:scale-105"
+              className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-gradient-to-r from-cobalt via-silver/40 to-cobalt px-8 py-4 text-base font-semibold text-white shadow-glow transition hover:scale-105"
             >
               Start Free Trial
               <HiArrowRight className="h-5 w-5" />

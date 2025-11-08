@@ -208,7 +208,7 @@ export function ContactFormSection() {
           <button
             type="submit"
             disabled={status === 'loading'}
-            className="group flex w-full items-center justify-center gap-3 rounded-full border border-white/10 bg-gradient-to-r from-cobalt via-aurora/40 to-cobalt px-8 py-4 text-base font-semibold text-white shadow-glow transition hover:scale-105 disabled:opacity-50"
+            className="group flex w-full items-center justify-center gap-3 rounded-full border border-white/10 bg-gradient-to-r from-cobalt via-silver/40 to-cobalt px-8 py-4 text-base font-semibold text-white shadow-glow transition hover:scale-105 disabled:opacity-50"
           >
             {status === 'loading' ? 'Sending your message...' : 'Get Free Consultation'}
             <HiPaperAirplane className="transition-transform group-hover:translate-x-1" />

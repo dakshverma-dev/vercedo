@@ -16,6 +16,7 @@ const config: Config = {
         midnight: '#020617',
         cobalt: '#1f6feb',
         platinum: '#e2e8f0',
+        silver: '#c0c0c0',
         mercury: '#f8fafc',
         aurora: '#7dd3fc',
         obsidian: '#090a10'

@@ -151,6 +151,56 @@ ${context}
 Please respond to the user's query based on this context.`
 }
 
+function truncateText(text: string, maxLength: number): string {
+  if (text.length <= maxLength) return text
+  return `${text.slice(0, maxLength).trimEnd()}...`
+}
+
+function ensureSentence(text: string): string {
+  const trimmed = text.trim()
+  if (!trimmed) return ''
+  return /[.!?]$/.test(trimmed) ? trimmed : `${trimmed}.`
+}
+
+function extractRelevantSentences(query: string, content: string, maxSentences = 2): string {
+  const sentences = content.match(/[^.!?]+[.!?]/g) ?? [content]
+  const normalizedTerms = query.toLowerCase().split(/\s+/).filter(term => term.length > 2)
+  const cleanedSentences = sentences.map(sentence => sentence.trim()).filter(Boolean)
+
+  if (cleanedSentences.length === 0) {
+    return ''
+  }
+
+  const relevantSentences = normalizedTerms.length
+    ? cleanedSentences.filter(sentence =>
+        normalizedTerms.some(term => sentence.toLowerCase().includes(term))
+      )
+    : []
+
+  const selectedSentences = (relevantSentences.length > 0 ? relevantSentences : cleanedSentences).slice(0, maxSentences)
+  return truncateText(selectedSentences.join(' '), 280)
+}
+
+function buildFallbackResponse(query: string, contextChunks: KnowledgeChunk[]): string {
+  if (contextChunks.length === 0) {
+    return "I'm sorry, I couldn't find information about that yet. Please try asking about Vercedo's AI receptionist services, pricing, or booking a demo."
+  }
+
+  const insights = contextChunks
+    .map((chunk, index) => {
+      const snippet = extractRelevantSentences(query, chunk.content) || truncateText(chunk.content, 220)
+      if (!snippet) return null
+      return `${ensureSentence(snippet)} [Source ${index + 1}]`
+    })
+    .filter((value): value is string => Boolean(value))
+
+  if (insights.length === 0) {
+    return "I'm sorry, I couldn't find information about that yet. Please try rephrasing your question or ask about pricing, features, or scheduling a demo."
+  }
+
+  return `Here's what I found:\n\n${insights.join('\n\n')}\n\nNeed more details or want to schedule a demo? I'm here to help.`
+}
+
 export async function POST(request: NextRequest): Promise<NextResponse> {
   try {
     // Load knowledge base if not already loaded
@@ -190,16 +240,40 @@ export async function POST(request: NextRequest): Promise<NextResponse> {
       contextChunks = tfidfSearch(userMessage.content, topK)
     }
     
-    // Build system prompt with context
-    const systemPrompt = buildSystemPrompt(contextChunks)
-    
-    // Initialize Gemini
+    const fallbackContext = contextChunks.slice(0, 3)
+
     if (!process.env.GEMINI_API_KEY) {
-      return NextResponse.json(
-        { error: 'GEMINI_API_KEY not configured' },
-        { status: 500 }
-      )
+      const fallbackResponse = buildFallbackResponse(userMessage.content, fallbackContext)
+      const encoder = new TextEncoder()
+
+      const stream = new ReadableStream({
+        start(controller) {
+          const data = JSON.stringify({
+            choices: [{
+              message: {
+                role: 'assistant' as const,
+                content: fallbackResponse
+              }
+            }],
+            sources: fallbackContext.map(({ id, ...rest }) => rest)
+          })
+
+          controller.enqueue(encoder.encode(`data: ${data}\n\n`))
+          controller.enqueue(encoder.encode('data: [DONE]\n\n'))
+          controller.close()
+        }
+      })
+
+      return new NextResponse(stream, {
+        headers: {
+          'Content-Type': 'text/event-stream',
+          'Cache-Control': 'no-cache',
+          'Connection': 'keep-alive',
+        },
+      })
     }
+    
+    const systemPrompt = buildSystemPrompt(contextChunks)
     
     const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY)
     const model = genAI.getGenerativeModel({ 

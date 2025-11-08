@@ -101,7 +101,7 @@ export function VerceBot() {
         onClick={() => setOpen((prev) => !prev)}
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
-        className="mt-4 flex h-14 w-14 items-center justify-center rounded-full border border-white/15 bg-gradient-to-br from-cobalt/50 via-aurora/40 to-transparent text-white shadow-lg"
+        className="mt-4 flex h-14 w-14 items-center justify-center rounded-full border border-white/15 bg-gradient-to-br from-cobalt/50 via-silver/40 to-transparent text-white shadow-lg"
         aria-label="Toggle VerceBot"
       >
         <HiOutlineSparkles className="h-6 w-6" />

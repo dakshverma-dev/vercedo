@@ -96,7 +96,7 @@ export function HeroSection() {
           >
             <Link
               href="/contact"
-              className="group inline-flex items-center gap-2 rounded-full border border-white/10 bg-gradient-to-r from-cobalt via-aurora/40 to-cobalt px-8 py-4 text-base font-semibold text-white shadow-glow transition-all hover:scale-105"
+              className="group inline-flex items-center gap-2 rounded-full border border-white/10 bg-gradient-to-r from-cobalt via-silver/40 to-cobalt px-8 py-4 text-base font-semibold text-white shadow-glow transition-all hover:scale-105"
             >
               Get Started Now
               <HiArrowRight className="transition-transform group-hover:translate-x-1" />
