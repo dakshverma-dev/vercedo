@@ -149,10 +149,10 @@ export function NavBar() {
               }}
               data-cal-link="vercedo/30min"
               data-cal-config='{"layout":"month_view"}'
-              className="w-full rounded-2xl border border-white/20 bg-gradient-to-r from-cobalt via-aurora/40 to-cobalt px-4 py-3 text-sm font-semibold uppercase tracking-[0.3em] text-white shadow-glow"
-            >
+              className="w-full rounded-2xl border border-white/20 bg-gradient-to-r from-cobalt via-platinum to-cobalt px-4 py-3 text-sm font-semibold uppercase tracking-[0.3em] text-white shadow-glow"
+              >
               Book a meet
-            </button>
+              </button>
           </div>
         </motion.div>
       )}

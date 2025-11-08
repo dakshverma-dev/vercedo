@@ -617,7 +617,7 @@ export function PricingCards() {
               className={cn(
                 'rounded-full px-6 py-3 text-sm font-semibold transition',
                 billingCycle === 'monthly'
-                  ? 'bg-gradient-to-r from-cobalt via-aurora/40 to-cobalt text-white shadow-glow'
+                  ? 'bg-gradient-to-r from-cobalt via-platinum to-cobalt text-white shadow-glow'
                   : 'text-slate-300 hover:text-white'
               )}
             >
@@ -629,7 +629,7 @@ export function PricingCards() {
               className={cn(
                 'rounded-full px-6 py-3 text-sm font-semibold transition',
                 billingCycle === 'annual'
-                  ? 'bg-gradient-to-r from-cobalt via-aurora/40 to-cobalt text-white shadow-glow'
+                  ? 'bg-gradient-to-r from-cobalt via-platinum to-cobalt text-white shadow-glow'
                   : 'text-slate-300 hover:text-white'
               )}
             >
@@ -638,21 +638,21 @@ export function PricingCards() {
           </div>
         </motion.div>
 
-        <div className="grid gap-8 md:grid-cols-2 xl:grid-cols-4">
-          {plans.map((plan, index) => (
-            <motion.div
-              key={plan.name}
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.8, delay: index * 0.1 }}
-              className={cn(
-                'group relative flex h-full flex-col rounded-4xl border border-white/10 bg-white/5 p-8 backdrop-blur-xl',
-                plan.badge ? 'border-aurora/40 shadow-glow' : ''
-              )}
+        <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+           {plans.map((plan, index) => (
+             <motion.div
+               key={plan.name}
+               initial={{ opacity: 0, y: 40 }}
+               whileInView={{ opacity: 1, y: 0 }}
+               viewport={{ once: true, margin: "-100px" }}
+               transition={{ duration: 0.8, delay: index * 0.1 }}
+               className={cn(
+                 'group relative flex h-full flex-col rounded-3xl border border-white/10 bg-white/5 p-6 backdrop-blur-xl',
+                 plan.badge ? 'border-aurora/30 shadow-glow' : ''
+               )}
             >
               {plan.badge && (
-                <div className="absolute right-6 top-6 rounded-full border border-aurora/40 bg-aurora/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-aurora">
+                <div className="absolute right-6 top-6 rounded-full border border-aurora/20 bg-aurora/5 px-2.5 py-0.5 text-xs font-medium uppercase tracking-[0.15em] text-aurora/70">
                   {plan.badge}
                 </div>
               )}
@@ -751,7 +751,7 @@ export function PricingCards() {
                             className={cn(
                               'inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-semibold transition',
                               cta.variant === 'primary'
-                                ? 'border border-white/10 bg-gradient-to-r from-cobalt via-aurora/40 to-cobalt text-white shadow-glow hover:scale-105'
+                                ? 'border border-white/10 bg-gradient-to-r from-cobalt via-platinum to-cobalt text-white shadow-glow hover:scale-105'
                                 : 'border border-white/15 bg-white/5 text-white hover:bg-white/10'
                             )}
                           >
@@ -949,7 +949,7 @@ export function PricingCards() {
           <div className="mt-6 flex justify-center">
             <Link
               href="/contact"
-              className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-gradient-to-r from-cobalt via-aurora/40 to-cobalt px-8 py-4 text-base font-semibold text-white shadow-glow transition hover:scale-105"
+              className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-gradient-to-r from-cobalt via-platinum to-cobalt px-8 py-4 text-base font-semibold text-white shadow-glow transition hover:scale-105"
             >
               Start Free Trial
               <HiArrowRight className="h-5 w-5" />
