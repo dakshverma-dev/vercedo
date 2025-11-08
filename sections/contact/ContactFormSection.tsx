@@ -5,6 +5,7 @@ import { motion } from 'framer-motion'
 import { HiPaperAirplane } from 'react-icons/hi2'
 import { contactSchema, type ContactFormData } from '@/lib/validators'
 import { cn } from '@/lib/utils'
+import { AnimatedCTAButton } from '@/components/ui/AnimatedCTAButton'
 
 export function ContactFormSection() {
   const [formData, setFormData] = useState<ContactFormData>({
@@ -208,10 +209,10 @@ export function ContactFormSection() {
           <button
             type="submit"
             disabled={status === 'loading'}
-            className="group flex w-full items-center justify-center gap-3 rounded-full border border-white/10 bg-gradient-to-r from-cobalt via-platinum to-cobalt px-8 py-4 text-base font-semibold text-white shadow-glow transition hover:scale-105 disabled:opacity-50"
+            className="group relative w-full overflow-hidden rounded-full border border-cobalt/30 bg-gradient-to-r from-cobalt via-platinum to-cobalt px-8 py-4 text-base font-semibold text-white shadow-glow transition-all duration-500 flex items-center justify-center gap-3 before:absolute before:top-1 before:right-1 before:z-10 before:h-12 before:w-12 before:rounded-full before:bg-aurora before:blur-xl before:transition-all before:duration-700 after:absolute after:top-3 after:right-8 after:z-10 after:h-20 after:w-20 after:rounded-full after:bg-cobalt/60 after:blur-2xl after:transition-all after:duration-700 hover:shadow-[0_0_60px_rgba(31,111,235,0.8)] hover:before:-bottom-8 hover:before:right-12 hover:after:-right-8 hover:after:top-12 disabled:opacity-50"
           >
-            {status === 'loading' ? 'Sending your message...' : 'Get Free Consultation'}
-            <HiPaperAirplane className="transition-transform group-hover:translate-x-1" />
+            <span className="relative z-20">{status === 'loading' ? 'Sending your message...' : 'Get Free Consultation'}</span>
+            <HiPaperAirplane className="relative z-20 transition-transform group-hover:translate-x-1" />
           </button>
         </motion.form>
       </div>

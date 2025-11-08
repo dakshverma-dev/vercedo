@@ -5,6 +5,7 @@ import Link from 'next/link'
 import { AnimatePresence, motion } from 'framer-motion'
 import { HiCheck, HiArrowRight, HiChevronDown, HiChevronUp } from 'react-icons/hi2'
 import { cn } from '@/lib/utils'
+import { AnimatedCTAButton } from '@/components/ui/AnimatedCTAButton'
 
 type PlanFeature = {
   title: string
@@ -745,18 +746,14 @@ export function PricingCards() {
 
                       <div className="flex flex-col gap-3">
                         {plan.ctas.map((cta) => (
-                          <Link
+                          <AnimatedCTAButton
                             key={cta.label}
                             href={cta.href}
-                            className={cn(
-                              'inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-semibold transition',
-                              cta.variant === 'primary'
-                                ? 'border border-white/10 bg-gradient-to-r from-cobalt via-platinum to-cobalt text-white shadow-glow hover:scale-105'
-                                : 'border border-white/15 bg-white/5 text-white hover:bg-white/10'
-                            )}
+                            variant={cta.variant}
+                            className="px-6 py-3 text-sm"
                           >
                             {cta.label}
-                          </Link>
+                          </AnimatedCTAButton>
                         ))}
                       </div>
                     </div>

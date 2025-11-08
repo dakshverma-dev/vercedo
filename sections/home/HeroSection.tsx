@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion'
 import Link from 'next/link'
 import { HiArrowRight, HiCheckCircle, HiOutlineSparkles } from 'react-icons/hi2'
+import { AnimatedCTAButton } from '@/components/ui/AnimatedCTAButton'
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 32 },
@@ -94,23 +95,20 @@ export function HeroSection() {
             animate="visible"
             className="flex flex-wrap items-center justify-center gap-3"
           >
-            <Link
+            <AnimatedCTAButton
               href="/contact"
-              className="group inline-flex items-center gap-2 rounded-full border border-white/10 bg-gradient-to-r from-cobalt via-platinum to-cobalt px-8 py-4 text-base font-semibold text-white shadow-glow transition-all hover:scale-105"
+              variant="primary"
             >
               Get Started Now
               <HiArrowRight className="transition-transform group-hover:translate-x-1" />
-            </Link>
-            <button
-              type="button"
+            </AnimatedCTAButton>
+            <AnimatedCTAButton
               onClick={handleBookDemo}
-              data-cal-link="vercedo/30min"
-              data-cal-namespace="30min"
-              data-cal-config='{"layout":"month_view"}'
-              className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-8 py-4 text-base font-semibold text-white backdrop-blur-sm transition hover:bg-white/15"
+              variant="secondary"
+              type="button"
             >
               Book a Live Demo
-            </button>
+            </AnimatedCTAButton>
           </motion.div>
 
           <motion.div

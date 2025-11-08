@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion'
 import Link from 'next/link'
+import { AnimatedCTAButton } from '@/components/ui/AnimatedCTAButton'
 
 export function PricingHero() {
   const handleBookDemo = () => {
@@ -45,22 +46,19 @@ export function PricingHero() {
           transition={{ duration: 0.7, delay: 0.3 }}
           className="mt-8 flex flex-wrap items-center justify-center gap-4"
         >
-          <Link
+          <AnimatedCTAButton
             href="/contact"
-            className="inline-flex items-center gap-3 rounded-full border border-white/10 bg-gradient-to-r from-cobalt via-platinum to-cobalt px-8 py-4 text-base font-semibold text-white shadow-glow transition-all hover:scale-105"
+            variant="primary"
           >
             Start Free Trial
-          </Link>
-          <button
-            type="button"
+          </AnimatedCTAButton>
+          <AnimatedCTAButton
             onClick={handleBookDemo}
-            data-cal-link="vercedo/30min"
-            data-cal-namespace="30min"
-            data-cal-config='{"layout":"month_view"}'
-            className="inline-flex items-center gap-3 rounded-full border border-white/15 bg-white/5 px-8 py-4 text-base font-semibold text-white backdrop-blur-sm transition hover:bg-white/10"
+            variant="secondary"
+            type="button"
           >
             Schedule Demo
-          </button>
+          </AnimatedCTAButton>
         </motion.div>
       </motion.div>
     </section>

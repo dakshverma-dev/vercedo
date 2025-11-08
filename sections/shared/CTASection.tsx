@@ -3,6 +3,7 @@
 import Link from 'next/link'
 import { motion } from 'framer-motion'
 import { HiArrowRight } from 'react-icons/hi2'
+import { AnimatedCTAButton } from '@/components/ui/AnimatedCTAButton'
 
 export function CTASection() {
   return (
@@ -66,19 +67,21 @@ export function CTASection() {
           transition={{ duration: 0.7, delay: 0.4, ease: [0.19, 1, 0.22, 1] }}
           className="flex flex-wrap items-center justify-center gap-4"
         >
-          <Link
+          <AnimatedCTAButton
             href="/contact"
-            className="group inline-flex items-center gap-3 rounded-full border border-white/10 bg-gradient-to-r from-cobalt via-platinum to-cobalt px-10 py-5 text-lg font-semibold text-white shadow-glow transition-all hover:scale-105 hover:shadow-glow"
+            variant="primary"
+            className="px-10 py-5 text-lg"
           >
             Get Started Now
             <HiArrowRight className="transition-transform group-hover:translate-x-2" />
-          </Link>
-          <Link
+          </AnimatedCTAButton>
+          <AnimatedCTAButton
             href="/contact"
-            className="inline-flex items-center gap-3 rounded-full border border-white/15 bg-white/5 px-10 py-5 text-lg font-semibold text-white backdrop-blur-sm transition hover:bg-white/10"
+            variant="secondary"
+            className="px-10 py-5 text-lg"
           >
             Schedule Demo Call
-          </Link>
+          </AnimatedCTAButton>
         </motion.div>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
