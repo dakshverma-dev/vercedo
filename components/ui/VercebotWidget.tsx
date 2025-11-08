@@ -7,7 +7,7 @@ import {
   HiPaperAirplane, 
   HiXMark,
   HiDocumentText,
-  HiExternalLink
+  HiArrowTopRightOnSquare
 } from 'react-icons/hi2'
 import { cn } from '@/lib/utils'
 
@@ -353,7 +353,7 @@ export function VercebotWidget() {
                             rel="noopener noreferrer"
                             className="block text-xs text-cobalt hover:text-aurora flex items-center gap-1 truncate"
                           >
-                            <HiExternalLink className="h-3 w-3 flex-shrink-0" />
+                            <HiArrowTopRightOnSquare className="h-3 w-3 flex-shrink-0" />
                             {source.title}
                           </a>
                         ))}
