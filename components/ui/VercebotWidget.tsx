@@ -85,11 +85,7 @@ export function VercebotWidget() {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' })
   }, [messages])
 
-  // Show widget after delay
-  useEffect(() => {
-    const timer = setTimeout(() => setOpen(true), 2500)
-    return () => clearTimeout(timer)
-  }, [])
+  // Widget opens only when user clicks the button (manual trigger)
 
   const handleBookDemo = () => {
     if (typeof window === 'undefined') return

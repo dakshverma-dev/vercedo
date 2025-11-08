@@ -1,6 +1,6 @@
 "use client"
 
-import { motion } from 'framer-motion'
+import { motion, AnimatePresence } from 'framer-motion'
 import { ChangeEvent, useState } from 'react'
 import { HiChevronDown } from 'react-icons/hi2'
 
@@ -127,30 +127,33 @@ export function FAQSection() {
           </div>
         </motion.div>
 
-        <div className="space-y-4">
-          {faqs.map((faq, index) => (
-            <motion.div key={index} variants={itemVariant}>
-              <button
-                onClick={() => setOpenIndex(openIndex === index ? null : index)}
-                className="glass flex w-full items-center justify-between rounded-2xl px-6 py-5 text-left transition hover:border-white/20"
-              >
-                <span className="text-lg font-semibold text-white">{faq.question}</span>
-                <HiChevronDown
-                  className={`h-5 w-5 text-aurora transition-transform ${openIndex === index ? 'rotate-180' : ''}`}
-                />
-              </button>
-              {openIndex === index && (
-                <motion.div
-                  initial={{ height: 0, opacity: 0 }}
-                  animate={{ height: 'auto', opacity: 1 }}
-                  transition={{ duration: 0.3, ease: 'easeOut' }}
-                  className="overflow-hidden rounded-2xl border border-white/10 bg-white/5 px-6 py-5"
-                >
-                  <p className="text-base leading-relaxed text-slate-300">{faq.answer}</p>
-                </motion.div>
-              )}
-            </motion.div>
-          ))}
+        <div className="space-y-3">
+           {faqs.map((faq, index) => (
+             <motion.div key={index} variants={itemVariant} className="overflow-hidden rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm">
+               <button
+                 onClick={() => setOpenIndex(openIndex === index ? null : index)}
+                 className="flex w-full items-center justify-between px-6 py-4 text-left transition hover:bg-white/10"
+               >
+                 <span className="text-base font-semibold text-white">{faq.question}</span>
+                 <HiChevronDown
+                   className={`h-5 w-5 flex-shrink-0 text-aurora transition-transform duration-300 ${openIndex === index ? 'rotate-180' : ''}`}
+                 />
+               </button>
+               <AnimatePresence initial={false}>
+                 {openIndex === index && (
+                   <motion.div
+                     initial={{ height: 0, opacity: 0 }}
+                     animate={{ height: 'auto', opacity: 1 }}
+                     exit={{ height: 0, opacity: 0 }}
+                     transition={{ duration: 0.3, ease: 'easeOut' }}
+                     className="overflow-hidden border-t border-white/10"
+                   >
+                     <p className="px-6 py-4 text-sm leading-relaxed text-slate-300">{faq.answer}</p>
+                   </motion.div>
+                 )}
+               </AnimatePresence>
+             </motion.div>
+           ))}
         </div>
       </motion.div>
     </section>

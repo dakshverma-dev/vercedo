@@ -44,8 +44,8 @@ export function HeroSection() {
       <div className="absolute inset-0 grid-pattern opacity-25" aria-hidden="true" />
       <div className="absolute inset-x-0 top-0 h-48 bg-gradient-to-b from-white/10 via-white/5 to-transparent opacity-10" aria-hidden="true" />
 
-      <div className="relative mx-auto flex max-w-6xl flex-col gap-16 px-6 pt-32 pb-24 lg:flex-row lg:items-center">
-        <div className="w-full space-y-6 lg:w-7/12">
+      <div className="relative mx-auto flex max-w-5xl flex-col gap-12 px-6 pt-24 pb-20">
+        <div className="w-full space-y-5 text-center">
           <motion.div
             custom={0}
             variants={fadeInUp}
@@ -62,7 +62,7 @@ export function HeroSection() {
             variants={fadeInUp}
             initial="hidden"
             animate="visible"
-            className="font-display text-5xl font-bold leading-[1.1] text-white sm:text-6xl lg:text-7xl"
+            className="font-display text-5xl font-bold leading-[1.1] text-white sm:text-6xl"
           >
             Never Miss Another <span className="text-gradient">Customer Call</span>
           </motion.h1>
@@ -72,9 +72,9 @@ export function HeroSection() {
             variants={fadeInUp}
             initial="hidden"
             animate="visible"
-            className="max-w-2xl text-xl leading-relaxed text-slate-300"
+            className="mx-auto max-w-2xl text-base leading-relaxed text-slate-300"
           >
-            Multilingual AI receptionist supporting Hindi, English, and other regional languages. Answer calls, book appointments, and capture leads—24/7.
+            24/7 AI receptionist in Hindi & English. Answer calls, book appointments, and capture leads automatically.
           </motion.p>
 
           <motion.p
@@ -82,9 +82,9 @@ export function HeroSection() {
             variants={fadeInUp}
             initial="hidden"
             animate="visible"
-            className="text-lg text-slate-400"
+            className="text-sm text-slate-400"
           >
-            Join 50+ businesses saving ₹15,000 every month while handling 300% more calls.
+            Join 50+ businesses saving ₹15,000/month while handling 300% more calls.
           </motion.p>
 
           <motion.div
@@ -92,11 +92,11 @@ export function HeroSection() {
             variants={fadeInUp}
             initial="hidden"
             animate="visible"
-            className="flex flex-wrap gap-4"
+            className="flex flex-wrap items-center justify-center gap-3"
           >
             <Link
               href="/contact"
-              className="group inline-flex items-center gap-2 rounded-full border border-white/10 bg-gradient-to-r from-cobalt via-aurora/40 to-cobalt px-8 py-4 text-base font-semibold text-white shadow-glow transition-all hover:scale-105"
+              className="group inline-flex items-center gap-2 rounded-full border border-white/10 bg-gradient-to-r from-cobalt via-platinum to-cobalt px-8 py-4 text-base font-semibold text-white shadow-glow transition-all hover:scale-105"
             >
               Get Started Now
               <HiArrowRight className="transition-transform group-hover:translate-x-1" />
@@ -111,13 +111,6 @@ export function HeroSection() {
             >
               Book a Live Demo
             </button>
-            <button
-              type="button"
-              onClick={() => document.getElementById('how-it-works')?.scrollIntoView({ behavior: 'smooth' })}
-              className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-8 py-4 text-base font-semibold text-white backdrop-blur-sm transition hover:bg-white/10"
-            >
-              See How It Works
-            </button>
           </motion.div>
 
           <motion.div
@@ -125,7 +118,7 @@ export function HeroSection() {
             variants={fadeInUp}
             initial="hidden"
             animate="visible"
-            className="flex flex-wrap items-center gap-6 text-sm text-slate-300"
+            className="flex flex-wrap items-center justify-center gap-6 text-sm text-slate-300"
           >
             {heroBenefits.map((benefit) => (
               <div key={benefit} className="flex items-center gap-2">
@@ -135,35 +128,6 @@ export function HeroSection() {
             ))}
           </motion.div>
         </div>
-
-        <motion.div
-          custom={6}
-          variants={fadeInUp}
-          initial="hidden"
-          animate="visible"
-          className="w-full lg:w-5/12"
-        >
-          <div className="glass relative overflow-hidden rounded-4xl border border-white/10 bg-white/5 p-8">
-            <div className="absolute inset-0 bg-gradient-to-br from-cobalt/15 via-aurora/10 to-transparent opacity-70" aria-hidden="true" />
-            <div className="relative space-y-6">
-              <p className="text-sm uppercase tracking-[0.3em] text-aurora/80">Real results</p>
-              <h3 className="font-display text-2xl text-white">
-                Designed to sound human and deliver measurable growth
-              </h3>
-              <div className="grid gap-6 sm:grid-cols-3">
-                {heroStats.map((stat) => (
-                  <div key={stat.label} className="rounded-3xl border border-white/10 bg-white/5 p-4 text-center">
-                    <p className="font-display text-2xl text-white">{stat.value}</p>
-                    <p className="mt-1 text-xs font-medium text-slate-400">{stat.label}</p>
-                  </div>
-                ))}
-              </div>
-              <p className="text-sm leading-relaxed text-slate-300">
-                Vercedo greets callers instantly, qualifies every lead, and books appointments while your team focuses on delivering great service.
-              </p>
-            </div>
-          </div>
-        </motion.div>
       </div>
     </section>
   )

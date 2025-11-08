@@ -68,7 +68,7 @@ export function CTASection() {
         >
           <Link
             href="/contact"
-            className="group inline-flex items-center gap-3 rounded-full border border-white/10 bg-gradient-to-r from-cobalt via-aurora/40 to-cobalt px-10 py-5 text-lg font-semibold text-white shadow-glow transition-all hover:scale-105 hover:shadow-glow"
+            className="group inline-flex items-center gap-3 rounded-full border border-white/10 bg-gradient-to-r from-cobalt via-platinum to-cobalt px-10 py-5 text-lg font-semibold text-white shadow-glow transition-all hover:scale-105 hover:shadow-glow"
           >
             Get Started Now
             <HiArrowRight className="transition-transform group-hover:translate-x-2" />
