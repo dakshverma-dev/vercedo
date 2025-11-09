@@ -1,26 +1,43 @@
 "use client"
 
 import { motion } from 'framer-motion'
-import Link from 'next/link'
-import { HiArrowRight, HiCheckCircle, HiOutlineSparkles } from 'react-icons/hi2'
+import { Phone } from 'lucide-react'
 import { AnimatedCTAButton } from '@/components/ui/AnimatedCTAButton'
+import { HeroPhoneMockup } from '@/components/hero/HeroPhoneMockup'
+import { FloatingStats } from '@/components/hero/FloatingStats'
 
-const fadeInUp = {
-  hidden: { opacity: 0, y: 32 },
-  visible: (i: number) => ({
+const container = {
+  hidden: { opacity: 0 },
+  visible: {
     opacity: 1,
-    y: 0,
-    transition: { delay: 0.15 * i, duration: 0.8, ease: [0.19, 1, 0.22, 1] }
-  })
+    transition: {
+      staggerChildren: 0.1,
+      delayChildren: 0.2
+    }
+  }
 }
 
-const heroBenefits = ['Setup in 2 days', 'No technical skills needed', 'Cancel anytime']
+const item = {
+  hidden: { opacity: 0, y: 20 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.8, ease: [0.19, 1, 0.22, 1] }
+  }
+}
 
-const heroStats = [
-  { value: '50+', label: 'Businesses trust Vercedo' },
-  { value: '3x', label: 'More calls answered' },
-  { value: '₹15K', label: 'Average monthly savings' }
+const trustBadges = [
+  { icon: '✓', text: 'Setup in 2 days' },
+  { icon: '✓', text: 'No credit card needed' },
+  { icon: '✓', text: 'Cancel anytime' },
+  { icon: '✓', text: '99.9% uptime' }
 ]
+
+const socialProof = {
+  calls: '247 calls today',
+  revenue: '₹1.2L revenue captured',
+  satisfaction: '94% satisfaction'
+}
 
 export function HeroSection() {
   const handleBookDemo = () => {
@@ -29,7 +46,7 @@ export function HeroSection() {
     const cal = (window as any).Cal
     if (cal) {
       cal('ui', {
-        styles: { branding: { brandColor: '#1F6FEB' } },
+        styles: { branding: { brandColor: '#0066FF' } },
         hideEventTypeDetails: false,
         layout: 'month_view'
       })
@@ -40,93 +57,136 @@ export function HeroSection() {
   }
 
   return (
-    <section className="relative overflow-hidden bg-gradient-midnight">
-      <div className="absolute inset-0 bg-gradient-to-b from-obsidian/40 via-obsidian/80 to-obsidian" aria-hidden="true" />
-      <div className="absolute inset-0 grid-pattern opacity-25" aria-hidden="true" />
-      <div className="absolute inset-x-0 top-0 h-48 bg-gradient-to-b from-white/10 via-white/5 to-transparent opacity-10" aria-hidden="true" />
+    <section className="relative min-h-screen w-full overflow-hidden bg-[#0a0e27]">
+      {/* Animated gradient mesh background */}
+      <div className="absolute inset-0">
+        <div className="absolute inset-0 bg-gradient-to-br from-[#0a0e27] via-[#1a1f3a] to-[#0a0e27] opacity-80" aria-hidden="true" />
+        
+        {/* Holographic gradient mesh */}
+        <div className="absolute top-0 left-1/4 w-96 h-96 bg-blue-500/10 rounded-full mix-blend-screen filter blur-3xl animate-pulse" aria-hidden="true" style={{ animation: 'float 20s ease-in-out infinite' }} />
+        <div className="absolute top-1/3 right-1/4 w-80 h-80 bg-cyan-500/10 rounded-full mix-blend-screen filter blur-3xl animate-pulse" aria-hidden="true" style={{ animation: 'float 25s ease-in-out infinite reverse' }} />
+        <div className="absolute bottom-0 left-1/2 w-96 h-96 bg-purple-500/5 rounded-full mix-blend-screen filter blur-3xl" aria-hidden="true" style={{ animation: 'float 30s ease-in-out infinite' }} />
+        
+        {/* Grain overlay */}
+        <div className="absolute inset-0 opacity-[0.02] mix-blend-overlay pointer-events-none" style={{
+          backgroundImage: 'url("data:image/svg+xml,%3Csvg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg"%3E%3Cfilter id="noiseFilter"%3E%3CfeTurbulence type="fractalNoise" baseFrequency="0.7" numOctaves="4" seed="2"/%3E%3C/filter%3E%3Crect width="400" height="400" filter="url(%23noiseFilter)"/%3E%3C/svg%3E")',
+          backgroundSize: '200px 200px'
+        }} aria-hidden="true" />
+      </div>
 
-      <div className="relative mx-auto flex max-w-5xl flex-col gap-12 px-6 pt-24 pb-20">
-        <div className="w-full space-y-5 text-center">
+      {/* Content */}
+      <div className="relative z-10 mx-auto max-w-7xl px-6 py-16 lg:py-24">
+        {/* Main grid layout */}
+        <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-12 items-center">
+          {/* Left Column - Content (60%) */}
           <motion.div
-            custom={0}
-            variants={fadeInUp}
+            className="lg:col-span-3 space-y-8"
+            variants={container}
             initial="hidden"
             animate="visible"
-            className="inline-flex items-center gap-2 rounded-full border border-aurora/30 bg-aurora/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-aurora"
           >
-            <HiOutlineSparkles className="h-4 w-4" />
-            India-first AI receptionist
-          </motion.div>
-
-          <motion.h1
-            custom={1}
-            variants={fadeInUp}
-            initial="hidden"
-            animate="visible"
-            className="font-display text-5xl font-bold leading-[1.1] text-white sm:text-6xl"
-          >
-            Never Miss Another <span className="text-gradient">Customer Call</span>
-          </motion.h1>
-
-          <motion.p
-            custom={2}
-            variants={fadeInUp}
-            initial="hidden"
-            animate="visible"
-            className="mx-auto max-w-2xl text-base leading-relaxed text-slate-300"
-          >
-            24/7 AI receptionist in Hindi & English. Answer calls, book appointments, and capture leads automatically.
-          </motion.p>
-
-          <motion.p
-            custom={3}
-            variants={fadeInUp}
-            initial="hidden"
-            animate="visible"
-            className="text-sm text-slate-400"
-          >
-            Join 50+ businesses saving ₹15,000/month while handling 300% more calls.
-          </motion.p>
-
-          <motion.div
-            custom={4}
-            variants={fadeInUp}
-            initial="hidden"
-            animate="visible"
-            className="flex flex-wrap items-center justify-center gap-3"
-          >
-            <AnimatedCTAButton
-              href="/contact"
-              variant="primary"
-            >
-              Get Started Now
-              <HiArrowRight className="transition-transform group-hover:translate-x-1" />
-            </AnimatedCTAButton>
-            <AnimatedCTAButton
-              onClick={handleBookDemo}
-              variant="secondary"
-              type="button"
-            >
-              Book a Live Demo
-            </AnimatedCTAButton>
-          </motion.div>
-
-          <motion.div
-            custom={5}
-            variants={fadeInUp}
-            initial="hidden"
-            animate="visible"
-            className="flex flex-wrap items-center justify-center gap-6 text-sm text-slate-300"
-          >
-            {heroBenefits.map((benefit) => (
-              <div key={benefit} className="flex items-center gap-2">
-                <HiCheckCircle className="h-5 w-5 text-aurora" />
-                <span>{benefit}</span>
+            {/* Badge */}
+            <motion.div variants={item}>
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-cyan-500/40 bg-cyan-500/10 backdrop-blur-md w-fit">
+                <span className="text-lg">🇮🇳</span>
+                <span className="text-xs font-semibold text-cyan-300 tracking-wide">India's most Reliable AI Receptionist</span>
               </div>
-            ))}
+            </motion.div>
+
+            {/* Headline - Split into 3 lines with gradient */}
+            <motion.div variants={item} className="space-y-3">
+              <div className="space-y-2">
+                <h1 className="text-5xl lg:text-6xl font-bold text-white leading-tight">
+                  Never Miss Another
+                </h1>
+                <h1 className="text-5xl lg:text-7xl font-black bg-gradient-to-r from-[#0066FF] to-[#00D9FF] bg-clip-text text-transparent leading-tight">
+                  Customer Call
+                </h1>
+                <h1 className="text-5xl lg:text-6xl font-bold text-white leading-tight">
+                  Ever Again
+                </h1>
+              </div>
+            </motion.div>
+
+            {/* Subheadline */}
+            <motion.p
+              variants={item}
+              className="text-lg text-[#A0AEC0] max-w-xl leading-relaxed"
+            >
+              24/7 AI receptionist in Hindi & English. Books appointments, captures leads, and handles customer queries—automatically.
+            </motion.p>
+
+            {/* Social Proof */}
+            <motion.div variants={item} className="text-sm text-[#A0AEC0]/80 space-y-2">
+              <p className="font-medium text-[#A0AEC0]">
+                Trusted by 50+ businesses • Handling 10,000+ calls monthly • ₹15,000 saved per business
+              </p>
+            </motion.div>
+
+            {/* CTAs */}
+            <motion.div variants={item} className="flex flex-col sm:flex-row gap-4 pt-4">
+              <AnimatedCTAButton
+                onClick={handleBookDemo}
+                variant="primary"
+                type="button"
+                className="gap-3 px-8 py-5 text-base font-semibold"
+              >
+                <Phone className="w-5 h-5" />
+                <span>Try Live Demo</span>
+              </AnimatedCTAButton>
+
+              <AnimatedCTAButton
+                href="/contact"
+                variant="secondary"
+                className="px-8 py-5 text-base font-semibold"
+              >
+                Book a Meeting
+              </AnimatedCTAButton>
+            </motion.div>
+
+            {/* Trust Badges */}
+            <motion.div variants={item} className="grid grid-cols-2 gap-3 pt-4">
+              {trustBadges.map((badge, idx) => (
+                <div key={idx} className="flex items-center gap-2 text-sm text-[#A0AEC0]">
+                  <span className="text-[#00C853] text-lg font-bold">{badge.icon}</span>
+                  <span>{badge.text}</span>
+                </div>
+              ))}
+            </motion.div>
+          </motion.div>
+
+          {/* Right Column - Visual Element (40%) */}
+          <motion.div
+            className="lg:col-span-2"
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 1, delay: 0.3, ease: [0.19, 1, 0.22, 1] }}
+          >
+            <HeroPhoneMockup />
+            <FloatingStats stats={socialProof} />
           </motion.div>
         </div>
       </div>
+
+      {/* Scroll indicator */}
+      <motion.div
+        className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center gap-2 z-10"
+        animate={{ y: [0, 8, 0] }}
+        transition={{ duration: 2, repeat: Infinity }}
+      >
+        <span className="text-xs text-[#A0AEC0]/60 font-medium">Scroll to explore</span>
+        <svg className="w-5 h-5 text-[#A0AEC0]/40" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+        </svg>
+      </motion.div>
+
+      {/* Animation keyframes */}
+      <style>{`
+        @keyframes float {
+          0%, 100% { transform: translate(0px, 0px); }
+          50% { transform: translate(20px, -20px); }
+        }
+      `}</style>
     </section>
   )
 }
