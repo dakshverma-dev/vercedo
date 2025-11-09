@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion'
 import Link from 'next/link'
 import { HiArrowRight } from 'react-icons/hi2'
+import { AnimatedCTAButton } from '@/components/ui/AnimatedCTAButton'
 
 export function PricingSection() {
   return (
@@ -39,13 +40,14 @@ export function PricingSection() {
           viewport={{ once: true }}
           transition={{ duration: 0.7, delay: 0.4, ease: [0.19, 1, 0.22, 1] }}
         >
-          <Link
+          <AnimatedCTAButton
             href="/pricing"
-            className="group inline-flex items-center gap-3 rounded-full border border-white/10 bg-gradient-to-r from-cobalt via-platinum to-cobalt px-10 py-5 text-lg font-semibold text-white shadow-glow transition-all hover:scale-105 hover:shadow-glow"
+            variant="primary"
+            className="px-10 py-5 text-lg"
           >
             View Pricing Plans
             <HiArrowRight className="transition-transform group-hover:translate-x-2" />
-          </Link>
+          </AnimatedCTAButton>
         </motion.div>
       </motion.div>
     </section>

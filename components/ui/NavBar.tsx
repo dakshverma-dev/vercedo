@@ -89,10 +89,9 @@ export function NavBar() {
               }}
               data-cal-link="vercedo/30min"
               data-cal-config='{"layout":"month_view"}'
-              className="group relative overflow-hidden rounded-full border border-white/20 px-5 py-2 text-xs font-semibold uppercase tracking-[0.25em] text-white"
+              className="group relative overflow-hidden rounded-full border border-white/20 bg-gradient-to-r from-cobalt/40 via-aurora/30 to-cobalt/40 px-5 py-2 text-xs font-semibold uppercase tracking-[0.25em] text-white transition-all duration-500 before:absolute before:top-0.5 before:right-0.5 before:z-10 before:h-8 before:w-8 before:rounded-full before:bg-aurora/40 before:blur-lg before:transition-all before:duration-700 hover:shadow-[0_0_30px_rgba(31,111,235,0.6)] hover:before:-bottom-6 hover:before:right-2"
             >
-              <span className="absolute inset-0 -z-10 bg-gradient-to-r from-cobalt/60 via-aurora/60 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
-              Book a meet
+              <span className="relative z-20">Book a meet</span>
             </button>
           </div>
         </LayoutGroup>
@@ -149,9 +148,9 @@ export function NavBar() {
               }}
               data-cal-link="vercedo/30min"
               data-cal-config='{"layout":"month_view"}'
-              className="w-full rounded-2xl border border-white/20 bg-gradient-to-r from-cobalt via-platinum to-cobalt px-4 py-3 text-sm font-semibold uppercase tracking-[0.3em] text-white shadow-glow"
+              className="group relative w-full overflow-hidden rounded-2xl border border-cobalt/30 bg-gradient-to-r from-cobalt via-platinum to-cobalt px-4 py-3 text-sm font-semibold uppercase tracking-[0.3em] text-white shadow-glow transition-all duration-500 before:absolute before:top-0.5 before:right-0.5 before:z-10 before:h-10 before:w-10 before:rounded-full before:bg-aurora/40 before:blur-lg before:transition-all before:duration-700 hover:shadow-[0_0_40px_rgba(31,111,235,0.8)] hover:before:-bottom-6 hover:before:right-3"
               >
-              Book a meet
+              <span className="relative z-20">Book a meet</span>
               </button>
           </div>
         </motion.div>

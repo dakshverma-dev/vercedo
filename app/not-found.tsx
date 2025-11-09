@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { HiArrowLeft } from 'react-icons/hi2'
+import { AnimatedCTAButton } from '@/components/ui/AnimatedCTAButton'
 
 export default function NotFound() {
   return (
@@ -10,13 +11,13 @@ export default function NotFound() {
         <p className="mb-8 text-slate-400">
           This page seems to have drifted into deep space.
         </p>
-        <Link
+        <AnimatedCTAButton
           href="/"
-          className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-gradient-to-r from-cobalt via-platinum to-cobalt px-8 py-4 text-base font-semibold text-white shadow-glow transition hover:scale-105"
+          variant="primary"
         >
           <HiArrowLeft />
           Return to Mission Control
-        </Link>
+        </AnimatedCTAButton>
       </div>
     </div>
   )
