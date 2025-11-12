@@ -7,7 +7,7 @@ import { AnimatedCTAButton } from '@/components/ui/AnimatedCTAButton'
 
 export function CTASection() {
   return (
-    <section className="relative overflow-hidden py-32">
+    <section className="relative overflow-hidden py-20 sm:py-24 md:py-32">
       <div className="absolute inset-0 bg-gradient-to-br from-cobalt/20 via-transparent to-aurora/10" />
       <div className="grid-pattern absolute inset-0 opacity-30" />
       <motion.div
@@ -15,7 +15,7 @@ export function CTASection() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-100px" }}
         transition={{ duration: 0.8, ease: [0.19, 1, 0.22, 1] }}
-        className="relative mx-auto max-w-4xl px-6 text-center"
+        className="relative mx-auto max-w-4xl px-4 sm:px-6 text-center"
       >
         <motion.div
           initial={{ scale: 0, rotate: -180 }}
@@ -47,7 +47,7 @@ export function CTASection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7, delay: 0.2, ease: [0.19, 1, 0.22, 1] }}
-          className="mb-6 font-display text-4xl font-bold text-white md:text-6xl"
+          className="mb-4 sm:mb-6 font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white"
         >
           Ready to Never Miss <span className="text-gradient">Another Call?</span>
         </motion.h2>
@@ -56,7 +56,7 @@ export function CTASection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7, delay: 0.3, ease: [0.19, 1, 0.22, 1] }}
-          className="mb-10 text-lg leading-relaxed text-slate-300"
+          className="mb-8 sm:mb-10 text-base sm:text-lg leading-relaxed text-slate-300 px-4 sm:px-0"
         >
           Join 50+ businesses that chose growth over missed opportunities
         </motion.p>
@@ -65,12 +65,12 @@ export function CTASection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7, delay: 0.4, ease: [0.19, 1, 0.22, 1] }}
-          className="flex flex-wrap items-center justify-center gap-4"
+          className="flex flex-col sm:flex-row flex-wrap items-center justify-center gap-4"
         >
           <AnimatedCTAButton
             href="/contact"
             variant="primary"
-            className="px-10 py-5 text-lg"
+            className="px-8 sm:px-10 py-4 sm:py-5 text-base sm:text-lg w-full sm:w-auto"
           >
             Get Started Now
             <HiArrowRight className="transition-transform group-hover:translate-x-2" />
@@ -78,7 +78,7 @@ export function CTASection() {
           <AnimatedCTAButton
             href="/contact"
             variant="secondary"
-            className="px-10 py-5 text-lg"
+            className="px-8 sm:px-10 py-4 sm:py-5 text-base sm:text-lg w-full sm:w-auto"
           >
             Schedule Demo Call
           </AnimatedCTAButton>
@@ -88,7 +88,7 @@ export function CTASection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7, delay: 0.5, ease: [0.19, 1, 0.22, 1] }}
-          className="mt-8 flex flex-wrap items-center justify-center gap-6 text-sm text-slate-400"
+          className="mt-6 sm:mt-8 flex flex-col sm:flex-row flex-wrap items-center justify-center gap-3 sm:gap-6 text-xs sm:text-sm text-slate-400 px-4 sm:px-0"
         >
           <span>✓ No credit card required for demo</span>
           <span>✓ Setup in 2 days</span>

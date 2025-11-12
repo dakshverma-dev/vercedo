@@ -2,6 +2,7 @@
 
 import Link from 'next/link'
 import { motion } from 'framer-motion'
+import { AnimatedCTAButton } from '@/components/ui/AnimatedCTAButton'
 
 const containerVariant = {
   hidden: { opacity: 0 },
@@ -136,38 +137,38 @@ export function FeatureMatrixSection() {
   }
 
   return (
-    <section className="relative overflow-hidden py-12">
+    <section className="relative overflow-hidden py-16 md:py-20">
       <div className="absolute inset-0 bg-gradient-aurora opacity-20" />
       <motion.div
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, margin: "-100px" }}
         variants={containerVariant}
-        className="relative mx-auto max-w-6xl space-y-16 px-6"
+        className="relative mx-auto max-w-6xl space-y-12 md:space-y-16 px-4 sm:px-6"
       >
-        <motion.div variants={itemVariant} className="max-w-3xl">
-          <p className="text-sm uppercase tracking-[0.3em] text-aurora">Vercedo Features</p>
-          <h2 className="mt-4 font-display text-4xl font-bold text-white md:text-5xl">
+        <motion.div variants={itemVariant} className="max-w-3xl mx-auto text-center md:text-left md:mx-0">
+          <p className="text-xs sm:text-sm uppercase tracking-[0.3em] text-aurora">Vercedo Features</p>
+          <h2 className="mt-4 font-display text-3xl sm:text-4xl md:text-5xl font-bold text-white leading-tight">
             Transform every conversation into revenue
           </h2>
-          <p className="mt-4 text-base leading-relaxed text-slate-300">
+          <p className="mt-4 text-base sm:text-lg leading-relaxed text-slate-300">
             Vercedo blends human-sounding AI with dependable automation so your business never misses a lead,
             booking, or follow-up.
           </p>
         </motion.div>
 
-        <div className="grid gap-6 lg:grid-cols-2">
+        <div className="grid gap-4 sm:gap-6 lg:grid-cols-2">
           {featureBlocks.map((block) => (
             <motion.div
               key={block.title}
               variants={itemVariant}
-              className="glass flex h-full flex-col rounded-4xl border border-white/10 bg-white/5 p-8 transition hover:border-white/20 hover:shadow-lg hover:shadow-aurora/10"
+              className="glass flex h-full flex-col rounded-3xl md:rounded-4xl border border-white/10 bg-white/5 p-6 sm:p-8 transition hover:border-white/20 hover:shadow-lg hover:shadow-aurora/10"
             >
               <div>
-                <h3 className="font-display text-2xl text-white">{block.title}</h3>
-                <p className="mt-2 text-sm font-semibold uppercase tracking-[0.2em] text-aurora">{block.subtitle}</p>
-                <p className="mt-4 text-base leading-relaxed text-slate-300">{block.description}</p>
-                <ul className="mt-6 space-y-3 text-sm text-slate-200">
+                <h3 className="font-display text-xl sm:text-2xl text-white">{block.title}</h3>
+                <p className="mt-2 text-xs sm:text-sm font-semibold uppercase tracking-[0.2em] text-aurora">{block.subtitle}</p>
+                <p className="mt-3 sm:mt-4 text-sm sm:text-base leading-relaxed text-slate-300">{block.description}</p>
+                <ul className="mt-4 sm:mt-6 space-y-2 sm:space-y-3 text-sm text-slate-200">
                   {block.highlights.map((highlight) => (
                     <li key={highlight} className="flex items-start gap-3">
                       <span className="mt-1 h-2 w-2 flex-shrink-0 rounded-full bg-aurora" />
@@ -176,62 +177,66 @@ export function FeatureMatrixSection() {
                   ))}
                 </ul>
               </div>
-              <p className="mt-6 text-sm font-medium text-slate-200">{block.footnote}</p>
+              <p className="mt-4 sm:mt-6 text-xs sm:text-sm font-medium text-slate-200">{block.footnote}</p>
             </motion.div>
           ))}
         </div>
 
-        <motion.div variants={itemVariant} className="grid gap-6 lg:grid-cols-[1.2fr_1fr]">
-          <div className="rounded-4xl border border-white/10 bg-white/5 p-8 backdrop-blur-xl">
-            <h3 className="font-display text-2xl text-white">Why choose Vercedo</h3>
-            <p className="mt-3 text-sm text-slate-300">
+        <motion.div variants={itemVariant} className="grid gap-4 sm:gap-6 lg:grid-cols-[1.2fr_1fr]">
+          <div className="rounded-3xl md:rounded-4xl border border-white/10 bg-white/5 p-6 sm:p-8 backdrop-blur-xl">
+            <h3 className="font-display text-xl sm:text-2xl text-white">Why choose Vercedo</h3>
+            <p className="mt-3 text-sm sm:text-base text-slate-300">
               Built for the realities of Indian businesses with fast setup, transparent pricing, and a team that
               supports you locally.
             </p>
-            <div className="mt-6 overflow-hidden rounded-3xl border border-white/10">
-              <table className="w-full text-left text-sm text-slate-200">
-                <thead className="bg-white/5 text-xs uppercase tracking-[0.3em] text-slate-400">
-                  <tr>
-                    <th className="px-4 py-3">Advantage</th>
-                    <th className="px-4 py-3">Vercedo</th>
-                    <th className="px-4 py-3">Others</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {comparisonRows.map((row, index) => (
-                    <tr key={row.advantage} className={index % 2 === 0 ? 'bg-white/5' : 'bg-transparent'}>
-                      <td className="px-4 py-3 text-sm text-white">{row.advantage}</td>
-                      <td className="px-4 py-3 text-sm font-semibold text-aurora">{row.vercedo}</td>
-                      <td className="px-4 py-3 text-sm text-slate-300">{row.others}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
+            <div className="mt-4 sm:mt-6 overflow-x-auto -mx-6 sm:mx-0">
+              <div className="inline-block min-w-full align-middle px-6 sm:px-0">
+                <div className="overflow-hidden rounded-2xl sm:rounded-3xl border border-white/10">
+                  <table className="w-full text-left text-xs sm:text-sm text-slate-200">
+                    <thead className="bg-white/5 text-[10px] sm:text-xs uppercase tracking-[0.2em] sm:tracking-[0.3em] text-slate-400">
+                      <tr>
+                        <th className="px-2 sm:px-4 py-2 sm:py-3">Advantage</th>
+                        <th className="px-2 sm:px-4 py-2 sm:py-3">Vercedo</th>
+                        <th className="px-2 sm:px-4 py-2 sm:py-3">Others</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {comparisonRows.map((row, index) => (
+                        <tr key={row.advantage} className={index % 2 === 0 ? 'bg-white/5' : 'bg-transparent'}>
+                          <td className="px-2 sm:px-4 py-2 sm:py-3 text-xs sm:text-sm text-white">{row.advantage}</td>
+                          <td className="px-2 sm:px-4 py-2 sm:py-3 text-xs sm:text-sm font-semibold text-aurora">{row.vercedo}</td>
+                          <td className="px-2 sm:px-4 py-2 sm:py-3 text-xs sm:text-sm text-slate-300">{row.others}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
             </div>
           </div>
 
-          <div className="flex flex-col gap-6">
-            <div className="rounded-4xl border border-white/10 bg-white/5 p-8 backdrop-blur-xl">
-              <h4 className="font-display text-xl text-white">Go live in 3 days</h4>
-              <p className="mt-3 text-sm text-slate-300">Simple steps to launch your AI receptionist.</p>
-              <ol className="mt-6 grid gap-4 sm:grid-cols-2">
+          <div className="flex flex-col gap-4 sm:gap-6">
+            <div className="rounded-3xl md:rounded-4xl border border-white/10 bg-white/5 p-6 sm:p-8 backdrop-blur-xl">
+              <h4 className="font-display text-lg sm:text-xl text-white">Go live in 3 days</h4>
+              <p className="mt-3 text-xs sm:text-sm text-slate-300">Simple steps to launch your AI receptionist.</p>
+              <ol className="mt-4 sm:mt-6 grid gap-3 sm:gap-4 grid-cols-2">
                 {goLiveSteps.map((step, index) => (
-                  <li key={step} className="flex items-center gap-3">
-                    <span className="flex h-9 w-9 items-center justify-center rounded-full bg-aurora/10 text-sm font-semibold text-aurora">
+                  <li key={step} className="flex items-center gap-2 sm:gap-3">
+                    <span className="flex h-8 w-8 sm:h-9 sm:w-9 items-center justify-center rounded-full bg-aurora/10 text-xs sm:text-sm font-semibold text-aurora">
                       {index + 1}
                     </span>
-                    <span className="text-sm text-slate-200">{step}</span>
+                    <span className="text-xs sm:text-sm text-slate-200">{step}</span>
                   </li>
                 ))}
               </ol>
             </div>
 
-            <div className="rounded-4xl border border-white/10 bg-white/5 p-8 backdrop-blur-xl">
-              <h4 className="font-display text-xl text-white">Smart add-ons</h4>
-              <div className="mt-4 space-y-4 text-sm text-slate-200">
+            <div className="rounded-3xl md:rounded-4xl border border-white/10 bg-white/5 p-6 sm:p-8 backdrop-blur-xl">
+              <h4 className="font-display text-lg sm:text-xl text-white">Smart add-ons</h4>
+              <div className="mt-4 space-y-3 sm:space-y-4 text-xs sm:text-sm text-slate-200">
                 {smartAddOns.map((item) => (
-                  <div key={item.title} className="rounded-3xl border border-white/10 bg-white/5 p-4">
-                    <p className="font-semibold text-white">{item.title}</p>
+                  <div key={item.title} className="rounded-2xl sm:rounded-3xl border border-white/10 bg-white/5 p-3 sm:p-4">
+                    <p className="font-semibold text-white text-sm sm:text-base">{item.title}</p>
                     <p className="mt-1 text-slate-300">{item.description}</p>
                   </div>
                 ))}
@@ -240,39 +245,38 @@ export function FeatureMatrixSection() {
           </div>
         </motion.div>
 
-        <motion.div variants={itemVariant} className="space-y-8 rounded-4xl border border-white/10 bg-white/5 p-8 backdrop-blur-xl">
-          <h3 className="font-display text-2xl text-white">Results that speak for themselves</h3>
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
+        <motion.div variants={itemVariant} className="space-y-6 sm:space-y-8 rounded-3xl md:rounded-4xl border border-white/10 bg-white/5 p-6 sm:p-8 backdrop-blur-xl">
+          <h3 className="font-display text-xl sm:text-2xl text-white">Results that speak for themselves</h3>
+          <div className="grid gap-3 sm:gap-4 grid-cols-2 lg:grid-cols-5">
             {resultStats.map((stat) => (
               <div
                 key={stat.label}
-                className="glass rounded-3xl border border-white/10 bg-white/5 p-4 text-center"
+                className="glass rounded-2xl sm:rounded-3xl border border-white/10 bg-white/5 p-3 sm:p-4 text-center"
               >
-                <p className="font-display text-2xl text-white">{stat.value}</p>
-                <p className="mt-1 text-xs uppercase tracking-[0.2em] text-slate-400">{stat.label}</p>
+                <p className="font-display text-lg sm:text-2xl text-white">{stat.value}</p>
+                <p className="mt-1 text-[10px] sm:text-xs uppercase tracking-[0.15em] sm:tracking-[0.2em] text-slate-400">{stat.label}</p>
               </div>
             ))}
           </div>
-          <p className="text-base text-slate-200">
+          <p className="text-sm sm:text-base text-slate-200">
             Vercedo combines AI voice, automation, and revenue growth into one platform built for India.
           </p>
-          <div className="flex flex-wrap items-center gap-4">
-            <button
-              type="button"
+          <div className="flex flex-col sm:flex-row flex-wrap items-center gap-4">
+            <AnimatedCTAButton
               onClick={handleBookDemo}
-              data-cal-link="vercedo/30min"
-              data-cal-namespace="30min"
-              data-cal-config='{"layout":"month_view"}'
-              className="inline-flex items-center justify-center rounded-full bg-aurora px-6 py-3 text-sm font-semibold text-obsidian transition hover:bg-aurora/90"
+              variant="primary"
+              type="button"
+              className="px-8 py-4 text-base font-semibold w-full sm:w-auto"
             >
               Book a live walkthrough
-            </button>
-            <Link
+            </AnimatedCTAButton>
+            <AnimatedCTAButton
               href="/contact"
-              className="inline-flex items-center justify-center rounded-full border border-white/15 px-6 py-3 text-sm font-semibold text-white transition hover:border-white/30"
+              variant="secondary"
+              className="px-8 py-4 text-base font-semibold w-full sm:w-auto"
             >
               Talk to our team
-            </Link>
+            </AnimatedCTAButton>
           </div>
         </motion.div>
       </motion.div>

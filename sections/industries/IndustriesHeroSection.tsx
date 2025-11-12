@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion'
 import Link from 'next/link'
 import { HiArrowRight, HiArrowTrendingUp } from 'react-icons/hi2'
+import { AnimatedCTAButton } from '@/components/ui/AnimatedCTAButton'
 
 const industries = [
   {
@@ -174,19 +175,21 @@ export function IndustriesHeroSection() {
             <p className="text-lg text-slate-300">
               Don&apos;t see your industry listed? Vercedo works for logistics, travel, healthcare, retail, and more. Talk to us—we&apos;ll tailor the AI to your workflows.
             </p>
-            <div className="mt-6 flex flex-wrap items-center justify-center gap-4">
-              <Link
+            <div className="mt-6 flex flex-col sm:flex-row flex-wrap items-center justify-center gap-4">
+              <AnimatedCTAButton
                 href="/contact"
-                className="inline-flex items-center gap-2 rounded-full bg-aurora px-8 py-3 text-sm font-semibold text-white transition hover:bg-aurora/90"
+                variant="primary"
+                className="px-8 py-4 text-base font-semibold w-full sm:w-auto"
               >
                 Book a Demo
-              </Link>
-              <Link
+              </AnimatedCTAButton>
+              <AnimatedCTAButton
                 href="/contact"
-                className="inline-flex items-center gap-2 rounded-full border border-white/10 px-8 py-3 text-sm font-semibold text-white transition hover:bg-white/10"
+                variant="secondary"
+                className="px-8 py-4 text-base font-semibold w-full sm:w-auto"
               >
                 Request Industry Playbook
-              </Link>
+              </AnimatedCTAButton>
             </div>
           </div>
         </motion.div>
