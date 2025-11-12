@@ -68,25 +68,25 @@ const features = [
 
 export function SolutionSection() {
   return (
-    <section className="relative overflow-hidden bg-midnight py-24">
+    <section className="relative overflow-hidden bg-midnight py-16 sm:py-20 md:py-24">
       <div className="absolute inset-0 grid-pattern opacity-20" />
       <motion.div
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, margin: "-100px" }}
         variants={containerVariant}
-        className="relative mx-auto max-w-7xl px-6"
+        className="relative mx-auto max-w-7xl px-4 sm:px-6"
       >
-        <motion.div variants={itemVariant} className="mb-16 text-center">
-          <h2 className="mb-4 font-display text-4xl font-bold text-white md:text-5xl">
+        <motion.div variants={itemVariant} className="mb-10 sm:mb-12 md:mb-16 text-center">
+          <h2 className="mb-3 sm:mb-4 font-display text-3xl sm:text-4xl md:text-5xl font-bold text-white">
             Meet Your <span className="text-gradient">AI Receptionist</span>
           </h2>
-          <p className="mx-auto max-w-3xl text-lg text-slate-300">
+          <p className="mx-auto max-w-3xl text-base sm:text-lg text-slate-300 px-4 sm:px-0">
             More than just an answering service. A complete customer communication solution that works like your best employee—but never takes a break.
           </p>
         </motion.div>
         
-        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-4 sm:gap-6 md:gap-8 sm:grid-cols-2 lg:grid-cols-3">
           {features.map((feature, index) => (
             <motion.div
               key={index}
@@ -95,18 +95,18 @@ export function SolutionSection() {
                 y: -8, 
                 transition: { duration: 0.3, ease: [0.19, 1, 0.22, 1] } 
               }}
-              className="glass group relative overflow-hidden rounded-3xl p-8 transition-all hover:border-white/20 hover:shadow-lg hover:shadow-aurora/10"
+              className="glass group relative overflow-hidden rounded-2xl sm:rounded-3xl p-6 sm:p-8 transition-all hover:border-white/20 hover:shadow-lg hover:shadow-aurora/10"
             >
               <motion.div 
                 className="absolute inset-0 bg-gradient-to-br from-aurora/10 via-cobalt/5 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100"
                 initial={false}
               />
               <div className="relative">
-                <div className="mb-4 inline-flex rounded-2xl bg-aurora/10 p-3">
-                  <feature.icon className="h-8 w-8 text-aurora" />
+                <div className="mb-3 sm:mb-4 inline-flex rounded-xl sm:rounded-2xl bg-aurora/10 p-2.5 sm:p-3">
+                  <feature.icon className="h-7 w-7 sm:h-8 sm:w-8 text-aurora" />
                 </div>
-                <h3 className="mb-3 text-xl font-bold text-white">{feature.title}</h3>
-                <p className="leading-relaxed text-slate-300">{feature.description}</p>
+                <h3 className="mb-2 sm:mb-3 text-lg sm:text-xl font-bold text-white">{feature.title}</h3>
+                <p className="text-sm sm:text-base leading-relaxed text-slate-300">{feature.description}</p>
               </div>
             </motion.div>
           ))}

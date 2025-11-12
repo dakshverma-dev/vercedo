@@ -55,22 +55,22 @@ const problems = [
 
 export function ProblemSection() {
   return (
-    <section className="relative overflow-hidden bg-obsidian py-24">
+    <section className="relative overflow-hidden bg-obsidian py-16 sm:py-20 md:py-24">
       <div className="absolute inset-0 bg-gradient-to-b from-midnight to-obsidian" />
       <motion.div
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, margin: "-100px" }}
         variants={containerVariant}
-        className="relative mx-auto max-w-7xl px-6"
+        className="relative mx-auto max-w-7xl px-4 sm:px-6"
       >
-        <motion.div variants={itemVariant} className="mb-16 text-center">
-          <h2 className="mb-4 font-display text-4xl font-bold text-white md:text-5xl">
+        <motion.div variants={itemVariant} className="mb-10 sm:mb-12 md:mb-16 text-center">
+          <h2 className="mb-3 sm:mb-4 font-display text-3xl sm:text-4xl md:text-5xl font-bold text-white">
             The Hidden Cost of <span className="text-gradient">Missed Calls</span>
           </h2>
         </motion.div>
         
-        <div className="grid gap-8 md:grid-cols-2">
+        <div className="grid gap-4 sm:gap-6 md:gap-8 md:grid-cols-2">
           {problems.map((problem, index) => (
             <motion.div
               key={index}
@@ -79,16 +79,16 @@ export function ProblemSection() {
                 y: -8, 
                 transition: { duration: 0.3, ease: [0.19, 1, 0.22, 1] } 
               }}
-              className="glass group relative overflow-hidden rounded-3xl p-8 transition-all hover:border-white/20 hover:shadow-lg hover:shadow-cobalt/10"
+              className="glass group relative overflow-hidden rounded-2xl sm:rounded-3xl p-6 sm:p-8 transition-all hover:border-white/20 hover:shadow-lg hover:shadow-cobalt/10"
             >
               <motion.div 
                 className="absolute inset-0 bg-gradient-to-br from-cobalt/10 via-aurora/5 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100"
                 initial={false}
               />
               <div className="relative">
-                <problem.icon className={`mb-4 h-12 w-12 ${problem.color}`} />
-                <h3 className="mb-3 text-2xl font-bold text-white">{problem.title}</h3>
-                <p className="leading-relaxed text-slate-300">{problem.description}</p>
+                <problem.icon className={`mb-3 sm:mb-4 h-10 w-10 sm:h-12 sm:w-12 ${problem.color}`} />
+                <h3 className="mb-2 sm:mb-3 text-xl sm:text-2xl font-bold text-white">{problem.title}</h3>
+                <p className="text-sm sm:text-base leading-relaxed text-slate-300">{problem.description}</p>
               </div>
             </motion.div>
           ))}
