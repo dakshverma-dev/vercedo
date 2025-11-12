@@ -98,16 +98,16 @@ const itemVariant = {
 
 export function IndustriesHeroSection() {
   return (
-    <section className="relative overflow-hidden">
+    <section className="relative overflow-hidden py-24">
       <div className="absolute inset-0 grid-pattern opacity-20" />
       <motion.div
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
         variants={containerVariant}
-        className="relative mx-auto max-w-7xl px-6"
+        className="relative mx-auto max-w-7xl px-6 space-y-24"
       >
-        <motion.div variants={itemVariant} className="mb-16 text-center">
+        <motion.div variants={itemVariant} className="text-center">
           <h1 className="mb-6 font-display text-5xl font-bold text-white md:text-6xl">
             Built for Indian Businesses <span className="text-gradient">Across Industries</span>
           </h1>
@@ -116,7 +116,7 @@ export function IndustriesHeroSection() {
           </p>
         </motion.div>
 
-        <motion.div variants={itemVariant} className="mb-16 grid gap-6 md:grid-cols-3">
+        <motion.div variants={itemVariant} className="grid gap-6 md:grid-cols-3">
           {stats.map((stat) => (
             <div key={stat.label} className="rounded-3xl border border-white/10 bg-white/5 p-6 text-center">
               <p className="text-3xl font-bold text-white">{stat.value}</p>
@@ -169,7 +169,7 @@ export function IndustriesHeroSection() {
           ))}
         </div>
 
-        <motion.div variants={itemVariant} className="mt-16">
+        <motion.div variants={itemVariant}>
           <div className="rounded-3xl border border-white/10 bg-white/5 p-8 text-center">
             <p className="text-lg text-slate-300">
               Don&apos;t see your industry listed? Vercedo works for logistics, travel, healthcare, retail, and more. Talk to us—we&apos;ll tailor the AI to your workflows.

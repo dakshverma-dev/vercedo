@@ -122,7 +122,7 @@ const plans: Plan[] = [
       'Startups testing the waters'
     ],
     ctas: [
-      { label: 'Start Free 7-Day Trial', href: '/contact', variant: 'primary' },
+      { label: 'Get Started', href: '/contact', variant: 'primary' },
       { label: 'Talk to Sales', href: '/contact', variant: 'secondary' }
     ]
   },
@@ -193,7 +193,7 @@ const plans: Plan[] = [
       'Growing startups'
     ],
     ctas: [
-      { label: 'Start Free 7-Day Trial', href: '/contact', variant: 'primary' },
+      { label: 'Get Started', href: '/contact', variant: 'primary' },
       { label: 'Book a Demo Call', href: '/contact', variant: 'secondary' }
     ]
   },
@@ -941,14 +941,14 @@ export function PricingCards() {
           className="rounded-4xl border border-white/10 bg-gradient-to-r from-cobalt/40 via-aurora/20 to-transparent p-12 text-center backdrop-blur-xl"
         >
           <h2 className="font-display text-3xl text-white">Still not sure? Here's what to do:</h2>
-          <p className="mt-4 text-base text-slate-200">Option 1: Start Free Trial</p>
-          <p className="mt-2 text-sm text-slate-300">7 days, no credit card, full features.</p>
+          <p className="mt-4 text-base text-slate-200">Option 1: Get started today</p>
+          <p className="mt-2 text-sm text-slate-300">7 days of full features, no credit card required.</p>
           <div className="mt-6 flex justify-center">
             <Link
               href="/contact"
               className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-gradient-to-r from-cobalt via-platinum to-cobalt px-8 py-4 text-base font-semibold text-white shadow-glow transition hover:scale-105"
             >
-              Start Free Trial
+              Get Started
               <HiArrowRight className="h-5 w-5" />
             </Link>
           </div>

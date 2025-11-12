@@ -59,7 +59,7 @@ export function HeroSection() {
             type="button"
             className="px-8 py-4 text-base font-semibold"
           >
-            Try Live Demo ☎️
+            Try Live Demo
           </AnimatedCTAButton>
           <AnimatedCTAButton
             href="/contact"
