@@ -14,14 +14,14 @@ export function PricingSection() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-100px" }}
         transition={{ duration: 0.8, ease: [0.19, 1, 0.22, 1] }}
-        className="relative mx-auto max-w-4xl px-6 text-center"
+        className="relative mx-auto max-w-4xl px-6 text-center space-y-8"
       >
         <motion.h2 
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7, delay: 0.2, ease: [0.19, 1, 0.22, 1] }}
-          className="mb-6 font-display text-4xl font-bold text-white md:text-5xl"
+          className="font-display text-4xl font-bold text-white md:text-5xl"
         >
           Simple, Transparent <span className="text-gradient">Pricing</span>
         </motion.h2>
@@ -30,7 +30,7 @@ export function PricingSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7, delay: 0.3, ease: [0.19, 1, 0.22, 1] }}
-          className="mb-10 text-lg leading-relaxed text-slate-300"
+          className="text-lg leading-relaxed text-slate-300"
         >
           No hidden fees. No long contracts. Cancel anytime. Choose the plan that fits your business.
         </motion.p>
@@ -39,6 +39,7 @@ export function PricingSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7, delay: 0.4, ease: [0.19, 1, 0.22, 1] }}
+          className="flex justify-center"
         >
           <AnimatedCTAButton
             href="/pricing"

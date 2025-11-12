@@ -47,17 +47,17 @@ export function PricingHero() {
           className="mt-8 flex flex-wrap items-center justify-center gap-4"
         >
           <AnimatedCTAButton
-            href="/contact"
-            variant="primary"
-          >
-            Start Free Trial
-          </AnimatedCTAButton>
-          <AnimatedCTAButton
             onClick={handleBookDemo}
-            variant="secondary"
+            variant="primary"
             type="button"
           >
-            Schedule Demo
+            Book a Demo
+          </AnimatedCTAButton>
+          <AnimatedCTAButton
+            href="/contact"
+            variant="secondary"
+          >
+            Contact Sales
           </AnimatedCTAButton>
         </motion.div>
       </motion.div>
