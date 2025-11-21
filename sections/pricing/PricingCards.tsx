@@ -618,7 +618,7 @@ export function PricingCards() {
               className={cn(
                 'rounded-full px-6 py-3 text-sm font-semibold transition',
                 billingCycle === 'monthly'
-                  ? 'bg-gradient-to-r from-cobalt via-platinum to-cobalt text-white shadow-glow'
+                  ? 'bg-gradient-to-r from-cobalt/40 via-aurora/30 to-cobalt/40 text-white shadow-glow'
                   : 'text-slate-300 hover:text-white'
               )}
             >
@@ -630,7 +630,7 @@ export function PricingCards() {
               className={cn(
                 'rounded-full px-6 py-3 text-sm font-semibold transition',
                 billingCycle === 'annual'
-                  ? 'bg-gradient-to-r from-cobalt via-platinum to-cobalt text-white shadow-glow'
+                  ? 'bg-gradient-to-r from-cobalt/40 via-aurora/30 to-cobalt/40 text-white shadow-glow'
                   : 'text-slate-300 hover:text-white'
               )}
             >
@@ -652,12 +652,12 @@ export function PricingCards() {
                  plan.badge ? 'border-aurora/30 shadow-glow' : ''
                )}
             >
-              {plan.badge && (
-                <div className="absolute right-6 top-6 rounded-full border border-aurora/20 bg-aurora/5 px-2.5 py-0.5 text-xs font-medium uppercase tracking-[0.15em] text-aurora/70">
-                  {plan.badge}
-                </div>
-              )}
-              <div className="mb-6">
+             {plan.badge && (
+               <div className="absolute right-6 top-6 rounded-full border border-aurora/20 bg-aurora/5 px-2 py-0.5 text-[10px] font-medium uppercase tracking-[0.1em] text-aurora/70">
+                 {plan.badge}
+               </div>
+             )}
+             <div className="mb-6">
                 <h3 className="font-display text-2xl text-white">{plan.name}</h3>
                 <p className="mt-2 text-sm text-aurora">{plan.subtitle}</p>
               </div>
@@ -933,26 +933,7 @@ export function PricingCards() {
           </div>
         </motion.div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 32 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.8 }}
-          className="rounded-4xl border border-white/10 bg-gradient-to-r from-cobalt/40 via-aurora/20 to-transparent p-12 text-center backdrop-blur-xl"
-        >
-          <h2 className="font-display text-3xl text-white">Still not sure? Here's what to do:</h2>
-          <p className="mt-4 text-base text-slate-200">Option 1: Get started today</p>
-          <p className="mt-2 text-sm text-slate-300">7 days of full features, no credit card required.</p>
-          <div className="mt-6 flex justify-center">
-            <Link
-              href="/contact"
-              className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-gradient-to-r from-cobalt via-platinum to-cobalt px-8 py-4 text-base font-semibold text-white shadow-glow transition hover:scale-105"
-            >
-              Get Started
-              <HiArrowRight className="h-5 w-5" />
-            </Link>
-          </div>
-        </motion.div>
+
       </div>
     </section>
   )
